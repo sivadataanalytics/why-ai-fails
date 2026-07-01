@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-# Entry point: python demo.py [--dry-run] [--clarify-demo]
+"""
+Entry point for the context pruning demo.
+
+  python demo.py --clarify-demo   # Layer 1: clarify first (0 tokens)
+  python demo.py --dry-run        # Layer 2+3: compare token counts ($0)
+  python demo.py                  # Full benchmark with Gemini API
+"""
 
 import runpy
 from pathlib import Path

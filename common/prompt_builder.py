@@ -1,4 +1,14 @@
-# Build prompts for the two demo flows (bloated vs pruned)
+"""
+Prompt builders — where token pruning becomes visible.
+
+Two prompts, same question, wildly different token counts:
+
+  build_unpruned_prompt()  →  embeds ALL raw log lines     (~71,000 tokens)
+  build_pruned_prompt()    →  embeds evidence summary only (~200 tokens)
+
+The LLM task is identical. Only the context size changes.
+That is the entire point of context pruning.
+"""
 
 from __future__ import annotations
 
@@ -14,7 +24,15 @@ Please provide:
 
 
 def build_unpruned_prompt(user_question: str, raw_logs: str) -> str:
-    # Intentionally includes entire log dump — simulates a naive integration
+    """
+    ANTI-PATTERN — no token pruning.
+
+    Concatenates the entire log file into the prompt string.
+    Every log line becomes billable input tokens, including lines
+    about unrelated blocks, healthy nodes, and routine INFO messages.
+
+    Use this flow only to demonstrate the cost of NOT pruning.
+    """
     return f"""You are an HDFS incident investigation assistant.
 
 User question:
@@ -27,7 +45,16 @@ Here are the logs:
 
 
 def build_pruned_prompt(user_question: str, evidence: dict[str, Any]) -> str:
-    # Only block-scoped summary and top messages — minimal token footprint
+    """
+    BEST PRACTICE — pruned context.
+
+    Sends only what prune.py distilled:
+      - block ID, error/warning counts
+      - top 10 relevant messages (not all 2000 lines)
+      - one-line summary
+
+    Same instructions to the model, ~99% fewer input tokens.
+    """
     top_messages = evidence.get("top_messages", [])
     numbered = "\n".join(f"  {i}. {msg}" for i, msg in enumerate(top_messages, 1))
 

@@ -1,4 +1,10 @@
-# HDFS log parsing and question validation (LogHub format)
+"""
+HDFS log parsing and pre-retrieval token guards.
+
+load_hdfs_logs()      — parse raw LogHub file into structured DataFrame
+extract_block_id()  — pull block ID from user question (enables scoped filtering)
+is_ambiguous_question() — TOKEN GUARD: stop before loading logs if scope is unclear
+"""
 
 from __future__ import annotations
 
@@ -7,11 +13,10 @@ from pathlib import Path
 
 import pandas as pd
 
-# HDFS block IDs look like blk_1073741825 or blk_-8775602795571523802
+# HDFS block IDs: blk_1073741825 or blk_-8775602795571523802
 BLOCK_ID_PATTERN = re.compile(r"blk_[-]?\d+")
 
-# LogHub HDFS line format:
-# 081109 203615 148 INFO dfs.DataNode$PacketResponder: message...
+# LogHub format: 081109 203615 148 INFO dfs.DataNode$PacketResponder: message...
 HDFS_LINE_PATTERN = re.compile(
     r"^(?P<date>\d+)\s+(?P<time>\d+)\s+(?P<pid>\d+)\s+"
     r"(?P<severity>\w+)\s+(?P<component>[^:]+):\s*(?P<message>.*)$"
@@ -19,11 +24,18 @@ HDFS_LINE_PATTERN = re.compile(
 
 
 def extract_block_id(text: str) -> str | None:
+    """Extract block ID from user question — required for scoped log filtering."""
     match = BLOCK_ID_PATTERN.search(text)
     return match.group(0) if match else None
 
 
 def load_hdfs_logs(path: Path | str) -> pd.DataFrame:
+    """
+    Parse HDFS log file into structured rows.
+
+    Returns DataFrame with 'raw' column (full line) used by unpruned flow,
+    and structured columns used by prune.py for filtering.
+    """
     rows: list[dict[str, str]] = []
     with open(path, encoding="utf-8", errors="replace") as handle:
         for raw in handle:
@@ -46,7 +58,6 @@ def load_hdfs_logs(path: Path | str) -> pd.DataFrame:
                     }
                 )
             else:
-                # Fallback for lines that don't match the standard pattern
                 rows.append(
                     {
                         "timestamp": "",
@@ -61,7 +72,14 @@ def load_hdfs_logs(path: Path | str) -> pd.DataFrame:
 
 
 def is_ambiguous_question(question: str) -> bool:
-    # If block ID is present, scope is clear enough to retrieve logs
+    """
+    TOKEN GUARD — clarify first, retrieve later.
+
+    If the question has no block ID and sounds vague ("investigate the issue"),
+    return True so app.py asks clarifying questions instead of loading 2000 log lines.
+
+    Loading logs before scope is known = wasted retrieval + wasted tokens.
+    """
     if extract_block_id(question):
         return False
     q = question.strip().lower()

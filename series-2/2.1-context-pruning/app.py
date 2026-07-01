@@ -1,6 +1,27 @@
-# Series 2.1 — Context Pruning demo
-# Compares full HDFS log dump vs pruned block-scoped evidence sent to Gemini.
-# Run: python demo.py [--dry-run] [--clarify-demo]
+"""
+Series 2.1 — Context Pruning demo (main entry point).
+
+TOKEN PRUNING PRINCIPLE
+-----------------------
+Organizations pay for tokens, not API calls. Every character sent to the LLM
+costs money and adds latency. Context pruning = send ONLY what the model needs.
+
+This demo runs TWO flows side-by-side:
+
+  Flow 1 (WITHOUT pruning): dump all 2,000 HDFS log lines into the prompt
+                            → ~71,000+ tokens, slow, expensive
+
+  Flow 2 (WITH pruning):    filter by block ID, dedupe, summarize
+                            → ~200 tokens, fast, cheap
+
+THREE LAYERS OF TOKEN SAVINGS
+-----------------------------
+  1. Clarify first  — vague questions get scoping questions, 0 tokens spent
+  2. Prune context  — prune.py removes irrelevant logs before prompt build
+  3. Measure        — benchmark.py shows exact token/latency reduction
+
+Run: python demo.py [--dry-run] [--clarify-demo]
+"""
 
 from __future__ import annotations
 
@@ -9,7 +30,6 @@ import importlib.util
 import sys
 from pathlib import Path
 
-# Repo root on sys.path so `common.*` imports work
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -21,7 +41,6 @@ from common.prompt_builder import build_pruned_prompt, build_unpruned_prompt
 from common.token_usage import estimate_tokens
 from common.utils import is_ambiguous_question, load_hdfs_logs
 
-# Load prune.py from same folder (folder name has dots, avoid package import)
 _prune_path = Path(__file__).parent / "prune.py"
 _spec = importlib.util.spec_from_file_location("prune_module", _prune_path)
 _prune_mod = importlib.util.module_from_spec(_spec)
@@ -29,7 +48,8 @@ assert _spec and _spec.loader
 _spec.loader.exec_module(_prune_mod)
 prune_hdfs_context = _prune_mod.prune_hdfs_context
 
-# Clarify-first: ask scope before loading logs (zero tokens spent)
+# LAYER 1 — Clarify first. Retrieve later.
+# Asking these costs ZERO tokens. Loading 2000 log lines without scope costs thousands.
 CLARIFYING_QUESTIONS = [
     "Which HDFS block ID should I investigate? (Example: blk_-8775602795571523802)",
     "What time window should I use?",
@@ -38,6 +58,7 @@ CLARIFYING_QUESTIONS = [
 
 
 def print_clarification(question: str) -> None:
+    """Show clarify-first flow — no logs loaded, no API call, 0 tokens."""
     print("====================================")
     print("CLARIFY FIRST — no logs retrieved yet")
     print("====================================")
@@ -49,9 +70,17 @@ def print_clarification(question: str) -> None:
 
 
 def run_without_pruning(question: str, raw_logs: str, *, dry_run: bool) -> dict:
-    # Flow 1: naive app dumps entire log file into the prompt
+    """
+    FLOW 1 — No token pruning (the expensive path).
+
+    Sends every log line to Gemini. On HDFS_2k.log this is ~71,000+ prompt tokens.
+    This simulates apps that dump full conversation history, all RAG chunks,
+    or entire log files into every request.
+    """
     prompt = build_unpruned_prompt(question, raw_logs)
+
     if dry_run:
+        # Count tokens locally — no API call, no cost
         pt = estimate_tokens(prompt)
         return {
             "text": "[dry-run: skipped Gemini call]",
@@ -64,9 +93,16 @@ def run_without_pruning(question: str, raw_logs: str, *, dry_run: bool) -> dict:
 
 
 def run_with_pruning(question: str, logs_df, *, dry_run: bool) -> dict:
-    # Flow 2: filter logs by block ID, summarize, send compact evidence only
+    """
+    FLOW 2 — Context pruning applied (the efficient path).
+
+    prune.py filters 2000 lines down to ~2 block-relevant rows, then summarizes
+    into a compact evidence block. Prompt drops from ~71,000 to ~200 tokens.
+    Same model, same question — only the context changes.
+    """
     _, evidence = prune_hdfs_context(logs_df, question)
     prompt = build_pruned_prompt(question, evidence)
+
     if dry_run:
         pt = estimate_tokens(prompt)
         return {
@@ -86,8 +122,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Context pruning benchmark (HDFS + Gemini)")
     parser.add_argument("--question", default=DEFAULT_QUESTION, help="Investigation question")
     parser.add_argument("--log-file", type=Path, default=DEFAULT_LOG_FILE, help="HDFS log file")
-    parser.add_argument("--dry-run", action="store_true", help="Token estimate only, no API call")
-    parser.add_argument("--clarify-demo", action="store_true", help="Show clarify-first flow only")
+    parser.add_argument("--dry-run", action="store_true", help="Estimate tokens only — no API call, $0 cost")
+    parser.add_argument("--clarify-demo", action="store_true", help="Show clarify-first flow only — 0 tokens")
     args = parser.parse_args(argv)
 
     load_config()
@@ -96,7 +132,7 @@ def main(argv: list[str] | None = None) -> int:
         print_clarification(AMBIGUOUS_QUESTION)
         return 0
 
-    # Stop early if question has no block ID — don't waste tokens on vague requests
+    # TOKEN GUARD: reject vague questions before loading any logs
     if is_ambiguous_question(args.question):
         print_clarification(args.question)
         print("Re-run with a specific block ID, e.g.:")
@@ -110,6 +146,7 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"Loading HDFS logs from {log_path} ...")
     logs_df = load_hdfs_logs(log_path)
+    # raw_logs = full dump used ONLY by the unpruned flow (intentionally bloated)
     raw_logs = "\n".join(logs_df["raw"].tolist())
     print(f"Loaded {len(logs_df)} log lines.\n")
     print(f'Question: "{args.question}"\n')
@@ -120,6 +157,7 @@ def main(argv: list[str] | None = None) -> int:
     print("Running WITH context pruning ...")
     with_pruning = run_with_pruning(args.question, logs_df, dry_run=args.dry_run)
 
+    # LAYER 3 — Print token savings side-by-side
     print()
     print_benchmark(without, with_pruning)
 
