@@ -1,0 +1,2836 @@
+{
+  "version": 2,
+  "schemaVersion": 2,
+  "source": "mantis",
+  "sourceVersion": "0.2.211",
+  "generatedAt": "2026-07-01T19:18:09.381Z",
+  "files": [
+    {
+      "file": "common/benchmark.py",
+      "action": "edited",
+      "linesAffected": 14,
+      "linesAdded": 14,
+      "linesDeleted": 1,
+      "totalLines": 64,
+      "assistant": "cursor"
+    },
+    {
+      "file": "common/config.py",
+      "action": "edited",
+      "linesAffected": 11,
+      "linesAdded": 11,
+      "linesDeleted": 3,
+      "totalLines": 38,
+      "assistant": "cursor"
+    },
+    {
+      "file": "common/gemini_client.py",
+      "action": "edited",
+      "linesAffected": 15,
+      "linesAdded": 15,
+      "linesDeleted": 2,
+      "totalLines": 57,
+      "assistant": "cursor"
+    },
+    {
+      "file": "common/prompt_builder.py",
+      "action": "edited",
+      "linesAffected": 30,
+      "linesAdded": 30,
+      "linesDeleted": 3,
+      "totalLines": 77,
+      "assistant": "cursor"
+    },
+    {
+      "file": "common/token_usage.py",
+      "action": "edited",
+      "linesAffected": 13,
+      "linesAdded": 13,
+      "linesDeleted": 2,
+      "totalLines": 27,
+      "assistant": "cursor"
+    },
+    {
+      "file": "common/utils.py",
+      "action": "edited",
+      "linesAffected": 24,
+      "linesAdded": 24,
+      "linesDeleted": 6,
+      "totalLines": 87,
+      "assistant": "cursor"
+    },
+    {
+      "file": "demo.py",
+      "action": "edited",
+      "linesAffected": 7,
+      "linesAdded": 7,
+      "linesDeleted": 1,
+      "totalLines": 16,
+      "assistant": "cursor"
+    },
+    {
+      "file": "push-to-github.sh",
+      "action": "added",
+      "linesAffected": 29,
+      "linesAdded": 29,
+      "linesDeleted": 0,
+      "totalLines": 29,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-2/2.1-context-pruning/app.py",
+      "action": "edited",
+      "linesAffected": 49,
+      "linesAdded": 49,
+      "linesDeleted": 11,
+      "totalLines": 174,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-2/2.1-context-pruning/prune.py",
+      "action": "edited",
+      "linesAffected": 61,
+      "linesAdded": 61,
+      "linesDeleted": 7,
+      "totalLines": 136,
+      "assistant": "cursor"
+    }
+  ],
+  "hunks": [
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:1:common/benchmark.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/benchmark.py",
+      "oldStart": 1,
+      "oldLines": 1,
+      "newStart": 1,
+      "newLines": 6,
+      "linesAdded": 6,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/benchmark.py",
+        "newPath": "common/benchmark.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:2:common/benchmark.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/benchmark.py",
+      "oldStart": 16,
+      "oldLines": 0,
+      "newStart": 22,
+      "newLines": 8,
+      "linesAdded": 8,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/benchmark.py",
+        "newPath": "common/benchmark.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:3:common/config.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/config.py",
+      "oldStart": 1,
+      "oldLines": 1,
+      "newStart": 1,
+      "newLines": 7,
+      "linesAdded": 7,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/config.py",
+        "newPath": "common/config.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:4:common/config.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/config.py",
+      "oldStart": 12,
+      "oldLines": 1,
+      "newStart": 18,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/config.py",
+        "newPath": "common/config.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:5:common/config.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/config.py",
+      "oldStart": 15,
+      "oldLines": 1,
+      "newStart": 21,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/config.py",
+        "newPath": "common/config.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:6:common/config.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/config.py",
+      "oldStart": 17,
+      "oldLines": 0,
+      "newStart": 24,
+      "newLines": 2,
+      "linesAdded": 2,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/config.py",
+        "newPath": "common/config.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:7:common/gemini_client.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/gemini_client.py",
+      "oldStart": 1,
+      "oldLines": 1,
+      "newStart": 1,
+      "newLines": 6,
+      "linesAdded": 6,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/gemini_client.py",
+        "newPath": "common/gemini_client.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:8:common/gemini_client.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/gemini_client.py",
+      "oldStart": 16,
+      "oldLines": 1,
+      "newStart": 21,
+      "newLines": 8,
+      "linesAdded": 8,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/gemini_client.py",
+        "newPath": "common/gemini_client.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:9:common/gemini_client.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/gemini_client.py",
+      "oldStart": 27,
+      "oldLines": 0,
+      "newStart": 40,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/gemini_client.py",
+        "newPath": "common/gemini_client.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:10:common/prompt_builder.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/prompt_builder.py",
+      "oldStart": 1,
+      "oldLines": 1,
+      "newStart": 1,
+      "newLines": 11,
+      "linesAdded": 11,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/prompt_builder.py",
+        "newPath": "common/prompt_builder.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:11:common/prompt_builder.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/prompt_builder.py",
+      "oldStart": 17,
+      "oldLines": 1,
+      "newStart": 27,
+      "newLines": 9,
+      "linesAdded": 9,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/prompt_builder.py",
+        "newPath": "common/prompt_builder.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:12:common/prompt_builder.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/prompt_builder.py",
+      "oldStart": 30,
+      "oldLines": 1,
+      "newStart": 48,
+      "newLines": 10,
+      "linesAdded": 10,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/prompt_builder.py",
+        "newPath": "common/prompt_builder.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:13:common/token_usage.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/token_usage.py",
+      "oldStart": 1,
+      "oldLines": 1,
+      "newStart": 1,
+      "newLines": 6,
+      "linesAdded": 6,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/token_usage.py",
+        "newPath": "common/token_usage.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:14:common/token_usage.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/token_usage.py",
+      "oldStart": 7,
+      "oldLines": 1,
+      "newStart": 12,
+      "newLines": 6,
+      "linesAdded": 6,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/token_usage.py",
+        "newPath": "common/token_usage.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:15:common/token_usage.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/token_usage.py",
+      "oldStart": 13,
+      "oldLines": 0,
+      "newStart": 24,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/token_usage.py",
+        "newPath": "common/token_usage.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:16:common/utils.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/utils.py",
+      "oldStart": 1,
+      "oldLines": 1,
+      "newStart": 1,
+      "newLines": 7,
+      "linesAdded": 7,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/utils.py",
+        "newPath": "common/utils.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:17:common/utils.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/utils.py",
+      "oldStart": 10,
+      "oldLines": 1,
+      "newStart": 16,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/utils.py",
+        "newPath": "common/utils.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:18:common/utils.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/utils.py",
+      "oldStart": 13,
+      "oldLines": 2,
+      "newStart": 19,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 2,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/utils.py",
+        "newPath": "common/utils.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:19:common/utils.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/utils.py",
+      "oldStart": 21,
+      "oldLines": 0,
+      "newStart": 27,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/utils.py",
+        "newPath": "common/utils.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:20:common/utils.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/utils.py",
+      "oldStart": 26,
+      "oldLines": 0,
+      "newStart": 33,
+      "newLines": 6,
+      "linesAdded": 6,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/utils.py",
+        "newPath": "common/utils.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:21:common/utils.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/utils.py",
+      "oldStart": 49,
+      "oldLines": 1,
+      "newStart": 60,
+      "newLines": 0,
+      "linesAdded": 0,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/utils.py",
+        "newPath": "common/utils.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:22:common/utils.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "common/utils.py",
+      "oldStart": 64,
+      "oldLines": 1,
+      "newStart": 75,
+      "newLines": 8,
+      "linesAdded": 8,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "common/utils.py",
+        "newPath": "common/utils.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:23:demo.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "demo.py",
+      "oldStart": 2,
+      "oldLines": 1,
+      "newStart": 2,
+      "newLines": 7,
+      "linesAdded": 7,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "demo.py",
+        "newPath": "demo.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:24:push-to-github.sh",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "push-to-github.sh",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 29,
+      "linesAdded": 29,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "push-to-github.sh",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:25:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 1,
+      "oldLines": 3,
+      "newStart": 1,
+      "newLines": 24,
+      "linesAdded": 24,
+      "linesDeleted": 3,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:26:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 12,
+      "oldLines": 1,
+      "newStart": 32,
+      "newLines": 0,
+      "linesAdded": 0,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:27:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 24,
+      "oldLines": 1,
+      "newStart": 43,
+      "newLines": 0,
+      "linesAdded": 0,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:28:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 32,
+      "oldLines": 1,
+      "newStart": 51,
+      "newLines": 2,
+      "linesAdded": 2,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:29:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 40,
+      "oldLines": 0,
+      "newStart": 61,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:30:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 52,
+      "oldLines": 1,
+      "newStart": 73,
+      "newLines": 7,
+      "linesAdded": 7,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:31:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 53,
+      "oldLines": 0,
+      "newStart": 81,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:32:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 54,
+      "oldLines": 0,
+      "newStart": 83,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:33:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 67,
+      "oldLines": 1,
+      "newStart": 96,
+      "newLines": 7,
+      "linesAdded": 7,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:34:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 69,
+      "oldLines": 0,
+      "newStart": 105,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:35:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 89,
+      "oldLines": 2,
+      "newStart": 125,
+      "newLines": 2,
+      "linesAdded": 2,
+      "linesDeleted": 2,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:36:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 99,
+      "oldLines": 1,
+      "newStart": 135,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:37:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 112,
+      "oldLines": 0,
+      "newStart": 149,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:38:series-2/2.1-context-pruning/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/app.py",
+      "oldStart": 122,
+      "oldLines": 0,
+      "newStart": 160,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-2/2.1-context-pruning/app.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:39:series-2/2.1-context-pruning/prune.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/prune.py",
+      "oldStart": 1,
+      "oldLines": 1,
+      "newStart": 1,
+      "newLines": 18,
+      "linesAdded": 18,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/prune.py",
+        "newPath": "series-2/2.1-context-pruning/prune.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:40:series-2/2.1-context-pruning/prune.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/prune.py",
+      "oldStart": 13,
+      "oldLines": 1,
+      "newStart": 30,
+      "newLines": 6,
+      "linesAdded": 6,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/prune.py",
+        "newPath": "series-2/2.1-context-pruning/prune.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:41:series-2/2.1-context-pruning/prune.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/prune.py",
+      "oldStart": 21,
+      "oldLines": 1,
+      "newStart": 43,
+      "newLines": 6,
+      "linesAdded": 6,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/prune.py",
+        "newPath": "series-2/2.1-context-pruning/prune.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:42:series-2/2.1-context-pruning/prune.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/prune.py",
+      "oldStart": 28,
+      "oldLines": 1,
+      "newStart": 55,
+      "newLines": 6,
+      "linesAdded": 6,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/prune.py",
+        "newPath": "series-2/2.1-context-pruning/prune.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:43:series-2/2.1-context-pruning/prune.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/prune.py",
+      "oldStart": 33,
+      "oldLines": 1,
+      "newStart": 65,
+      "newLines": 6,
+      "linesAdded": 6,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/prune.py",
+        "newPath": "series-2/2.1-context-pruning/prune.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:44:series-2/2.1-context-pruning/prune.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/prune.py",
+      "oldStart": 44,
+      "oldLines": 1,
+      "newStart": 81,
+      "newLines": 10,
+      "linesAdded": 10,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/prune.py",
+        "newPath": "series-2/2.1-context-pruning/prune.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:45:series-2/2.1-context-pruning/prune.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.1-context-pruning/prune.py",
+      "oldStart": 72,
+      "oldLines": 1,
+      "newStart": 118,
+      "newLines": 9,
+      "linesAdded": 9,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2/2.1-context-pruning/prune.py",
+        "newPath": "series-2/2.1-context-pruning/prune.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 10,
+        "cursorSessionMtimeMs": 1782933412338,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    }
+  ],
+  "summary": {
+    "totalHunks": 45,
+    "buckets": {
+      "ai_only": 45,
+      "human_only": 0,
+      "tool_only": 0,
+      "mixed_ai_human": 0,
+      "mixed_ai_tool": 0,
+      "mixed_human_tool": 0,
+      "mixed_ai_human_tool": 0,
+      "unknown": 0
+    },
+    "aiInvolved": 45,
+    "humanInvolved": 0,
+    "toolInvolved": 0,
+    "unknownInvolved": 0,
+    "linesAdded": 253,
+    "linesDeleted": 36
+  },
+  "reconciliation": {
+    "schemaVersion": 2,
+    "strategy": "staged-diff-hunk-overlap-v1",
+    "stagedHunkCount": 45,
+    "matchedHunkCount": 0,
+    "unknownHunkCount": 0,
+    "files": [
+      "common/benchmark.py",
+      "common/config.py",
+      "common/gemini_client.py",
+      "common/prompt_builder.py",
+      "common/token_usage.py",
+      "common/utils.py",
+      "demo.py",
+      "push-to-github.sh",
+      "series-2/2.1-context-pruning/app.py",
+      "series-2/2.1-context-pruning/prune.py"
+    ],
+    "lineSummaryByBucket": {
+      "ai_only": {
+        "hunks": 45,
+        "linesAdded": 253,
+        "linesDeleted": 36
+      },
+      "human_only": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "tool_only": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_human": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_human_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_human_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "unknown": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      }
+    }
+  }
+}
