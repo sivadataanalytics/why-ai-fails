@@ -24,10 +24,10 @@ READING ORDER
 
 RUN
 ---
-  python app.py --dry-run      # token math only, $0, instant
-  python app.py                # one Gemini call, live answer
-  python app.py --drift-demo   # show v1/v2/v3 cache growth
-  python app.py --cache-version v2
+  python series-2/app.py --dry-run      # token math only, $0, instant
+  python series-2/app.py                # one Gemini call, live answer
+  python series-2/app.py --drift-demo   # show v1/v2/v3 cache growth
+  python series-2/app.py --cache-version v2
 """
 
 from __future__ import annotations
