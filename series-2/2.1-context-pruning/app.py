@@ -30,6 +30,7 @@ import importlib.util
 import sys
 from pathlib import Path
 
+# BOOTSTRAP — add repo root to sys.path for common/ imports
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -41,6 +42,7 @@ from common.prompt_builder import build_pruned_prompt, build_unpruned_prompt
 from common.token_usage import estimate_tokens
 from common.utils import is_ambiguous_question, load_hdfs_logs
 
+# LOCAL PRUNE MODULE — context pruning pipeline for this series
 _prune_path = Path(__file__).parent / "prune.py"
 _spec = importlib.util.spec_from_file_location("prune_module", _prune_path)
 _prune_mod = importlib.util.module_from_spec(_spec)
@@ -58,7 +60,7 @@ CLARIFYING_QUESTIONS = [
 
 
 def print_clarification(question: str) -> None:
-    """Show clarify-first flow — no logs loaded, no API call, 0 tokens."""
+    """LAYER 1 — Show clarify-first flow; no logs loaded, no API call, 0 tokens."""
     print("====================================")
     print("CLARIFY FIRST — no logs retrieved yet")
     print("====================================")
@@ -77,10 +79,11 @@ def run_without_pruning(question: str, raw_logs: str, *, dry_run: bool) -> dict:
     This simulates apps that dump full conversation history, all RAG chunks,
     or entire log files into every request.
     """
+    # PROMPT BUILD — embed entire raw log dump (intentionally bloated)
     prompt = build_unpruned_prompt(question, raw_logs)
 
     if dry_run:
-        # Count tokens locally — no API call, no cost
+        # DRY-RUN — count tokens locally; no API call, no cost
         pt = estimate_tokens(prompt)
         return {
             "text": "[dry-run: skipped Gemini call]",
@@ -89,6 +92,8 @@ def run_without_pruning(question: str, raw_logs: str, *, dry_run: bool) -> dict:
             "total_tokens": pt,
             "latency_seconds": 0.0,
         }
+
+    # LIVE API — send full unpruned prompt to Gemini
     return generate(prompt)
 
 
@@ -100,10 +105,12 @@ def run_with_pruning(question: str, logs_df, *, dry_run: bool) -> dict:
     into a compact evidence block. Prompt drops from ~71,000 to ~200 tokens.
     Same model, same question — only the context changes.
     """
+    # PRUNE + BUILD — run pipeline, then build compact evidence prompt
     _, evidence = prune_hdfs_context(logs_df, question)
     prompt = build_pruned_prompt(question, evidence)
 
     if dry_run:
+        # DRY-RUN — count pruned prompt tokens only
         pt = estimate_tokens(prompt)
         return {
             "text": "[dry-run: skipped Gemini call]",
@@ -113,12 +120,15 @@ def run_with_pruning(question: str, logs_df, *, dry_run: bool) -> dict:
             "latency_seconds": 0.0,
             "evidence": evidence,
         }
+
+    # LIVE API — send pruned prompt; attach evidence for inspection
     result = generate(prompt)
     result["evidence"] = evidence
     return result
 
 
 def main(argv: list[str] | None = None) -> int:
+    # CLI — parse question, log file, and demo mode flags
     parser = argparse.ArgumentParser(description="Context pruning benchmark (HDFS + Gemini)")
     parser.add_argument("--question", default=DEFAULT_QUESTION, help="Investigation question")
     parser.add_argument("--log-file", type=Path, default=DEFAULT_LOG_FILE, help="HDFS log file")
@@ -128,17 +138,19 @@ def main(argv: list[str] | None = None) -> int:
 
     load_config()
 
+    # LAYER 1 DEMO — clarify-first only; exit before any log load
     if args.clarify_demo:
         print_clarification(AMBIGUOUS_QUESTION)
         return 0
 
-    # TOKEN GUARD: reject vague questions before loading any logs
+    # TOKEN GUARD — reject vague questions before loading any logs
     if is_ambiguous_question(args.question):
         print_clarification(args.question)
         print("Re-run with a specific block ID, e.g.:")
         print(f'  python demo.py --question "{DEFAULT_QUESTION}"')
         return 0
 
+    # DATA LOAD — read HDFS log file into structured DataFrame
     log_path = args.log_file
     if not log_path.exists():
         print(f"Log file not found: {log_path}")
@@ -151,13 +163,15 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Loaded {len(logs_df)} log lines.\n")
     print(f'Question: "{args.question}"\n')
 
+    # FLOW 1 — unpruned: all 2000 lines in the prompt
     print("Running WITHOUT context pruning ...")
     without = run_without_pruning(args.question, raw_logs, dry_run=args.dry_run)
 
+    # FLOW 2 — pruned: filtered evidence only
     print("Running WITH context pruning ...")
     with_pruning = run_with_pruning(args.question, logs_df, dry_run=args.dry_run)
 
-    # LAYER 3 — Print token savings side-by-side
+    # LAYER 3 — print token savings side-by-side
     print()
     print_benchmark(without, with_pruning)
 

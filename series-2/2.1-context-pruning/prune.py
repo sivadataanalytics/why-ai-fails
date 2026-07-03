@@ -33,6 +33,7 @@ def filter_logs_for_block(logs: pd.DataFrame, block_id: str) -> pd.DataFrame:
     From 2000 lines, keep only rows mentioning the target block ID.
     Typical result: 2000 → 2 lines (~99.9% of log tokens eliminated here).
     """
+    # Match block ID in message text or structured block_id column
     mask = logs["message"].str.contains(block_id, na=False, regex=False)
     if logs["block_id"].notna().any():
         mask = mask | (logs["block_id"] == block_id)
@@ -70,6 +71,8 @@ def limit_relevant_rows(logs: pd.DataFrame, max_rows: int = 50) -> pd.DataFrame:
     """
     if logs.empty:
         return logs
+
+    # Sort by severity (ERROR first), then timestamp; cap at max_rows
     severity_rank = {"ERROR": 0, "WARN": 1, "WARNING": 1, "INFO": 2, "DEBUG": 3}
     logs = logs.copy()
     logs["_rank"] = logs["severity"].str.upper().map(severity_rank).fillna(9)
@@ -88,13 +91,16 @@ def summarize_evidence(logs: pd.DataFrame, block_id: str) -> dict[str, Any]:
 
     This is the biggest token win after filtering — summary beats raw dump.
     """
+    # COUNT — tally errors and warnings from remaining rows
     severities = logs["severity"].str.upper()
     error_count = int(severities.isin(["ERROR", "ERR", "FATAL"]).sum())
     warning_count = int(severities.isin(["WARN", "WARNING"]).sum())
 
+    # EXTRACT — top messages and involved components for the prompt
     top_messages = logs["message"].head(10).tolist()
     components = sorted(logs["component"].dropna().unique().tolist())
 
+    # SUMMARIZE — one-line narrative instead of replaying every log line
     if logs.empty:
         summary = f"No log lines found for block {block_id}."
     else:
@@ -124,10 +130,12 @@ def prune_hdfs_context(logs: pd.DataFrame, user_question: str) -> tuple[pd.DataF
     The evidence dict feeds build_pruned_prompt() which produces a ~200-token
     prompt instead of a ~71,000-token raw log dump.
     """
+    # SCOPE — extract block ID from question; fail fast if missing
     block_id = extract_block_id(user_question)
     if not block_id:
         raise ValueError("No block ID in question. Example: blk_-8775602795571523802")
 
+    # PIPELINE — steps 1–4 shrink the DataFrame; step 5 builds evidence dict
     filtered = filter_logs_for_block(logs, block_id)
     filtered = keep_useful_columns(filtered)
     filtered = deduplicate_messages(filtered)
