@@ -39,11 +39,11 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 # BOOTSTRAP — Python needs these folders on sys.path to find our imports:
 #   ROOT          → common/ (config, gemini_client, prompt_builder, ...)
-#   2.1-context   → prune.py from Series 2.1 (we still prune evidence)
-#   this folder   → prompt_cache.py, benchmark.py
+#   series-1      → prune.py (context pruning, article 2.1)
+#   this folder   → prompt_cache.py, benchmark.py (prompt caching, article 2.2)
 # ---------------------------------------------------------------------------
-ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT), str(ROOT / "series-2" / "2.1-context-pruning"), str(Path(__file__).parent)]
+ROOT = Path(__file__).resolve().parents[1]
+sys.path[:0] = [str(ROOT), str(ROOT / "series-1"), str(Path(__file__).parent)]
 
 from benchmark import print_benchmark
 from common.config import DEFAULT_LOG_FILE, DEFAULT_QUESTION, load_config
