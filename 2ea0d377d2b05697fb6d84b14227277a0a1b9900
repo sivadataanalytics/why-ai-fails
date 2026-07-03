@@ -1,0 +1,647 @@
+{
+  "version": 2,
+  "schemaVersion": 2,
+  "source": "mantis",
+  "sourceVersion": "0.2.208",
+  "generatedAt": "2026-07-03T19:50:27.182Z",
+  "files": [
+    {
+      "file": "{series-2/2.1-context-pruning => series-1}/app.py",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "totalLines": 0,
+      "assistant": null
+    },
+    {
+      "file": "{series-2/2.1-context-pruning => series-1}/prune.py",
+      "action": "edited",
+      "linesAffected": 0,
+      "linesAdded": 0,
+      "linesDeleted": 0,
+      "totalLines": 0,
+      "assistant": null
+    },
+    {
+      "file": "demo.py",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "totalLines": 16,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-1/app.py",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "totalLines": 188,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-1/README.md",
+      "action": "added",
+      "linesAffected": 28,
+      "linesAdded": 28,
+      "linesDeleted": 0,
+      "totalLines": 28,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-2/{2.2-prompt-caching => }/app.py",
+      "action": "edited",
+      "linesAffected": 4,
+      "linesAdded": 4,
+      "linesDeleted": 4,
+      "totalLines": 0,
+      "assistant": null
+    },
+    {
+      "file": "series-2/{2.2-prompt-caching => }/benchmark.py",
+      "action": "edited",
+      "linesAffected": 0,
+      "linesAdded": 0,
+      "linesDeleted": 0,
+      "totalLines": 0,
+      "assistant": null
+    },
+    {
+      "file": "series-2/{2.2-prompt-caching => }/prompt_cache.py",
+      "action": "edited",
+      "linesAffected": 0,
+      "linesAdded": 0,
+      "linesDeleted": 0,
+      "totalLines": 0,
+      "assistant": null
+    },
+    {
+      "file": "series-2/2.2-prompt-caching/README.md",
+      "action": "deleted",
+      "linesAffected": 26,
+      "linesAdded": 0,
+      "linesDeleted": 26,
+      "totalLines": 0,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-2/app.py",
+      "action": "edited",
+      "linesAffected": 4,
+      "linesAdded": 4,
+      "linesDeleted": 4,
+      "totalLines": 259,
+      "assistant": null
+    },
+    {
+      "file": "series-2/README.md",
+      "action": "added",
+      "linesAffected": 30,
+      "linesAdded": 30,
+      "linesDeleted": 0,
+      "totalLines": 30,
+      "assistant": "cursor"
+    }
+  ],
+  "hunks": [
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:1:demo.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "demo.py",
+      "oldStart": 14,
+      "oldLines": 1,
+      "newStart": 14,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "demo.py",
+        "newPath": "demo.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 13,
+        "cursorSessionMtimeMs": 1783108205243,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:3:series-1/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-1/app.py",
+      "oldStart": 34,
+      "oldLines": 1,
+      "newStart": 34,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer.status-bar-refresh",
+            "operationId": "vscode:mr5cduno:1030:Why-AI-Fails-:app.py:cursor-agent.composer.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "R",
+        "oldPath": "series-2/2.1-context-pruning/app.py",
+        "newPath": "series-1/app.py",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mr5cduno:1030:Why-AI-Fails-:app.py:cursor-agent.composer.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mr5cduno:1030:Why-AI-Fails-:app.py:cursor-agent.composer.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:2:series-1/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-1/README.md",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 28,
+      "linesAdded": 28,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "series-1/README.md",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 13,
+        "cursorSessionMtimeMs": 1783108205243,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:4:series-2/2.2-prompt-caching/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/2.2-prompt-caching/README.md",
+      "oldStart": 1,
+      "oldLines": 26,
+      "newStart": 0,
+      "newLines": 0,
+      "linesAdded": 0,
+      "linesDeleted": 26,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "D",
+        "oldPath": "series-2/2.2-prompt-caching/README.md",
+        "newPath": null,
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 13,
+        "cursorSessionMtimeMs": 1783108205243,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:6:series-2/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/app.py",
+      "oldStart": 42,
+      "oldLines": 2,
+      "newStart": 42,
+      "newLines": 2,
+      "linesAdded": 2,
+      "linesDeleted": 2,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "editor.action.clipboardPasteAction",
+            "operationId": "vscode:mr5b39af:144:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "editor.action.clipboardPasteAction",
+            "operationId": "vscode:mr5btie1:904:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "editor.action.clipboardPasteAction",
+            "operationId": "vscode:mr5c6mdp:932:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "editor.action.clipboardPasteAction",
+            "operationId": "vscode:mr5cdiv0:1027:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "R",
+        "oldPath": "series-2/2.2-prompt-caching/app.py",
+        "newPath": "series-2/app.py",
+        "matchedOperationCount": 4,
+        "matchedHunkCount": 4,
+        "matchedOperationIds": [
+          "vscode:mr5b39af:144:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+          "vscode:mr5btie1:904:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+          "vscode:mr5c6mdp:932:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+          "vscode:mr5cdiv0:1027:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction"
+        ],
+        "matchedHunkIds": [
+          "vscode:mr5b39af:144:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction:1",
+          "vscode:mr5btie1:904:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction:1",
+          "vscode:mr5c6mdp:932:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction:1",
+          "vscode:mr5cdiv0:1027:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction:1"
+        ],
+        "matchedInheritedHunkCount": 0
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:7:series-2/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/app.py",
+      "oldStart": 45,
+      "oldLines": 2,
+      "newStart": 45,
+      "newLines": 2,
+      "linesAdded": 2,
+      "linesDeleted": 2,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "editor.action.clipboardPasteAction",
+            "operationId": "vscode:mr5b39af:144:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "editor.action.clipboardPasteAction",
+            "operationId": "vscode:mr5btie1:904:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "editor.action.clipboardPasteAction",
+            "operationId": "vscode:mr5c6mdp:932:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "editor.action.clipboardPasteAction",
+            "operationId": "vscode:mr5cdiv0:1027:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "R",
+        "oldPath": "series-2/2.2-prompt-caching/app.py",
+        "newPath": "series-2/app.py",
+        "matchedOperationCount": 4,
+        "matchedHunkCount": 4,
+        "matchedOperationIds": [
+          "vscode:mr5b39af:144:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+          "vscode:mr5btie1:904:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+          "vscode:mr5c6mdp:932:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+          "vscode:mr5cdiv0:1027:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction"
+        ],
+        "matchedHunkIds": [
+          "vscode:mr5b39af:144:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction:1",
+          "vscode:mr5btie1:904:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction:1",
+          "vscode:mr5c6mdp:932:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction:1",
+          "vscode:mr5cdiv0:1027:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction:1"
+        ],
+        "matchedInheritedHunkCount": 0
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:5:series-2/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2/README.md",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 30,
+      "linesAdded": 30,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.composer",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "cursor_session",
+        "source": "cursor-agent.composer",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "series-2/README.md",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "cursorSessionTouchedFile": true,
+        "cursorSessionFreshForFile": true,
+        "cursorSessionTouchedFileCount": 13,
+        "cursorSessionMtimeMs": 1783108205243,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "cursor-agent.composer"
+      }
+    }
+  ],
+  "summary": {
+    "totalHunks": 7,
+    "buckets": {
+      "ai_only": 5,
+      "human_only": 2,
+      "tool_only": 0,
+      "mixed_ai_human": 0,
+      "mixed_ai_tool": 0,
+      "mixed_human_tool": 0,
+      "mixed_ai_human_tool": 0,
+      "unknown": 0
+    },
+    "aiInvolved": 5,
+    "humanInvolved": 2,
+    "toolInvolved": 0,
+    "unknownInvolved": 0,
+    "linesAdded": 64,
+    "linesDeleted": 32
+  },
+  "reconciliation": {
+    "schemaVersion": 2,
+    "strategy": "staged-diff-hunk-overlap-v1",
+    "stagedHunkCount": 7,
+    "matchedHunkCount": 3,
+    "unknownHunkCount": 0,
+    "files": [
+      "demo.py",
+      "series-1/README.md",
+      "series-1/app.py",
+      "series-2/2.2-prompt-caching/README.md",
+      "series-2/README.md",
+      "series-2/app.py"
+    ],
+    "lineSummaryByBucket": {
+      "ai_only": {
+        "hunks": 5,
+        "linesAdded": 60,
+        "linesDeleted": 28
+      },
+      "human_only": {
+        "hunks": 2,
+        "linesAdded": 4,
+        "linesDeleted": 4
+      },
+      "tool_only": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_human": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_human_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_human_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "unknown": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      }
+    }
+  }
+}
