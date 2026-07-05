@@ -1,11 +1,11 @@
-# Series 1 — Context Pruning (Engineering Lab 2.1)
+# Series 2.1 — Context Pruning
 
 Demo: send only the log evidence the model needs — not all 2,000 HDFS lines.
 
 ## Layout
 
 ```
-series-1/
+series-2.1/
   app.py    # main demo
   prune.py  # filter → dedupe → summarize pipeline
 ```
@@ -24,5 +24,5 @@ python demo.py
 Or directly:
 
 ```bash
-python series-1/app.py --dry-run
+python series-2.1/app.py --dry-run
 ```

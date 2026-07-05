@@ -24,10 +24,10 @@ READING ORDER
 
 RUN
 ---
-  python series-2/app.py --dry-run      # token math only, $0, instant
-  python series-2/app.py                # one Gemini call, live answer
-  python series-2/app.py --drift-demo   # show v1/v2/v3 cache growth
-  python series-2/app.py --cache-version v2
+  python series-2.2/app.py --dry-run      # token math only, $0, instant
+  python series-2.2/app.py                # one Gemini call, live answer
+  python series-2.2/app.py --drift-demo   # show v1/v2/v3 cache growth
+  python series-2.2/app.py --cache-version v2
 """
 
 from __future__ import annotations
@@ -39,11 +39,11 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 # BOOTSTRAP — Python needs these folders on sys.path to find our imports:
 #   ROOT          → common/ (config, gemini_client, prompt_builder, ...)
-#   series-1      → prune.py (context pruning, article 2.1)
-#   this folder   → prompt_cache.py, benchmark.py (prompt caching, article 2.2)
+#   series-2.1    → prune.py (context pruning)
+#   this folder   → prompt_cache.py, benchmark.py (prompt caching)
 # ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parents[1]
-sys.path[:0] = [str(ROOT), str(ROOT / "series-1"), str(Path(__file__).parent)]
+sys.path[:0] = [str(ROOT), str(ROOT / "series-2.1"), str(Path(__file__).parent)]
 
 from benchmark import print_benchmark
 from common.config import DEFAULT_LOG_FILE, DEFAULT_QUESTION, load_config
