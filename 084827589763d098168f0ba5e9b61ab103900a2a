@@ -1,0 +1,3603 @@
+{
+  "version": 2,
+  "schemaVersion": 2,
+  "source": "mantis",
+  "sourceVersion": "0.2.221",
+  "generatedAt": "2026-07-15T19:57:26.569Z",
+  "files": [
+    {
+      "file": "docs/series_2_1_context_pruning.txt",
+      "action": "added",
+      "linesAffected": 42,
+      "linesAdded": 42,
+      "linesDeleted": 0,
+      "totalLines": 42,
+      "assistant": null
+    },
+    {
+      "file": "docs/series_2_2_prompt_caching.txt",
+      "action": "added",
+      "linesAffected": 64,
+      "linesAdded": 64,
+      "linesDeleted": 0,
+      "totalLines": 64,
+      "assistant": null
+    },
+    {
+      "file": "docs/series_2_3_rag_chunking.txt",
+      "action": "added",
+      "linesAffected": 92,
+      "linesAdded": 92,
+      "linesDeleted": 0,
+      "totalLines": 92,
+      "assistant": null
+    },
+    {
+      "file": "docs/series_2_hidden_economics.txt",
+      "action": "added",
+      "linesAffected": 33,
+      "linesAdded": 33,
+      "linesDeleted": 0,
+      "totalLines": 33,
+      "assistant": null
+    },
+    {
+      "file": "README.md",
+      "action": "added",
+      "linesAffected": 52,
+      "linesAdded": 52,
+      "linesDeleted": 0,
+      "totalLines": 52,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-2.1/README.md",
+      "action": "edited",
+      "linesAffected": 77,
+      "linesAdded": 77,
+      "linesDeleted": 10,
+      "totalLines": 95,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-2.2/README.md",
+      "action": "edited",
+      "linesAffected": 118,
+      "linesAdded": 118,
+      "linesDeleted": 12,
+      "totalLines": 136,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-2.3/app.py",
+      "action": "added",
+      "linesAffected": 216,
+      "linesAdded": 216,
+      "linesDeleted": 0,
+      "totalLines": 216,
+      "assistant": null
+    },
+    {
+      "file": "series-2.3/benchmark.py",
+      "action": "added",
+      "linesAffected": 127,
+      "linesAdded": 127,
+      "linesDeleted": 0,
+      "totalLines": 127,
+      "assistant": null
+    },
+    {
+      "file": "series-2.3/chunker.py",
+      "action": "added",
+      "linesAffected": 167,
+      "linesAdded": 167,
+      "linesDeleted": 0,
+      "totalLines": 167,
+      "assistant": null
+    },
+    {
+      "file": "series-2.3/prompt_builder.py",
+      "action": "added",
+      "linesAffected": 39,
+      "linesAdded": 39,
+      "linesDeleted": 0,
+      "totalLines": 39,
+      "assistant": null
+    },
+    {
+      "file": "series-2.3/questions.py",
+      "action": "added",
+      "linesAffected": 45,
+      "linesAdded": 45,
+      "linesDeleted": 0,
+      "totalLines": 45,
+      "assistant": null
+    },
+    {
+      "file": "series-2.3/README.md",
+      "action": "added",
+      "linesAffected": 148,
+      "linesAdded": 148,
+      "linesDeleted": 0,
+      "totalLines": 148,
+      "assistant": null
+    },
+    {
+      "file": "series-2.3/retriever.py",
+      "action": "added",
+      "linesAffected": 78,
+      "linesAdded": 78,
+      "linesDeleted": 0,
+      "totalLines": 78,
+      "assistant": null
+    }
+  ],
+  "hunks": [
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:2:docs/series_2_1_context_pruning.txt",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "docs/series_2_1_context_pruning.txt",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 42,
+      "linesAdded": 42,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "552f6d9d79988243663d083e9ffae70f79a9920e10402ec5719d6bfc6e91b023",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "dbea90c9f146eacb7d982bde3a6c176b0aea73ee5696834c10ce59588a78c6a8",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "0f3afcf4d9f83895cf8c2c80de9bff0cb294cb7746218a78c12e663fa1c25016",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a1b98e37585c236f2afbbf52cadbcb9a1fa9cde2fb8efc584dc0994a7e95f446",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "c118b33d39b01d78fa42f12cc30e26348ea79fd8f21ae2d8e968af9ff9a124a7",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cf2cabec6b1c6626e9e76e3c52bf897af2b0d0b2f2367f13bea947cc0c49ea4c",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "5897c85ebdb7ab2e8d1864e8a532afb83a6f535fd64cf375856431b03accb77a",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "0e362165b0dee9263e4b0c0fb670ffbfd00eabbbf6fec287cf6219e42347bad8",
+          "3ae58003e28056f4dd0e11ca0a25b920652b8a451ad9690ed76c8a0cbcb21c52",
+          "bc9a332266906fc4f57aea1b25403ac6f4b9aeb3be53b349e0f59e0679eed292",
+          "92cd8a90321c5c43cbcf3c164da54967d9ae9ec45e7b8b2e628c32062e8f9a57",
+          "68019747db35d557a6a17f32e5558aa6075118bf2100bb37ab2f1a246cf0ad05",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d372bb006e1156f7b8dcb97c8245cf3dbd363006d7165ceaecdf9a6dd892937d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "4132a6df765bfaf071314cc810b2f53126b4977846ecd0270aac0ae79de640a0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "7dbabb33c545daa61fb7eefa31e6b7706c21f3efd945a7262ab03bebe054c7d3",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "741d30f17cf75f2564e838487bb8f474354c24e1cd1efc2cd7f70bc6c83ebec9",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b0483a8f66d2d25f48e8b9fe41222f858c339b3061bf70fdfb5d13509a548df7",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "77bc89a839fe19de109defb183b79a8f6fa927533ac92808d6076b94be61f8a4",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ef8f2db9a3bfc9e8cc6c5138b1dc1e4171ff22a8090341e87871b2bb552ba50d",
+          "303ccbf2180712815e8750aa2693ff83191069a8f92b8cfe77bf4c83dadbc756",
+          "0a185862865a81fcc9ac3e2575a2763f5c7b355817014dedb098eb03ace1e4dd",
+          "09db8a85318108a8689b0c1ec89fc81bd96520ceedb876dec59f15b2b95aa469",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b5906b27ae4f9c82e5c811ca4f9c85a1e3b2b1eb6991f49b4c3a15229a0869a2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "2577058a01224e65b6d18d78badd569043966a0c6674e1e2d7e1c051d17b53bc",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "07934aa85dfb067319be4759bbf52e35e583cfcf20a2e9bdd8e3d59d2fbc1fd3"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "docs/series_2_1_context_pruning.txt",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:3:docs/series_2_2_prompt_caching.txt",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "docs/series_2_2_prompt_caching.txt",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 64,
+      "linesAdded": 64,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "084911f760b9e618011c75a1c6ad91e9edcc21261f3a00bc4bc3743d001900d1",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "899ef798938e4c886d7cfe7dbdfeff313d86d808c389ab34a474f74d9f7de991",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "fd36dabb53511d42ae914b17083e27f0bca07487a69cb79a785f182b0b8c2ec6",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "47b1a3c526ef7a3f065fd8e509449385a712967e3a3c3e2d077363bf6f718f1c",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "897e2c43f85390fcea476fef286d4f8d6d1fb70cb476bb1d2c09ed8a7c120572",
+          "c667014f82d60a9d1c6cdf302e78466f11f659715f947d8a3fb8dcd9f6af7444",
+          "1b5ad626863e25718f37e3f6e3cc348f9878ceae67722eec57dec45f1595ae5e",
+          "baeff6e306d6445109d793af964731e588fbf5701bc590383e88c8ccdaaa60c1",
+          "59490895bdbf3a0e2651a4a319d61b0d3b3762098763ca8356fc630ff3111888",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "593bdb8590b306eacbd8ef457e4342cdbe565ab305c09874dcb698158e6b7834",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "1430afa7c198a456a0993933c58e22b2585047626af4d03fc506b0a7ffd4a810",
+          "36e4819160667fb71e574139c6384e2400720dc37d1429d37578776e0fc0b4a7",
+          "defa7fef6e0dd1da55eace5b30c19fbdf4938a32e71a9007db8217fc98c842e2",
+          "492d44ec8c9584b80d2618e9c1e022a274479ababacd3a927ec86cca10302147",
+          "a07d0b1c1e16dbef2627c53f326891067c1d3222e6181f349ff7d5b584372509",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "4c1087d3041ec46c5e154ba21d5dc50472d0dc63ba0a3b58f131941a36093d8f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "8f3fa9dd4dd0983d64f329bcf7a4df371d7887f3a8b4aafd6f791d0ace57e6c2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "02b535284d4daa6f3337adecccffc1cad7ae20f6f62b775bfff209d36c7c0850",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bf314171c8112cd32268c6351d7f83f729e108a658d20c413d50e7eb15706aea",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "131c13a19f19cc1d1413f62dd9ed27e7b934aaba05ff05aa3f0fb3b40af4feca",
+          "915c0b2f26d4ae6799581d683c6d24342fa2dbf221110cecf16dcaab32a5e3e7",
+          "3ebe0f9457b0de8147b649afb3950d8b7a050fbfa45a247949c7548bb7e22bf7",
+          "7347a990c470619bba94ab990e367d6571c47ec8b6f8aaa2742b96ec6bf64ada",
+          "55141bc50ddb3018a4d540a436d40436cd6edcb1356c3586122ee7d6c744afe2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "45b7a458fbdad4bc61aee81382e736fa0a5a595d40ee43859774c9e8a9164b2c",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e57d6b45084052a21ef4441ea37c4d4003ad66e0a5acc290495a56096ea3c63f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "7b0d31624e9bef20a1ec75e2b3e33d8d23dd7f9689e95eb51835f83d2b0c4375",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "8facab64f2f514d2610d659057cc9bea92c88c33ae3b34f04a7cba6cc65fd701",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "85bdbdd0fb89be7e55bd50dda8743a218820ce24e10f7429501ce19dd242c6ad",
+          "22d0aadbe63093ec981503532f732c4596ed47d2a057da524fab67e40dbc299d",
+          "1e3feeed182a092e86ca5c279747be2312e5ed7b0c1fab7822fd1d5ee43a817b",
+          "a168aa8dae32d3b932b7361aaa5b09879055e0c94d143631de33815e05c6a714",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "c983d2215f1e00f567553ecf54d1198da90787c2435c4d1e78ef64e7b8f3ce0a",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3ff0dafd3ee4b5f810cd380ade61ef812302d586dfc91707dd58df7388557860",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a850b710bdca3e9dc26c4d68c5deb7007ca6fcd73428163e9a5ee23a028b3915",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e4824d9a34af339fea519222ee42863007b7c8abb4b88874e86f6267a530492b",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a16b5cd43972933cf9c49fe0702becd2e975e010110d995ce54e73a84c19eb9e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3484dcb7912e6410ac5a31a1bf66a41f844758e8b29336e255540e7b74e09025",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "2577058a01224e65b6d18d78badd569043966a0c6674e1e2d7e1c051d17b53bc",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "aa06069161d182fba5000933f07bdbe296ffe661286ed968c09d71bcc5cd024b"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "docs/series_2_2_prompt_caching.txt",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:4:docs/series_2_3_rag_chunking.txt",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "docs/series_2_3_rag_chunking.txt",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 92,
+      "linesAdded": 92,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "763c8d34c20c11b2fe60868515e992dd83304931089b8d4d429c86e037aee810",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e9aecf67bb963d9f671e4f02671f65fd92ca53f75ed1f39afe6f88d878805a52",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "2247e3401acf7cba147bebb82b6b9ef5fe837db3ad49def7fe3e8548d7b3783f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3a3c912a4f4cb6d6513d0eba722415f3e2717cea4fc28dcb77a30c9227f5bfb0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "67eb1861eb11479348bf46a5b5174d53801003932a2e0a265157621b5dd7b3e9",
+          "92ec8742aa272ea975b1f05b3fe3790a3aa1c801f8f93d8a10c95e0f4210d944",
+          "18b27365afc61736f43ad37b85dd4d4c5998443b589b59384ee2317a69f57cbe",
+          "ba6b51e0728eb70fb873d92efc26c09b58a0a6a4f852bd10595363d5510a2837",
+          "1d4a54236e5a56bd40c32668999f3d74eddf231a3122594d4491c0c4f16b5437",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "7c9e2d6c6e6fb73c1379f2e4c16b422276a96baf6004fc353022253615880d11",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "604d514d730e56139879cc0cefd637facf33d10022fa979aaa6a9b3fef0ec183",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b230cea5e6f374f3a9057d759ac1b1d95ce358896464eb5ae9eb7ddb63d59985",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "55202a06dce0500e44ddc786f8ef6ede63c9798dc2b613da1f8d113cd2914f44",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "6af0331aaa66a7c75a1a004260382587cad45d18c4335c2c1aaa94f978dcab9e",
+          "bde532452857668434f1d50e6090e8c2bf73513e7ec541721f3db9786b118a3c",
+          "f45c7f6c3c59c506b4a27159d685a55633074eb6924a709a3d53c70cddf5b6af",
+          "91e96c65895b06a4c55eb006a34d55147a837b8ebf78976ed5bd4693ee567dfc",
+          "2bd2b5770369f5ab500d8edaa44decdc2664e01e5e513ae636621ca6d01b0937",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d49b257da2c4e95ccbdd8d8f165a36f69799f7583f44a388d64d894edfea07fb",
+          "596efb6e46a54eb6b3c7fd2bc648dfada59d318437cda4e3e68ba4658f0e71e7",
+          "4e04f5f8c702659e3bf863d63233667c5261e1f27f257844eeabec716cbb142a",
+          "ea45f8a4bc4f5e9f1e1b006f4a89e9c2ff7e1fa9d2fb5051883d5b859c1445eb",
+          "71d50190162fc2b8bcb5bec1576b01d51e643ec433b41cb2755d256339cce8dd",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "8e37367a07d3d1679507d748daf16930e85936200a95d48a4cd2444490103470",
+          "83ed44565eb43fe97ffc331324511ead14e139917af6c0978e003fc7ab92fc9d",
+          "9f9a6266fa6468a552a032b2333ce4df7e9a870ee923e973a331aa133769371f",
+          "339a1da9c88c6d7d916050f3fc5fb90538ca0670a674bc5a4a3854533fef66b7",
+          "350c169d621ec23db30233160475b1f38c178b39eeaa140d3b58b6190a158bb7",
+          "433ec0949757865a30457ef599820fd810940936c05de26db48ba3538950b026",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "94772736c77b75905e60f6a5205f730ca7c6b72bb8de092126d0bae713887b22",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "6df60587c7d4eef159eff6950b6d250ef75ab91099c6618cbbac9cd5db574fcd",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "360fa5f622d9cad0669cf87e81888c3c5aae5de35b00ca9140cae8c63edd9010",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "56e1c987014500f41c972c15090560adff2c3c57b7dc19b751ba77710673b842",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "753719d194196378eb9d27b42635768da2710e31caefe7d8716c2afe54ba67da",
+          "218ff4296f881e39e876f90ae83dd816898f5b73bb81e4305600ae1053933b71",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "83c95592168df7ee588dc5e1f2fca8c4e52148b13b16956727b2dc407910d39e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "0d304cb9c36ff47d186911c9f2c2196b9b824db322d6639f39688971053ad236",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "af4fbfee0e8a8b57d4b17265e297c89a5091dcb0db2f4e4ad655b3d9c381356b",
+          "71de8f0952d191b5c3440eca0c3c57b743bf306d1c22be56c5874e4a7f073bda",
+          "d95c8b9dad4c5d4416e4b2955be762501d16b2f418db5d5b0bc0d735eee8a9b6",
+          "324acffcd92c2c962b555ce21e98e8629ae541892e29a43d009cd33b6b57119c",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "85258c137c619469dd5cc84f3d167b9b03a488915925d2857bdace0d4343042a",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "85ab22ccab3a524f9d7418c2d2dfb5dafba5d0a3622f6239e95e7ff48a6019ba",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a4b083bd1c98b52c23179e46ba93450c781a8e43f8074907e3dbfbdd24030717",
+          "d8b4ac6c49cca3941ad7a230057bcb9388c65019b8dea40f8a48027befd0cdbe",
+          "2f5ae7e37a0febfb580ca7d340b1d97201860ef8e1453ea94c0ef9ee5eec4914",
+          "b4b7df207255db3cc0bd0c830c113ac539ecc643ceaf2bc2761d5aa08f51d0bb",
+          "d89086389d9aebd1d6e2ce885b98f48fe89831715af1dc4a44bb32857e470ab1",
+          "7840fd66d078a87ad0aa01463c6c4552c01a12389c56dca322374aaf4de3ac6d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e4ff81cbe840865eb73219be7c7d82597ff574c4fae91f70017c9705dfa4f3d7",
+          "0b9e0ef2387febb57cb79bd59668ae67ae5c42140439b11e4a419996daf94396",
+          "2088ecc047fa3af9ea3fa8eebd0b4a5d33a9a0dbb2e36dfd22ef33dc306d94b9",
+          "e761802f156dccbbe0766826cfb06674627be8b58c71da0d5c00f17bbeae6d5d",
+          "0793a9f194fad2b8f8827ecc8e15b25f38d47d1b3a3cec60db4e4982974e4579",
+          "38b953304bff8b7657d4f0ac68a5243b7d44cae9b763068b9c896d4b27f6a9b8",
+          "d5c631e52bd1cfbff8e86d7aa1bdc11fe471b8fb223c232fa1b3ad816e769ec5",
+          "fc0ea135291c3e721bb49b760e4aeaf99c8dec83b4fc9680a8055d3a03c91c1f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "56bed4e3e0ed97719801edb4de5a1e9b3140b669a32d985a03a78875852ad275",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "75567b73aebb76771c6401ebf4afdd5aad495f8a1a909ab54ed25bd11cadf12d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "92bf455ea039c23c889a78119e6cc75b231b4e93a5d622b102a733c1929b5656",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "701c85f586710d09619e9114cde545b5a4777e974e3af37f00bc501b2ae52e14",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "2577058a01224e65b6d18d78badd569043966a0c6674e1e2d7e1c051d17b53bc",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "7042d469db3f2b1ab34484573a895a962d470d058df1f9f2dbd8859304e8048f"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "docs/series_2_3_rag_chunking.txt",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:5:docs/series_2_hidden_economics.txt",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "docs/series_2_hidden_economics.txt",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 33,
+      "linesAdded": 33,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "73e6feca6cd7c7608d4f226d12c2686e8235b026c6acff1eb6ec452c2f78a9a5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "98c24b15bf3d98b4721cd27024053a42bdcee1f08bc15a3a034565b57e072d5c",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "dff5dbd2dc7b3029214e66e6e847762501bd11f05b5d3af50e26939b19a36e45",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3dcc5446846669f29cd9df631338e3063107d11b7739c7e6de771a4173e27478",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b7be106e6c6ba238eb576e3cd19c9fb0f961e2a9cff4cca8b4987e6c65b00062",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "2ed13abc7ccddb82162781f254e9a842294ddf9890645daf7aa45ee20f1f4dc7",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a150baabaa851b0a0eddca9123dc5b4670bcc161f0efc358d4d2b16d3e40ad59",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "c06c51ba7934f47792851d6e3670ad9f4b0d14ce8354e8777152b13d2451c45e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "1aa578b2d1190507709d292ce8262fa7acfc7917484fa4fe224759b0759c3327",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "75604d85b6c4b0e35f2ccd1dcac1238fad592ec992ac626eabae21fb5aadc6fd",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "71b14ede4274fc2d2312858d68507abc98203f71ef14ce34bc4d1edcc0b6717f",
+          "f77d9dcf70188ad3df182e56cad2ec1b92822d3d8a37ef1cbcf6fc0024ce73cc",
+          "2d2ec4d23d45d866f34d9f8c3c4fe3137299fd24187b5a45597754a6d8bb0d8f",
+          "74f04b3db406264395a565f8b6ca1c727908f3bd1279bbe3fe113177fbaa6198",
+          "eba7c7fe2db6225854ce1ffa16a5a43b71a2744537e1dbf8d9f522e8767d3655",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "2fdf959fe519117a3c1b802c4d920a691c927f4d04e798ca62517ce71bd5c8f4",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e8e7ec1dc211c3dfbcaf4cce712c43160f19f89c1c8fc02f8a9c4eb82992dbb8",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ca74a8ff2873bf696bf147778f32310d5d8ca67f7c6593a433243ad4033b5423",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b00a8517fabec2f2a5ef7e2a9e5484aaa03ad5f0707c904e0a8a7fa9332294d8"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "docs/series_2_hidden_economics.txt",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:1:README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "README.md",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 52,
+      "linesAdded": 52,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk3b5:5:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:mrmflw1c:7:Why-AI-Fails-:README.md:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:mrmflydi:8:Why-AI-Fails-:README.md:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfusqv:11:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "1d2ecb82c42ef998989c6be53473bcbbb13fc8d78a9b016a9731a1f1eaacb28d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "6b3a1f2b7e6ac88cf2e9646b6ab85cb295e2e0ef7767285c382d71e6afb7e96d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "8a26dac6a1258820ae8543a0cac9a63babd45e363356a721a51163b420fe9827",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "1c0be51584344b978e586c39aff47ec4a0213050c6fcf30466edffad18b846fe",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d459cfdd91b133f20c162eac58abc6dc4b6bcfb50ed1da28ae3528b0bf94a453",
+          "5897e3b2021cf4ec69a8d121e41cc54c8e49b7f676e97124c9a720a7a841507f",
+          "e8219d27f0e0be17061cf7f51fffd915968aaa3b6eed706e05e415f6934c33f4",
+          "fd0c67e2334f6aa347d84c8b289c41d18923ed1fa525e24ac3cc27927d611f91",
+          "e9220609bef883d634ea60e17af204137faeebc344d703d1da9bb94fec718207",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bf3bc044bdb160517bb61d078d6f7bb354f8c89f1946c24dd2dd943681fba9da",
+          "8e273de23c94b93420f6e840d5cffd4945936e6d93bcbeaec5843842a737a3c0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "9535b10be9abb7a87788c3f5107c21822734a4507aeb464f8710fb8c4866b965",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ad332335cfaa348c5bd715c3479844622270d5f7389ae070b81b135d521a221a",
+          "e0ed46d86e72aed0cf8faf5b0a3415584b7a239e270ad2bad55a91074c52cfe9",
+          "5e3f7560795167329cbcf02a8a3e4b83f9f045b87cc981b68ad9823d5b84d166",
+          "44351ac40d7cb3fa57a90bd0a2ff0d0e0f90dcf4de0c9f32b49d0f197d1e8300",
+          "f634394e6be6cb445c6bc8191ae89e2f0de21f2214dc16b9cd2e080ad660b1dc",
+          "70d1b25f1780974738800bee7ccb487f1581a2632b5887cd942443338ea4aa7f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ff62c71335d9b02a537607acbd2f6e961b424f93d4fdc0780c39c61116f05767",
+          "4d415e3cb2f13e92b4fb67863eb8867cfccf85f510d5f1eced3f15740bc74e0e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f5024e9402014b953fff5a045e977a87b13e0627bf50e2540a5edfad68cfbf7a",
+          "db15f03daf1ba1e835c2a1765aea1f06e80dc10fc3eed443437aacadd587fc7a",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ce461fa4d167d49b2affdc0bc11f1c2f2566d81095500596f9807cff608d3383",
+          "1556250a82f935620f0536d2d00a198e5add23d41b918b350ead31062d5b752c",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e0b878e218330b9ff7876a4e3d7f5ded2c09f222ab952e2f65896f8f75436431",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "95658f9190b3cd103e3c198b0c0fca1d7618ec4fe28a1ddabd217981bb5c5ebb",
+          "8e8f641337b2b9d4986b872ca5f66d931fcc6d9ca621d8ade9ead163715535ea",
+          "fbb3c4a99d7ed4bea61823ca2ceefaed8691aa52c54f33d9dd5270b26552b7ba",
+          "d335431cde1502a1d4a87654e4d99169ab1f63cab6c761d25a8132041234f958",
+          "6a9f34fecab0238c7e5919c8759f95312550741c3eabe6121070ab08d749ebca",
+          "a57b74daa398a67fe3a9a2bb6c29a4dc42bfb7e2b89b9af2d78eaa034b84da02",
+          "7953bde7b03af6bef78340bc3091917ff287f54bcc16212ed9f60819bb83c8ea",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "524f73dc4cfde2457bcda01d1f283474c67d01bb1bdc513fa4e21163496d9cc8",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "05ab0b110b61fca4641a7bb7f81ad96702509a37c15de863aea0dbd1025d36a7",
+          "2e757f5f6790fc2ae7340167b5150cb7efc536b2874a08c9f65e8b7bdb7ff860"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "README.md",
+        "matchedOperationCount": 4,
+        "matchedHunkCount": 4,
+        "matchedOperationIds": [
+          "vscode:mrmfk3b5:5:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+          "vscode:mrmflw1c:7:Why-AI-Fails-:README.md:cursor-agent.transcript.fs-fallback",
+          "vscode:mrmflydi:8:Why-AI-Fails-:README.md:cursor-agent.transcript.fs-fallback",
+          "vscode:mrmfusqv:11:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk3b5:5:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1",
+          "vscode:mrmflw1c:7:Why-AI-Fails-:README.md:cursor-agent.transcript.fs-fallback:1",
+          "vscode:mrmflydi:8:Why-AI-Fails-:README.md:cursor-agent.transcript.fs-fallback:1",
+          "vscode:mrmfusqv:11:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 52,
+            "deleted": 0,
+            "changed": 52,
+            "touched": 52
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:6:series-2.1/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/README.md",
+      "oldStart": 3,
+      "oldLines": 1,
+      "newStart": 3,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "edbbbf27ff67626af6aaa34d89e550924cf672ba283182bce850dabf2a64a05b"
+        ],
+        "deletedLineHashes": [
+          "ebe5d82e415e6dec7d8e9caf10fafadd6acc6ff0c6547bb90b7ee1da8ab613c8"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/README.md",
+        "newPath": "series-2.1/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 1
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:7:series-2.1/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/README.md",
+      "oldStart": 5,
+      "oldLines": 1,
+      "newStart": 5,
+      "newLines": 18,
+      "linesAdded": 18,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "41a3dcd9801420974c52ba7cccb67f80dbfa84f60dbc273b7e30f8b8be4e91fa",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f1b725aeba063714b8f47e86da92b54318e98aa83090e3b941da0dbdad8a43f2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "5a712e5e607812e5dfce705801ab745f5974ff071267a64624ec50f69d6a29f7",
+          "38144e06317574cd89969d28b10ae32f7d1829102a2d6c93e87534fea1953fc3",
+          "c5f984f7c17c08355b6ce97b655c82d8a396acabfb563bd4d84d59e80e79c71d",
+          "f8d0de356944b787946bb434e85f53eab33648013c04aa15de534764428e2df5",
+          "2354cf3610d231ed11f908a9cbf02b33668ecc863cc48add8344fec3ed859621",
+          "3cbe74eb1729fb8b7e6976f4026559365655bdd0d40f915791750003958ada71",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "9527518988d24b9cc4e9c5c0a9484d04a27d1ee4cfd285c94a5d197a55b9aaec",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "12f3e7fcb97d7a3d907892f6305babcc444c9ec6925c21d470e949cc17ef9318",
+          "dbef7c5b598d33600cce888853c5f5b48e75281a472f8072704633caf15fd323",
+          "7677212b1af1b28e540cd35eb24c9a62fdfae94c2a07251e054abda0e7de330a",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "c55f78cb1186e8e93dac63668e9ae9c7cd14b5a8ad73c342e7b8d95765d17d28"
+        ],
+        "deletedLineHashes": [
+          "1ab8b509e0fe148b8c428e292d04d5f8b3fb7acac3fce228fca89495886509d9"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/README.md",
+        "newPath": "series-2.1/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 18,
+            "deleted": 1,
+            "changed": 19,
+            "touched": 18
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:8:series-2.1/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/README.md",
+      "oldStart": 9,
+      "oldLines": 2,
+      "newStart": 26,
+      "newLines": 22,
+      "linesAdded": 22,
+      "linesDeleted": 2,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "d0ca3d1c3da05756b26d3b55ddbc023d93a85362ab92e0bf4b0fa5b23be7d444",
+          "8f0f58928cadaaeededb7bae8d310211bcf1886dc3e53d54a66f6c92f130bac1",
+          "1f692686a8d3247011bc8bc8cc9727b6d75b8af57e83776d248275ccc6172b08",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "9a2408db940067a0af250948043f317f3d212404916ae9630ff5b18a6cab92eb",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b4d3c7d3ad563706459f6902d0b87d0f0f27458954c06cb69389b880bf40f58e",
+          "6a192d4d214681209f6e09cfa4dbeaa358300e792d00f66b5bfad2bba9e2947a",
+          "2211b732b2c3b8d0c8711ca1a16b61f5682376aed323cf4a1ad2e87700166d84",
+          "f6d6f4b3263c3f5c343a6cff4ff6bd7bf7528160ae2e7f4195af9129fb28dd09",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bef1ffd3cd323d4af5f1dc934cb0be6f57206789fcdb243ed8bdeb693df59216",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "731de9873972c465dbdab6f0f2cde14f8a7659e2bd663d0a409529e5e5999228",
+          "773f70ce75144d05098b8ed584859cc8ee10b1c5b10863c5b67198aaf0728da5",
+          "0a419b53d7f4cdaefef63592f973221eb70efeda61aadfc8186b41cc0de075e9",
+          "7e9aa106fa7e0b769eeb5e9178f4e58b45f0f4760c6d4e11518b3201d6fc3672",
+          "a17bdab8635dcda8962bb3d4a13af864457aa7ef70c9be3ac0ef352fd8708f86",
+          "ae4ecce06554bc02903764286e2332b2b02385494dd6f03965a51db81b30d590",
+          "9bb244fb515660dd2da68cb061e03387ef4185f85dd494996c5dd114b7d29f1b"
+        ],
+        "deletedLineHashes": [
+          "86cba35199f73abe3f56b729b5e0e89ef7ae6fc62b9f9b55bd0b72bb7822d3b9",
+          "81288c1c1612bbef4d327ab57f05a02e55b4bf5303d86d3c4113f2a3d954afa7"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/README.md",
+        "newPath": "series-2.1/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 22,
+            "deleted": 2,
+            "changed": 24,
+            "touched": 24
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:9:series-2.1/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/README.md",
+      "oldStart": 13,
+      "oldLines": 1,
+      "newStart": 50,
+      "newLines": 8,
+      "linesAdded": 8,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "0ecddf15e1aff85f7399e0fd362b9856d804a3e66dd65e41b547c255fc86d8c1",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "30ea56e11c938cfea29dc8b96ffdb301613e5a403d74ca152baef84af1fd37b0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ad332335cfaa348c5bd715c3479844622270d5f7389ae070b81b135d521a221a",
+          "f634394e6be6cb445c6bc8191ae89e2f0de21f2214dc16b9cd2e080ad660b1dc",
+          "5490aba30331263d1525ca4519e451e701319631d065a0574e2deabbd2be07fc",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5"
+        ],
+        "deletedLineHashes": [
+          "72af4121fe8de77f8b876f98d6a4cd208e131a9f059be069d77b36a780ef1342"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/README.md",
+        "newPath": "series-2.1/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 8,
+            "deleted": 1,
+            "changed": 9,
+            "touched": 9
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:10:series-2.1/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/README.md",
+      "oldStart": 18,
+      "oldLines": 2,
+      "newStart": 62,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 2,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "70d5d961ecccb54c09ddc9390510f3e86cdee7e07b0203e163343b00bf4c5d65"
+        ],
+        "deletedLineHashes": [
+          "6edaef46106887268384c5387acf429a70a935bd055098c6249c0027c22f110d",
+          "4d415e3cb2f13e92b4fb67863eb8867cfccf85f510d5f1eced3f15740bc74e0e"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/README.md",
+        "newPath": "series-2.1/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 2,
+            "changed": 3,
+            "touched": 3
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:11:series-2.1/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/README.md",
+      "oldStart": 20,
+      "oldLines": 0,
+      "newStart": 64,
+      "newLines": 5,
+      "linesAdded": 5,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "683a4d2a1724aecb65dc7f13298d09d0c27faede25f6db02a4ff8ccf09a2e8e1",
+          "4d415e3cb2f13e92b4fb67863eb8867cfccf85f510d5f1eced3f15740bc74e0e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "53a95e5a7afe67b37645d87eb5898f4ac3e3af878faa5f79ad479a3e4a939581"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/README.md",
+        "newPath": "series-2.1/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 5,
+            "deleted": 0,
+            "changed": 5,
+            "touched": 5
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:12:series-2.1/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/README.md",
+      "oldStart": 21,
+      "oldLines": 0,
+      "newStart": 70,
+      "newLines": 4,
+      "linesAdded": 4,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3ae9ddc0a1ada963e6899d5b0951c9425bd5e8b836732df6f3c9054bc797d683",
+          "07773d11e97508282bd8bc6273146425b7feb9404d7c7e0d8164d3e097186f7e",
+          "d971c7d7e8ec62831b9f7e7c8c3317911e44d3352efa9dcdea90d46b3a4e2447"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/README.md",
+        "newPath": "series-2.1/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 4,
+            "deleted": 0,
+            "changed": 4,
+            "touched": 4
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:13:series-2.1/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/README.md",
+      "oldStart": 24,
+      "oldLines": 1,
+      "newStart": 76,
+      "newLines": 10,
+      "linesAdded": 10,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "159304a0dbe434bea1a6c3d6a3ceca9ec29c6620ad81a688a6238e46b2033a85",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d2e10c876f4424e891dfade256fee880c5d48674f364a91ff98d300d6c87a82c",
+          "1346b997a53ef8c2a534b25b5e0241e8349f31f632d4a2f51078e8d629a48a6d",
+          "da00b20d12adeffcac434059069a8d1fbec9fdbf4f04a9555d59d21fafc9bb1c",
+          "6446edf9463ffaa979c18c9e981362200771ad2e990298f39372f51e7b744f42",
+          "76696c32a9581a1951651372062038b9724963fe6b03e852742027ce8c7c93d4",
+          "77f32c45f9aae5a89a71fb199c9cb0bca15daab5fd91fa495c4922e068e9a7e7",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "39586375b6aea27494ed5513ab7a802cdb80f1a14c133a9974700e6aaea7b2f5"
+        ],
+        "deletedLineHashes": [
+          "aead9a58ed9d8b200b90cc9cb8d5f2ef9fa20fc406d6e513d7fa880faa924efd"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/README.md",
+        "newPath": "series-2.1/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 10,
+            "deleted": 1,
+            "changed": 11,
+            "touched": 11
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:14:series-2.1/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/README.md",
+      "oldStart": 26,
+      "oldLines": 2,
+      "newStart": 86,
+      "newLines": 0,
+      "linesAdded": 0,
+      "linesDeleted": 2,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "deletedLineHashes": [
+          "ad332335cfaa348c5bd715c3479844622270d5f7389ae070b81b135d521a221a",
+          "07773d11e97508282bd8bc6273146425b7feb9404d7c7e0d8164d3e097186f7e"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/README.md",
+        "newPath": "series-2.1/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 0,
+            "deleted": 2,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:15:series-2.1/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/README.md",
+      "oldStart": 28,
+      "oldLines": 0,
+      "newStart": 88,
+      "newLines": 8,
+      "linesAdded": 8,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "81fea2636c3ca3e815e1135682f004df532debb0a806fe7bcc9bfa3de17ab35f",
+          "b0722ffbd590d4664fd125034cfe594960d1349ab8b9e7850d1385306bf60966",
+          "adcd3c4d4ee14f1d0cc615046c603965a528084db3f5d4d81f256f57b3329a05",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f13563580a5de03b699102b98587f73b66e48af047745a4bb3f64720f1fedd78",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3bfc44a5747984a3c95424505926bc9059c992d697cafd319e57508dc4c7d3bb"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/README.md",
+        "newPath": "series-2.1/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk2y2:3:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 8,
+            "deleted": 0,
+            "changed": 8,
+            "touched": 8
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:16:series-2.2/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/README.md",
+      "oldStart": 3,
+      "oldLines": 1,
+      "newStart": 3,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "b43dfb4debc05da2e9044d28bd2c3377b83a323879fa8e3ae2f8cc58ad05c520"
+        ],
+        "deletedLineHashes": [
+          "ed984613cce58ee0b75950fe6ca70d45da94b51471612ff6f9d5eb1292495968"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/README.md",
+        "newPath": "series-2.2/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 1
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:17:series-2.2/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/README.md",
+      "oldStart": 5,
+      "oldLines": 1,
+      "newStart": 5,
+      "newLines": 34,
+      "linesAdded": 34,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "d597f446e15e353761591fe5ea45a8140aeba09ef2068f193ebed92302f2388e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d799984e6f444dff3f1290a35050b0c9de5029028f37197081d0a68e83a893c9",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "98da0b2d411252456a89639f3326b56f2ccd8056500bd2aa8d0d1f385a728614",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "a205770505eaf5dfc5e112eb45ae183925ce46f466b632eeb02f82ceb92242c0",
+          "afd60fb74f60d7e938daea5ab9c4b7c316953f3e69958f7989e355fbea6550dd",
+          "2b2c0fddf76e363773555da2298e327502ba995af64a1dc891d982e2e65fc013",
+          "d9d71d0bf4770b6a489e953bbeae50fdbcb8049d1a67052d2d11738eedffa588",
+          "24dcbfb14e0a385e8bc3527937d57acf0b265e9cc19e3e9fa40d95bc15e02fb6",
+          "a68c4cdef6dd1cabd0025f7cec023c2b0089888bc0e0fb9fa5ed7b27f34e877e",
+          "fbd2587008b877f88dd81e5030e5ccaba595153cbfd90b1e237ac731d6186d68",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e0a72527ea1c88ff07a0eec1f36190e0d4bcbecd908ddcdaf1aa53f28c8765b3",
+          "9291481eeddccc2352401eaa1d62c703c3e2b2043c70d6b04ce4f2533ac355b4",
+          "ed8b2edad06fcdbd2e31734569a68c0099fdb81ce12ce509c0ab2b06274a14a3",
+          "3c19cb060e5a819b013b5a60d61c671a78dc3a3b6c8855d447c86c4b79ec8722",
+          "46a73988aabb9ae7a6cc4ba41123e66757e29fcc3e064a69f31537a0c779041e",
+          "7c40bdb0dfffcd6063f627dcc34e32cb139ef819b0f1a0753b63853cc88de8c3",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f1b725aeba063714b8f47e86da92b54318e98aa83090e3b941da0dbdad8a43f2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "17cd310898d9d4cf28053b3c9286d0ad64c94dc7cc569f4f23045b2ea2aa1c72",
+          "439e3066f46e2e773d3e39f3bf11fdc14d818180c7f90cb081b5d02671a6ec34",
+          "436b9cd42b4595d712b8995e8ab8b8417ffe1b77ad5fc7f11bc97307c82ce15d",
+          "0370e7516e2a78c07e27daeb71ef8305615729e75e385f2470948badf1fd90ca",
+          "65d56f712a05706b558153c4ae7ff0f3a22ab39265e5a5cd9b8abfe44268e271",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "2152870423139ec5e9d623389fcc3b1c0f29394ecc2a8c95db7163409226ec8f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "c55f78cb1186e8e93dac63668e9ae9c7cd14b5a8ad73c342e7b8d95765d17d28"
+        ],
+        "deletedLineHashes": [
+          "1ab8b509e0fe148b8c428e292d04d5f8b3fb7acac3fce228fca89495886509d9"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/README.md",
+        "newPath": "series-2.2/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 34,
+            "deleted": 1,
+            "changed": 35,
+            "touched": 34
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:18:series-2.2/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/README.md",
+      "oldStart": 9,
+      "oldLines": 3,
+      "newStart": 42,
+      "newLines": 4,
+      "linesAdded": 4,
+      "linesDeleted": 3,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "f1e599927a4e912423f6075c1384c9573ee809d9bb64c4f8f6fcedb2681880dc",
+          "e4dce8651a7e1278f98bebaf621b6d2fcf34dc13006712c5c8221a6997e6547d",
+          "e854cb99d092e50d98b3953a171c59e06a016ac9cbd14ea7a8a9e180dbfbb3c6",
+          "874d4f5399522d00c30c0aa60f246172e28c21e541c9462c26bf4639f395ca80"
+        ],
+        "deletedLineHashes": [
+          "cc8dbf04be57dd6188a44a34f7706b0f455d0e276dca4c6f024a00ad4193b67e",
+          "78501c00cf9f02fb33f06fdae1f5b0ff7015de0eb71ff7e9a2d7106570bc4f01",
+          "295c9b2669069542d4a518d38523bf309de543af52ba93579084122c74ac7c28"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/README.md",
+        "newPath": "series-2.2/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 4,
+            "deleted": 3,
+            "changed": 7,
+            "touched": 7
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:19:series-2.2/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/README.md",
+      "oldStart": 14,
+      "oldLines": 1,
+      "newStart": 48,
+      "newLines": 23,
+      "linesAdded": 23,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "a196840e440f982c6d7c0c0b7deace6053436a0bf47c0eb54e5daa467d29c895",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d803ced4ef7e49b33f930dd63971ef560e02f984c4720c63aded674c54e5b79e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "9a2408db940067a0af250948043f317f3d212404916ae9630ff5b18a6cab92eb",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bbc07c201e94bc7668fe0df4ca10a6d8591cca00cf339edd768dcd4a9927a9cf",
+          "a21236b59a52ccbbcdbf784961a74bf8058fb510af7698e6df8ad505113d88f2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f48cfe09aa1510cb495ad143c504474f5dc01f9ce92e0589457b830c50bc23ac",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3e365205d78d4030527399de8333abcc881db82ee2868fb169cb6c173bce1adf",
+          "0e3b442401e9e8771b0aedcb7a469224c8e001d92299e852383361871e967876",
+          "2fe0e6b6979401d310e33bde7f1279df76c959dbfd0c86f1af6c0cc3b954ff93",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "0ecddf15e1aff85f7399e0fd362b9856d804a3e66dd65e41b547c255fc86d8c1",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "30ea56e11c938cfea29dc8b96ffdb301613e5a403d74ca152baef84af1fd37b0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ad332335cfaa348c5bd715c3479844622270d5f7389ae070b81b135d521a221a",
+          "f634394e6be6cb445c6bc8191ae89e2f0de21f2214dc16b9cd2e080ad660b1dc",
+          "70d1b25f1780974738800bee7ccb487f1581a2632b5887cd942443338ea4aa7f",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5"
+        ],
+        "deletedLineHashes": [
+          "69e29a3a1e87ffe855d9cf91d9d713eeeee4b5cdbddbcb1311f02ba7fdd704ff"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/README.md",
+        "newPath": "series-2.2/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 23,
+            "deleted": 1,
+            "changed": 24,
+            "touched": 24
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:20:series-2.2/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/README.md",
+      "oldStart": 19,
+      "oldLines": 1,
+      "newStart": 75,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "683a4d2a1724aecb65dc7f13298d09d0c27faede25f6db02a4ff8ccf09a2e8e1"
+        ],
+        "deletedLineHashes": [
+          "6edaef46106887268384c5387acf429a70a935bd055098c6249c0027c22f110d"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/README.md",
+        "newPath": "series-2.2/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:21:series-2.2/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/README.md",
+      "oldStart": 21,
+      "oldLines": 1,
+      "newStart": 77,
+      "newLines": 2,
+      "linesAdded": 2,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "8db26e143d390c5a9c11f546e9737b3df75369a0da2e9468776009f22dff2566"
+        ],
+        "deletedLineHashes": [
+          "d183121de6b395eb3d3d3d61a55a96379db53d917c016dd2f93f39da3b7c99d0"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/README.md",
+        "newPath": "series-2.2/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 2,
+            "deleted": 1,
+            "changed": 3,
+            "touched": 3
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:22:series-2.2/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/README.md",
+      "oldStart": 23,
+      "oldLines": 1,
+      "newStart": 80,
+      "newLines": 6,
+      "linesAdded": 6,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "025ce45acfe0919aa96bab68b9356d9c1a5f6158d56866790866d6b68e6e6933",
+          "d183121de6b395eb3d3d3d61a55a96379db53d917c016dd2f93f39da3b7c99d0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "965312f80ba212272ddeb66df8d997f0b451aa819c1a69f358b5975dde1f0dbf",
+          "abb9936f1e194c81320fe28a5450113b4cbef7d9acd082d2a8805e59416d7dd1"
+        ],
+        "deletedLineHashes": [
+          "62176e16e1b8daa7b98ae3715fea6ce0fa78f5fdf618ce6e801f82cc9a5b7e3f"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/README.md",
+        "newPath": "series-2.2/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 6,
+            "deleted": 1,
+            "changed": 7,
+            "touched": 7
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:23:series-2.2/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/README.md",
+      "oldStart": 25,
+      "oldLines": 0,
+      "newStart": 88,
+      "newLines": 10,
+      "linesAdded": 10,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "159304a0dbe434bea1a6c3d6a3ceca9ec29c6620ad81a688a6238e46b2033a85",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d2e10c876f4424e891dfade256fee880c5d48674f364a91ff98d300d6c87a82c",
+          "1346b997a53ef8c2a534b25b5e0241e8349f31f632d4a2f51078e8d629a48a6d",
+          "58aea90e7c67249e9de36c544503c92f4f49d6b2397eb11c55325a090c714ca1",
+          "a352b176bd4688c64f2aad369f321ae612f9c3db96a8c635298eb26c9049bdb2",
+          "4a9c8fd5cc711e2a8925cfb13ffc2c01986ef400b696b6b0d0d61a459aa8e0a2",
+          "b7d61e07aa6a1c8371852e112ebf91eeedaff9bbd674b322b8bd0cc20fa0338b",
+          "0e2a80cde285eb3686ee9c41d39a91dd218159775fcf187001c286077d982a8b",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/README.md",
+        "newPath": "series-2.2/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 10,
+            "deleted": 0,
+            "changed": 10,
+            "touched": 10
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:24:series-2.2/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/README.md",
+      "oldStart": 28,
+      "oldLines": 3,
+      "newStart": 100,
+      "newLines": 37,
+      "linesAdded": 37,
+      "linesDeleted": 3,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "fb0255cd223a432f03845efdb7ca8195e3dc16f524378070b11a60d963998012",
+          "a9daba59c9908de8acd03e33630a43e15897a8d2d696b9a9007db2603359095c",
+          "6d8303016cef72dee10c67089323dbef44ecd9f1fb0f3f7947c4ae9d08b31b83",
+          "08e2d009c2306be1f671b204ccf937998406402f7d84ab5a4bba4ae9ebe74fcd",
+          "55501085bc99d07db0055ef195c4e68c2978ee155fb512fee1d32b3624f16e02",
+          "652c5ad51278342b88f0777d4b8d1627420eef6e8d8ff4373924f4ea3fa12870",
+          "2e10c7c920a80163bbb890bbe2f8b956cf4f5128198869314bca5572a3fcaa01",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "671d3b5c477b51bb34038bf744c3d5195382d59aecf347209144a4e905954349",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e9e4736171fa38166035997624ecd9d512444242f758333a380f6a96893e71c7",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "2aa43449a6472c5c19a16a22790c6841b4f023e19a91a324317b36e21a29b673",
+          "2ab831faa31845561ab279f3aa1935bfe91ddc9176743403d5a7b409bdda5290",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "20cbfe54cd05eba1fe3074476b6ac712fb35b06ad31a0ae86b3db4ae58b6aae6",
+          "75966645ad1fd0fdf8a6de7ba63ce794df8c14744d6d475c1726a7aefbcbefb7",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "329fd0bdb3388662e6ef04c78397c0e9eae4ce9b6e4ee0428905e4ab2b0d68e2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "832b9ba92afade2c8030f249dbe96dfb4219035e8125d3e727e27df845982e33",
+          "fed72bb768b4200fe4794e958b5346ff3d803256f624e2c052baf35a508b81ff",
+          "ee417a54f66098c76cfda672187b25f8ec07fad43dde93340403f7eb8f1ebe38",
+          "dd02dc89da3c782c53e66b37fc2d08f41b63be89fed08d131a28a6d8aec8ea8b",
+          "801adcfb0afba47664792da3e7d603513003805e65153c8ebe91b3b56f13e893",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "58c44a3f464a9454f59cc0f7cd9c6b24f2d04c94d9dbe7582a0f6fccd77c451b",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "7a9edb3ed51b11eff6623b14a1a9ac8b6e7910db5394cd1aaa21fed4e05aaf95",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "059696f1dd9c8aafaf60af800cb20d367c50cf9516250f84f6bfaa8232d84089",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f8e58f2b7b82bb1087b227cba759d285e0a023af715e2e17e17f528fcb6b24d1"
+        ],
+        "deletedLineHashes": [
+          "1e57534f2652601fd424626f25f516c2d755800198d22596a8599d81cbcaca8f",
+          "8b720caece1b4cb3b6d357388e629ddd6c1108dfff601690e241c13811fd58f5",
+          "46349426f2532fb7e37b842f141d247acbfce404c8009dcb07d2245c5e46683f"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/README.md",
+        "newPath": "series-2.2/README.md",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfk34a:4:Why-AI-Fails-:README.md:cursor-agent.transcript.status-bar-refresh:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 37,
+            "deleted": 3,
+            "changed": 40,
+            "touched": 40
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:26:series-2.3/app.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.3/app.py",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 216,
+      "linesAdded": 216,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "vscode.unknown-change",
+            "operationId": "vscode:mrmfmoy4:9:Why-AI-Fails-:app.py:vscode.unknown-change",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "editor.action.clipboardPasteAction",
+            "operationId": "vscode:mrmfmuix:10:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "98dc1c6dca83227f6cdca5d0bcfc0174405577b2dc6fa692903d77dad54c20f2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "52e046172eaed88cacf039c76a534ece26af98120f2411b00faf47124600f522",
+          "fc0e1c1c3e9991d9af86ba58ff1744171469bda051b1268aa127a088fb18ff82",
+          "f83034f345028a351babe5644719ffa6e047c309cd5d497bb08f5fc90af3f640",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "1c37be6e7c92bc0a0859ec795440b3c3a4b2b98b89ba466c0a1b94465243d58d",
+          "a4849791faa124c695be563957cc66fcdefcab84a57409146187a4c399f6ff9e",
+          "964399130e1592210ce9013344b47bb09463ada67e9111c1a8beacb4486641e2",
+          "9d9041c0aee836734765cc3c79ed728d883a4a833935fac344533f02d39a3c0c",
+          "99ba2063c34e2ef66be8a688b260f4ab19d6d36f87978d7918a7b97d53cafd2d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "54e7cf7d6ee89fb013726e25979c2e682bea29c3c8d592c704f100866c23624b",
+          "04b7afb740d6c973bde6bb200d55eb4b57f46490cb6092cfcd4d75078fb58fb5",
+          "e180d364ee22a4fe721370907aa7dbffb00be9d3bb8afd4b441fb711ccae0563",
+          "09de6000d84b0632a24b3fa0812f3e254a5824274d5b0c09a365b4f5484ee5c1",
+          "4b3a2e24b3f7a4385ba802057061e2f3b3071bdf865adaa794d89e306973030e",
+          "c3db7288a96feb694fb3339d8e8764229b8b448d4c8df3caa3af084fafc04e45",
+          "5f5843b2ccc608871586af7a7423fa2d362aac2c46b0dd0cfe9181b5f3506a99",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ddeaded8ad8e44933f39e672a8886d49ba10738d78bde119b2fe7c3c25fdc4d4",
+          "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+          "cd372831ea42b5e0dc28c136b1548c086591a5ca7ef7b8778411daca7d1da9c9",
+          "215bbbb57c56cb32f7f5eebf6e443ba1b00b16f70dae192b653d79080e695f93",
+          "b9e4ed6bde1b3a06324baecce1258f60951d89fcc44c5e8511261760d87402a0",
+          "b0b01216b99bff2315631b2d9efea6b1a24fce2cd989c36f24ecc76d996b73d4",
+          "8abd291b5204080653c0b4691f1bf4a9aa58e0d630b897155eaee1bfe1414969",
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f534a72c58d199602723840a24761409f227f4238759b1f6b1982afb8956b460",
+          "9e77b3746ea081eb4c557e71cc84ca29dc66a89d18a07e85dba66a336e7310ae",
+          "6d69f2ac09017b8a49d050ab336e953b8fa02ae08c24396916ea7ea42418e627",
+          "063e3d97fbe5c7382df417aae2453be61a01861561f37741b5ce484cfd6551d0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "5c4688e3c1ee3aecda2246830b648e4ddbba4deb666ab90343436ab1a3a97f27",
+          "0a6962acb47b242e21aa12f0718ce39eec8ce32992587e176999d2c03f36543c",
+          "5c4688e3c1ee3aecda2246830b648e4ddbba4deb666ab90343436ab1a3a97f27",
+          "368e0b19b5c2054e768091e0f4a14f5009340b92571f3e578aca9185f278b094",
+          "7acd58b920875d016e7f8d9f3d8a38e5fa8a543337cd2f6917df6647b6959888",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "9bac58fa1932697536b0e02106d799f715687550ec159c5b47308dc848a932c1",
+          "9158fa9e7f56ef0b9d5d90c80408faa5662eec415f95046cfafabb01786884ae",
+          "d2de2e6341540d9860ebf0e7fdfb6f3b2541d2032b5e3bf9fb19a37d1359975a",
+          "2076a93e5e92c5f57208ea757f432b4d686bbeac2e993321f61a1ccb0f6fd902",
+          "5733f3fc63382f15e1c30d3492eee1f187236954c1bee7e72e2e16253d789e8d",
+          "fbf5078cee14c98971551ab51f1b864f8ad3bdbca64d8764e64e3d3275e3b5c8",
+          "09cf1b36ae76577af343272d1014bf3d09c3da6275c3bef5da29df504c42e54d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b4f4dbfa6d6f0bf7992de8aba953f1203f21e1e72ea6479bc963bdc0ccea18fb",
+          "f1207989b3db3fc68871c5273c56db596443dacb4ea1d1aa61669b09b9829ee4",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "5387703680d9c095510216e9a190dd3b456c83d38ece11616401dc332f3f606e",
+          "edc5a9ee2790f847a166d2fade283c316de72758745187f82ddcf0c77c7c4cef",
+          "08696d13d2ed091d36177109b06db217578a38fb697cd415e4023d260eb0f8fc",
+          "c8209a6084f48ededf17635a600148585daa86b49116af80a495bb34d28ab140",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "4ddf3eaa54167cc583557e12954f2bc409d91f921e2f0a11c0fc0d1e6e050c1e",
+          "14e90d5d35b7284ca711043418a48451823bc33bde0ad9b9cf4ddbfa455cd409",
+          "d26a4791efbbc0e6684d22d237e3a46dd1d55f9cbeb6ea2a4d546223d8907faa",
+          "a6f26d5ec0464fd1138203f9541b08563ccffa7c827d8b59db95281793db779d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "78c834421801239d1f206718f6774985f0275da0a868ee9c72505d1f400be67c",
+          "50c431f5f94ed0ca9aac0e39383a8a6555e58dc221fbaf43deb4d51ded981c1e",
+          "6c45c7e82f84da09b4c4972ca434e6e9413b559db272d108db9301c34eca7c82",
+          "534f52f56c2a3b0c3dc151d120b23891dd80068ebc5b7a5e96f3e78c10db2c62",
+          "351e434e5bdc0b558854ad2fcf06f4a99dc9032476ec56ca0108a3125961d3c7",
+          "83043837d5d8c9c1b72689c968ffffa2f5f464b0e72d6ca9a763cf4b65b81b2e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "6d05fff06b7a614d2e9e2ebb689656d60977cb2de8774475ffe7a07773eca4a7",
+          "9da004ceb0cf63ff67c3111f01860e9321ede40c1afe79c72582947c7231d80b",
+          "6d1b4da779845b96509deef9192a54fe58f5d67724fb702d47b5f7ff82f21259",
+          "5443afeb99d8632082145d61f9b3da6765095b805117680fd1af2910b4e4efc0",
+          "1d9edaac3dabacd58b49965b57450e9c9c482754e38533693af3f7fce4e91b6b",
+          "8fcbfbd69cf65feb83faeb12a785525d7879fc5908d03f924a428be3bc37b4f4",
+          "03c779da788e540f57f0b16071ff42f376718ff33ef8dfe3a4e7b010e8b6a1e7",
+          "ff19446752c33c181ea9232a795beff15bc3feedd2a58087b3f5c33eeb62e992",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e9b01b04798ff1bfdba068179925c0162b6d9a550a3b07ec74dcedd37b278226",
+          "d8b7f46c6dc425b74c3b90ba022d704920002ff02ab7dcabef601c3155452000",
+          "8159ca3646083156abe5f1a341991070c43da30396fef1f3afeae5550ad4923b",
+          "9667ca0748e8cfc92a2216aedfe756ecdb1e7a2e4e858875a1ec1235fa6d7577",
+          "165645c85ea11a01bb83cb7ee5c9c1c6da07efa58c2947f791ad7f6917a7a9cc",
+          "a575af9c764f49f5f509dea99100da66c3c442422a54875bcc677203fafa7484",
+          "d36b6f0a3281366b21e9be5ea8775ac9c9590a2f9bfefc1f3403d1f093800129",
+          "a85ecf6e6f9ad60689e8db4228039bfe9d3151ac03fcc9b968689921cbe242a3",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "ab290ce2670c49deedb45e83052ce1b450489b11d34040b78e2f7aecab97b788",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d28d79f9ed4115ed82d4cd9f23b35d4551225757a4bcd9ff79749a1122a4fd5c",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "a7ba9308a0cb77f21cc124ff3e15a56b1e89b11c6a9c263321f208e9dbc9cdd0",
+          "07fe841105a6a806135ebe3fcf318851d6a42159da39adef10e0d110d0985e59",
+          "8f4bafe54566aa195ae9b23b9919039a1c9d2eeba15ffb9ae5e321c5f023e268",
+          "b61c486424519f4d4fe3d2fcf4ee98e04b10f8d3a1ebf477e9e35090f41fa945",
+          "0d12271aab3147e563cf8221e1bc45f98bf791735742de3c4bcb363e0c836869",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ab7ee2db2043406630b419825716c82ab947a5e486072c36e2d4933450658e9d",
+          "dc69cd35dc81cc05078da0167778eebde9be481c11024c82a874418f204fcc44",
+          "df99c36132453a447111bc9ce2b3f603a4e9c21cd3a64ff5c2b175af7d57245f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "946450fda02fc3aa50b423226358389a517dd0102b204ae88e520be8e30be947",
+          "fe005418a32e8157b8a66952dd25c2ac48ec2e4acb10421b7a6d3ee3d131097a",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "71e16e04f456f7110a837edee18f47469f85fa5a11ab9e1c3012ae39ba1af642",
+          "a6445a6a32c60725422534384b5c6c16a1e4ba5fde619e026e26f7b881aca4be",
+          "496e694138ffeda0bdb2889eb65b16cbd2dafb89577c85643a770853de765ba8",
+          "4e8535d4e91a12324cc69ec1d9d72f2bd0db8adff7b0e5c003726f05f80bc111",
+          "05da9a18af64873c88c0aa11e8773ccbf4e327c55f10e259fbd80e51c2f15398",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "40828003431e5439109a73a2c3b62ac98f0a81d9e40991cc1147b1736a8f9cbf",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d0ed3e192847c302ffcc163aff94789b0ab5d6088390ec604daec4c7e8ab898c",
+          "a93f724d0e1167fc806546da6ad2ca6c896a82cfcd63f4e10667f3da6c43144d",
+          "a55f9382cce03a1b0cd071e4c46cefab37eb33704c2102bcc3f897d92b840647",
+          "e320602830e401d393e8eda04b4320488c95e43eef8628f10cc98aab3a2d8e97",
+          "608ba8df69d324db41bdd5cc61ecd656d51d047a8b01a97d32225d2f29614ded",
+          "bb60abf62d353cb246b138d7ddb46f7c1952311d3492088ba0f263e05bad6b0f",
+          "f317b61d07c387f6bd77b0ff7038f521fe37828b6b724b024baef7cb24e7d81a",
+          "226ce47f20e3ab25ce3223c326b160f493dbe050ca4e448fa73347294fb94b72",
+          "c5c4debc6973d46158a0f8fa09557de8bcae1e5cb7d2d15d68f8a60db6810c1c",
+          "78b21ba2b471e4b6bd0662737eb8225d9248d3ae292abb3d526589f9c1e6f725",
+          "f678d3c50b7189fc97629fb73bee029a6977b348ad4912244d499f408af54d14",
+          "63908ddb6610d93c8fc9a24bed558d590fca021ba2a2f7233523f7c37edddb2b",
+          "672e30465a61009067312cd6b1772e3aa49aeb6f677e9ddd74486591ee14e718",
+          "cab83fc08b0b9db5fb44fe00c96e48f4577dfe73fe9a6bf8609f1d80d68fb5c7",
+          "e14d1bef16ab6544ffbaf69ccf583a9d8a11b06398467c52ce5c96309123fbce",
+          "ad73d1848649d333ed759fb34209a6868c38f603223b26b8f3267e43210f84ff",
+          "28d86778615f6af47bb1bc4f40face756749768e5111f114cfa234a5060c25af",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "006faa322092ebb409292d50a424aaa78097593d89d39a67671c7d92868ba1ea",
+          "4dd7ea482583a8d73acce5afd8118e2207ed86a4716aec6072a99f1754be6913",
+          "18be612bb67766738a40c16c8ed252067c3b5b4ec2565547ef7e57f38f5e289e",
+          "4dd7ea482583a8d73acce5afd8118e2207ed86a4716aec6072a99f1754be6913",
+          "062fa9ff1e5adec3255ba2bcda168cc2328d05b2a603c611a6da854dbd4d6cb3",
+          "172d66e4b0d977f03f4e4c78e2694190f2f22da949f32dc65c5a9d192b34e489",
+          "58a36e6e4960bba3f2662a5575d4ee373132c2712e1f6aabffc24a71f6be5056",
+          "5da31b22861f63c062e34b66a37ef7e12b5f71b68029183e1f50f364dea5aea4",
+          "098e05e009eee92a9fcd34f5069143af9db7f1e4ad6acd35102610b10d4cd413",
+          "5e5213252ce751efd34ab0d7cdd9714b5610b0343d2f9707a3f1e93bd525dcb6",
+          "b30e64f83934cc72e011fbd9a504072470ee6137e06bd940a6831b2b18352d24",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ff3e251df3a8893564150e770f2b751564c7a7eb3be86cae08a4437ba32b278a",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "4dd7ea482583a8d73acce5afd8118e2207ed86a4716aec6072a99f1754be6913",
+          "204850cc1e0cfd1c3504865d2455574cf6910913857ba46676490ac40d0f0148",
+          "4dd7ea482583a8d73acce5afd8118e2207ed86a4716aec6072a99f1754be6913",
+          "c94f2f6f372b7580bfa044adc2baa7338648791e5270602f26af1a770ac18f1d",
+          "16f5be36af752b3cf5d2a680aff9ee4d642be5bf34431bc99e20f2c2345437af",
+          "42b506103a3f390fc50c690fd3ef9439acc7efc85a5c3fa0df52be8bb2912807",
+          "0054ce29795c64b2a43c2a3adb05e24f0a550023a390313449337e2979b8ef6e",
+          "824d24b96f1d13d9b6d6a2189bdaf87c43819f0e644733a2a1fd43f85341d8cd",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a4bc46d4260aba2bf4e87008a1fe6316ce3f16cfecb1544096c24c198ebd27c9",
+          "eb4eab5431cdcc4a11018b7d414ad622b5d8ba274e9ab04b969a97fe6a2d8950",
+          "2e2bda2974397b4eaf51bad141ab89845e5f4a0a0b18b3c7ead3ed352c7ae9d7",
+          "7ddf4032b059de16a6c0f2da6699104bc76961dc4ef743316f88d7e5f7b9370f",
+          "ff19446752c33c181ea9232a795beff15bc3feedd2a58087b3f5c33eeb62e992",
+          "bfd217ed63eb319e60eef7680af8d10385014f207bafe2c0fa909235aca69db0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "12e64e02ade536498999c1d9d3ff2857ee414726088c3b3b185eb66daa9a7fdb",
+          "96fc0b262166441c33ed426cd4b1d1cf30d3459f52aaee4cb8ee9f38820f47ec",
+          "65f3300eb58d7d0be5f42b4b19c37b8677d3995b1b09a3984cc2fdca5eb63019",
+          "cb74f03b04de43f9dcd96dea53635541669ecc57b882802c2b7d9673fb9f9891",
+          "edbb1492625941ffe8e643c2d44a399c54645f1c261bb593aad7420c150075bd",
+          "dc87b9f20c7b5f5d06b779331dac312ebb3e0e1cab856029bfebb8a6ca7c812e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "4dd7ea482583a8d73acce5afd8118e2207ed86a4716aec6072a99f1754be6913",
+          "08024c53856c5238faa318536194c92aa52802aa8e45a395306563c83a79e9fa",
+          "4dd7ea482583a8d73acce5afd8118e2207ed86a4716aec6072a99f1754be6913",
+          "67906a6cc90bbf27757ef5fc736d9aa70ef54b4c5b38959ff1093f5b15516bce",
+          "a626a21a1823e67f27f9847542367a2cd0c79d6d77f9f0d9703d1cc51d9ebd60",
+          "4fa09e8a382fd27183b649e72921ef106668826ac84ba8a3fedce292ac996517",
+          "b5c2b6a88f61cd707ce3e1806293711127265b73b58f70c4744aed2661111536",
+          "b3e9c514cb7eef62fbc1e29603cbebc7e97f22e32ff04369f8606570b9377f96",
+          "501dcc82b6eb2d4d41341dd979587a167c3e2bae1bfb51c4b6e78e90c8783fad",
+          "dd5b953285386bffb50180ea9d908065909dc5c604e9ab09af1b53aa4dbf93b8",
+          "e10f79629fa25632d914474341df2a7efe85f358b04b024f37a6b278c914bd9f",
+          "4e5454580a42be4e27d50914e1388b034df19ae27d6c6b7c9859f1d744efe8ea",
+          "ffaccab7b4db484d72fee3c4f6d0287e09244a7a82b8de03e536b1532cb4fe13",
+          "c482bb9932ff630099661d8bc04e860d58be6383bf49b8b40e5c31d29fa37453",
+          "f450add81f7acedbdc4922166b5659ceae8d06dc87b296007723f3fa6434cad2",
+          "70ddf14be8889fc2270882d9ea2fc66b42f32ec43f436ef29666fb96114e22f6",
+          "67b7fb1d7f4c6690b148550704b237d68f213c83e571173e33bffc3ba4fa9d8c",
+          "cb830a95ae5bfe4703ece751ec79343faa0b7d924b3919802cb0c5f9536cf580",
+          "fc4c56284723f70fd356c374d25e42608f37b8ff3b0e2ba020b3eaa8e9255109",
+          "961f69791515483abb594991fd2de31511c4830760e09ab52ff28e2b62e9bfc6",
+          "2ecf74e2be2514ff73eb0cc4e475e12d231e2ccccd377df1ad072fa77dbc2eb7",
+          "fc4c56284723f70fd356c374d25e42608f37b8ff3b0e2ba020b3eaa8e9255109",
+          "8403cbbf7514378492f63ba767df78df291288683352446a32ec9cdcb23cd0f0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f03ae93757a6896442a256c999d6c486bc7834878484ecded61fedc1843a581b",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f3f5c6511c82d7e9835ac1dacf9fefafd5c88094b06f189dcf5750b47829d38d",
+          "b99b9bf0e14c809c5b46c034d1ce3ec73df78d793908f5e0b4c9fda0ff25d4e9",
+          "1c3e7eba707dc6afe9330436a6256b02e1faefbca7af9132331e9b1cc22328cf",
+          "103e1f09a8bf732c6467e385cb7c876adf493fc831c51fc8cbfbef8f31414ded",
+          "9e9241c2cba24ad58c2a2dd9ed1140fba39d13dbc4b78f9d55a3056bf0d932bb",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bc16469f6c07deac739c6299701d06bbff19347bbe612efb3f5773d3e8ac6211",
+          "bfad268d997fae813ddb67110807a2ee7ceabc0f94149fbad62536d01268ad67",
+          "8d181d28f070a24bf82bac1de2a67b5fc0bb41db4109bd6c73c09da3e5906606",
+          "07aa8ecf8b2d34aca0a973fb70df602182b74ff59ba8727d1c4d8192b745b346",
+          "624a540d58edb790a36c26162e104c2aa4b03862bce9d49758ae7908611807ec",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e894e71c35f32db04dfe0962003f16ad8fb888cb47b2f0efed7cb875233fca92",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3412809c1cf42d7343047cba6a497584fa6c468737e2ef3fc443e11211447ea5",
+          "cc79ea1de8f5cf7c4f02e7b43c494b1ae782416b138c209cd6f7b5ff347fc48c"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "series-2.3/app.py",
+        "matchedOperationCount": 2,
+        "matchedHunkCount": 2,
+        "matchedOperationIds": [
+          "vscode:mrmfmoy4:9:Why-AI-Fails-:app.py:vscode.unknown-change",
+          "vscode:mrmfmuix:10:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction"
+        ],
+        "matchedHunkIds": [
+          "vscode:mrmfmoy4:9:Why-AI-Fails-:app.py:vscode.unknown-change:1",
+          "vscode:mrmfmuix:10:Why-AI-Fails-:app.py:editor.action.clipboardPasteAction:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "manual": {
+            "added": 216,
+            "deleted": 0,
+            "changed": 216,
+            "touched": 216
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:27:series-2.3/benchmark.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.3/benchmark.py",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 127,
+      "linesAdded": 127,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "ccb66b510941ae87ca3f255a40432d1ba6c37a3d50fd4bfb2eb7095066e6c847",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cc5bdc25ee6f604b44c569ce44e9517cd0b57454bf4265fdb4a03ea6aa208dde",
+          "bb9f458cf24edaaa522ef316c27f3ebbdd33415b28ce02fcd4a583dcdc287037",
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "063e3d97fbe5c7382df417aae2453be61a01861561f37741b5ce484cfd6551d0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "1966b4f7c9f19b345ede6412c74f572a7dd715065ed152465cc6ac4b6dd91773",
+          "9bfbc99415d71e2ff7d70fbf7526750c1c8092993de4d98ab7fbebede21958bc",
+          "451362f98e9890dc7c35524f95490bd439c7ecfd71f9ec86338226eaf9a5fb8c",
+          "16eb2b42b1be22a1fdbe3b6231c5e1193f5c922b6fee6780d60a1a3871f768ac",
+          "451362f98e9890dc7c35524f95490bd439c7ecfd71f9ec86338226eaf9a5fb8c",
+          "20fbf7c07e00ca5f02f0bbd7d1c573c5bbed8a3dfe0c2fdd30a317ad7b549277",
+          "349149fedfd3b5d3610458c71e89c94ab9cc34b85d3bf39ef1793da8075d61c3",
+          "30058ee8fbecb768600d8c72b7fc57f309aa43c2774a1b1d0225f117a065113c",
+          "f01d2f45264414bf14ab84a43d94d7ed54eb0b32366bff6566dfefe9aee7b5c8",
+          "6672f2f57ceca08ecd2f7fb40d077c50947e365be5e6b6b1ba497261cd525e3a",
+          "efabb971df3d524a2fd5b30a4813c75bbd7bef5db81e4292087b19687a96bf04",
+          "2dea8407961d468d2a181e67bbb810989e11fd100991472003c7934e2c3b63b3",
+          "3a95bb48db48baa58d75b8793b13981829c46e005b98d4b6a3966f5f5b15f7f0",
+          "0ad92394b1de01d3c9c01d9b2a864b42beabd5f0468b5aacb199f8de5ca1f596",
+          "edc97dbe5f40b1aa2241dfffaf184303b8eaa57a47d84b5eefaf83c2672319af",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3431aff811ef5324a490b211844496f8e3780812f5e99390880c86ffda0a1685",
+          "be807aae57a2f7f34cbd4b1e353de8538898e2b178080bef26a3ceb1c083d7b3",
+          "14b3f5bc23646aae2459aa21459af0f4a1a75b581bd36422e33b0e3f88a8d8c5",
+          "7e881d4a526cf1f4d9114d557b9e2a1f34cc0f96aa1ea46b6ab17f034a173b46",
+          "14b3f5bc23646aae2459aa21459af0f4a1a75b581bd36422e33b0e3f88a8d8c5",
+          "d9f1971dfd916ae35b17e3abf0c0e2a0d57fe5a74a6da0da8741fbe2dbba3fde",
+          "517deaddd8e1e668f44d7130e3b1f241f52ccad55126bff2ed2687b33a031c47",
+          "9dad0f2822330561b59e40dc22074e7bd5d6aa748072ba2bedf4681d19de1a57",
+          "d9f1971dfd916ae35b17e3abf0c0e2a0d57fe5a74a6da0da8741fbe2dbba3fde",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "91fbdfb7f729fa9f3d166fe3de55af783517a2c889c0ff6e5e36b89d003aadac",
+          "c863d8aad6ee773234d03eb757e48296bb14a40f3965d57698ebc44e814a1a56",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d9f1971dfd916ae35b17e3abf0c0e2a0d57fe5a74a6da0da8741fbe2dbba3fde",
+          "14b3f5bc23646aae2459aa21459af0f4a1a75b581bd36422e33b0e3f88a8d8c5",
+          "a1bc518b911d2043990cfc15f476965ea4b07fb3857a3c93baa0909b7dabba34",
+          "14b3f5bc23646aae2459aa21459af0f4a1a75b581bd36422e33b0e3f88a8d8c5",
+          "ea652680f61a089081629400073955872af59c35a8a01e35b1ee3b14b5301b86",
+          "14b3f5bc23646aae2459aa21459af0f4a1a75b581bd36422e33b0e3f88a8d8c5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "6a75964f4553a993c78e707f977c385519b5e2bcc5d56c79460b414f9c0b7e06",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "4642246867b5e0e4a38b8a284bd47ea41ca63371273c271ef8612d9a17bfee3b",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "54f4e418ee1cd5c8429f2ef9b96c998a24f6f9b4f42a3bdd917b64231ce8b8bc",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "c11a385795e556a4cc924f4dc2caa6ef2ce12a681fc91fcf4f42645d6017468a",
+          "da6631a3560e3f9a9bd147d711003cf57e84b29b357037b352a030f4bb6ffe89",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "4b6001870d614512f50e40fc92fb45d23aa1a1b4a788f3f524ea91b567de6c96",
+          "fb7099da96173166c7202ef525620a63c87fb84fc5ac7c2b8865123264354514",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f9f22198648c1ec49f70aa20221dd6d39d88dc6573e6894966cd142352b32f2b",
+          "03fbfc1d67039fbbaeab27e92262484fae909f7169b0e2e141827d3c2217455e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "6271fb51538a6a8868e93346d561dc9b97869f43041d43c63bf92fb7af79eca9",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b52aecd4e08fbb4a2374d78efb9a000568f2b7958bbf55536ce7f3173750d360",
+          "fd207d78f795bac42c8b2140890725d8593eb8eb2257565c3152a9b92e970a83",
+          "e1cf6e1964487e5ec99868de0124439a6b580b159612c7bf9d06909461c58282",
+          "5bd4b4e8b6d7a200ea02b1c58119963574cb425ff6ab7638fbe45be70b30c30d",
+          "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+          "edbb1492625941ffe8e643c2d44a399c54645f1c261bb593aad7420c150075bd",
+          "284dd07d0122841aa7685c0adb453792efc6084645630af1a81845994188b123",
+          "e67ad4443d87a04dc926cd264a46440fe55313c1f62ba8d2bca934022c28df8f",
+          "54182b6104e84bab38ae1ebe07330778ecadbe417653ca0bf98dbcbc8178175f",
+          "5a4dbab319ab7d5451832f8458e15446cbb28e97d7ffa840efa61fae090b2462",
+          "5ef79885a9187ae8de2775676bd8526b741bfa964f566cd97a0369deaeb6b009",
+          "cf51de17643494e05faac3972d2ed1ae27b011b2215840db210fefffd305bb68",
+          "778c0265198bbac9a3c76d457a5766daeab66667ffedba379b5998b26be8586d",
+          "624d3df3f58ab8e6640147c9b730467487b7a6c6f171b87e1d35837d3565a233",
+          "8ce8689be42237098be02105417221113f6cfad95aebf6d032bf4aa84f2336e6",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f948c9387b38e9774ca030094902c4dd9746f05455fff8542291666f67b1fbec",
+          "fd207d78f795bac42c8b2140890725d8593eb8eb2257565c3152a9b92e970a83",
+          "b9440c1ed87d9f8bd7ecf299e612fd16c56e13d070e905c12b7e3ddda9883f7b",
+          "ff762b9c8fea44a17e0a42554eb7d8f17d0eaf51c72a116e7f4c2c64e2ff45f6",
+          "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "42fc0eddb9ee0cc8d53b496db4be2abf3715242c58faea4ee3ee925148deb5b0",
+          "c4e86374c9f67aaad5e48572f1a561bb2899a4ee55fa0fd9be515f0c352aac49",
+          "067d59f789b3bcb7654f2e2a3658303d39d7d3b03a0e344c95c916b51e715a2f",
+          "709e26061c6165b3c5a52b39b5870afd3d9968c9fe70a414bff16722c3f10a7f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "6d7bfc3ddf6b353cc56832b40a10d2e2284dc4bda158d7b1495c30e5448cc6f6",
+          "eed2312769a676ea1acbab09397699696722539937ed17112427c7f89280b894",
+          "cf51de17643494e05faac3972d2ed1ae27b011b2215840db210fefffd305bb68",
+          "5a581213497a816fabfe24291feac6b88e10128e383542a6cfb24a2dfae00059",
+          "8ce8689be42237098be02105417221113f6cfad95aebf6d032bf4aa84f2336e6",
+          "605349a397665a07baea812ef24def564b28df8669f4baf8999b437e893ab1ab",
+          "cf51de17643494e05faac3972d2ed1ae27b011b2215840db210fefffd305bb68",
+          "8f5ea71f8d0a97a8659e31f37268a6e18b9638c8ee78658a71e4b0dfe15b51f1",
+          "8ce8689be42237098be02105417221113f6cfad95aebf6d032bf4aa84f2336e6",
+          "00c355afa9f09ae65d631db52cc2ad66d9c9f3d94ed5ed60565ae758c7115298",
+          "cf51de17643494e05faac3972d2ed1ae27b011b2215840db210fefffd305bb68",
+          "7ed42b82a234b24d005fd9ce4f4ebc157e512fd1239a70c7786ebd576f4fab94",
+          "53abb81d0198101bb5903c3b0f49d256d5e4e8049521722ca2cdf4ad23ef57a1",
+          "8ce8689be42237098be02105417221113f6cfad95aebf6d032bf4aa84f2336e6",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "16da033c20e516a078b73149665291082d1ce80f6995acaba01e95da7cf076cb",
+          "d536ee92c06eea3432fc77b34b0b5be066bfd97852ab93b83dcdb168c5c7387e",
+          "b67b960b7b7649af4437e6cc2c3487e96bc6950e6a40d20808aa18ea9b48972f",
+          "0aa881b7149f77fc998ed74d91910d402e772be3fd4d68f2ff1d58b2d0458aeb",
+          "f3e33ad63aa3cb896ad3b5b917ecaba48c96e26fc40c50c3e7c5a43160ad3df0",
+          "9b1cbe7c3873a0769713ff22244b88be4f7718bff91fcd0d52530d44829b8b50",
+          "f3d29c07018b731e825fb36a91855f60addcfa842471f7de99ec4f46d33bddcc",
+          "3fcd90dc32d1b9ed4bcd88b3156e06a1f78986b4e2a8dfcf6cf6842d6b560ed1",
+          "7aebe8fbe54a47ada0ffe1306df54889b1a3fb315e3b1cb1f3f965e9472c6cc0",
+          "70ddf14be8889fc2270882d9ea2fc66b42f32ec43f436ef29666fb96114e22f6",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "136dbaff31ee0d08c3d8f59be9580a368fa339a08ff3fe3c7b2cb4fdffe17348",
+          "fd207d78f795bac42c8b2140890725d8593eb8eb2257565c3152a9b92e970a83",
+          "6dfe60393e943c074588b7bd069eac24fd06189f031ed2b27300ca075fc42b4a",
+          "8720859eea56aeec685dad256b92b89635d608c56039abad1389c1aba5dcdc27",
+          "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "1b105fe74edb5ae289d340da3a0aa480cb9785caa3b82b017f8979ee0abeca23"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "series-2.3/benchmark.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:28:series-2.3/chunker.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.3/chunker.py",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 167,
+      "linesAdded": 167,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "9deec068f7f41ecc811d4c8f23f8a5316eb9aab2762c619faab3d2ffd37a2985",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "92cc39e1dfe780e7fc09369cc009896e70ae896c71ea5a9f51fbb8fe47faa148",
+          "ef0f49727eebde54b2bc76e11c11bc322bab6694b8fb17baf8175e269bb2a730",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "9861dff3a12e23fe2308fdd197539d9557f7f9c47eda6eca6779191c69dbd2cc",
+          "1e99b0aa2879ea6a617e6c80cd5b863aaa277a7290ecb1d3e851f4e5c8706aff",
+          "2b9c1f7197508b6037f3345a07458b104338a94b51dd37b46b54c4dab31ac331",
+          "2fff38f9455372bac7b4b20c109ae767f1c4e97dbe60403d8f03ad72e19b625c",
+          "eb91b2fcb2779e490ecc38948ee6dddd80f6fc96e0271363cfc4f6b3e8b2d5b2",
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "66ec018201fb03f10df19f1a56a1264beb2654e8f07c2f163f023ebd53a751e4",
+          "063e3d97fbe5c7382df417aae2453be61a01861561f37741b5ce484cfd6551d0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "9c66cd111a4b045fa1c8b981050fe932685f1247262f7ae311028ff1a0dc6172",
+          "5eb63e43fbfa232d8896be6746e8466e4b70a233485d02676aa51f9edd8ccae6",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ceb0d4e0dfdb701e06ebf84186fbb013b6911cd4b9f71eb8cfc0cb46900a4ad3",
+          "aab5123336d0f0c2d32ae721f0805b574714d9889138f468a125af6ed0d122d0",
+          "d0f6153018f2ae5803a3daf41ba8bc0b5a8d71e80d747878052afc129b40722c",
+          "2f7c546eef3a538ca55cd4c88556f91950901b7f466869663d4ea2ca8f5ebd0f",
+          "736026d06d2d57071975a285aaae822e176b76b70a8dcbef6048ee618d5bec2b",
+          "6d2efb1f11e56ec714cfd00148420c7bc0f853b3e03d61bd87ce184e3e0297c7",
+          "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+          "a74691a7d50b72159780880bf81ee7c56d586ad5c9921ead6929192ee1e2b794",
+          "a53a871546fb7cde47e2dbdfa7da251cc269ceeb1dc48b5460d5e2957cc86225",
+          "362489c8433a8ed368922b296fc69cca8cbd006d315c76da7ac7967fb71c8dff",
+          "5503807c09bf03e9815d6f7b99b5a782a04629c69722e70bf365c5a411b7bcff",
+          "6d2efb1f11e56ec714cfd00148420c7bc0f853b3e03d61bd87ce184e3e0297c7",
+          "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+          "37b6b6870c5cf21cbb8233d4d7e7e5e17bf822c73950107d264acb854a6b19ae",
+          "f9557950c3cec1085637f01b66f4ea026496ffcd985a2756d24bbbfc8846a0f6",
+          "3d0e102a1e9e5900b5ebedb45f0f5c16d0697d7cc02a14689aaaa1d7dedcfd49",
+          "f876b29c24583a3884cdc5fb5175dc25e7335c5a2b916b525ca28a64049ab949",
+          "6d2efb1f11e56ec714cfd00148420c7bc0f853b3e03d61bd87ce184e3e0297c7",
+          "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+          "faa8402451c312408dd655fa819dd21adbf17e9fa055c112d2b3a4d1a67a7190",
+          "c160180b205d04b01cbd9443bd0ad752690c45d7707d5f550f83313656302549",
+          "f142719f212d8648c977e90f8886f4e19c218f87ce7a4f7b3b7afb00669de7cb",
+          "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+          "d10b36aa74a59bcf4a88185837f658afaf3646eff2bb16c3928d0e9335e945d2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f532278e70fae26681c829c76b94d7c9d5a18ccbda27e616ce4ef9e74735ce91",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3ec9ee5049d6d5bf7173e8e14162a93ac11a2916efc8c760d1a79cc091809a47",
+          "9a449fa8b8a079c9a1a2ab87228f32f293f01092c1031a7db5122cb46cbf9e2b",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "8659b5048cfa49a28258d1299bd45c6a3827b38cee5f6d60df81a729985462f5",
+          "6ee115d629f032febf2ca155d9c8415c626a4a5ef8ee509967e36d3e2c0c6fed",
+          "8f86dce07c0353373bab662a4567831757db83a10034af43a70adb39dac83e57",
+          "165645c85ea11a01bb83cb7ee5c9c1c6da07efa58c2947f791ad7f6917a7a9cc",
+          "7dfc0c4de5fe4a0ade90b116a37a9a4e3aa6e98b86840c4affc08d7846c61f35",
+          "8aa2a3a5a686fabdde37d5cd75568cb10c067e20618e45a0a7967cd32f97c5c4",
+          "fdbac3f55f334209ad86b799c8633c2d554f9d97d2a9dea34a39686fcbb85b84",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "9de29eca5eb95dfd99097cebee097ff66a2a183f1b760e111287b14eb4d9d726",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "1c79b942ae773c3936aa66fa8aeb695da16c0d744b7f4b5b7ddd9a7e55981d7b",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "d9665e0a647eb1aa7ccac2352439ee61990edacd4e9bb5da39cd718da69ae438",
+          "ce3410c9aee62e5b6d7c81198bed8aa32950a822b46f86d93a8d69d5b465d051",
+          "1ee5dce7584304ed8d0583d64c0d6f9a51f9145a126ce5a34f2df3a1851fa1ad",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3bddfd62b68e48cffbedca2bf08d059f28fd819a6e91baafaf841ef53bbc3403",
+          "17dff04733bb1a28515321ad4f6b205ea0ae5c43e847d7b127ffb065e75fa3a4",
+          "ce69c8b998e9093204ca688ac3978cd956313690eaa8a263e51ecec2e0dcebf8",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b1fcfbb48601ad3c698b7d27ad45229ee7947633581c2810538f4eb341b6ae8f",
+          "b184f1abcbc9b9c520053bf4f99e13a70444a5ca9cac73f584bb70df0e3024c5",
+          "f018abd29335296210d8d40bfbcf46036f12918e1cc27e29d0eef503ccd61bed",
+          "134bf6a08a3f3aa16446c8b3a5ec3a75311104efb1dea4ddc07ecbc220995a9d",
+          "ee5d6f53c8e25e6099a7325542177d566768d81734ec0e5108096995ba80c0d3",
+          "181a354fdabbf70355c57bb275099dbaee2b2624c3c4ce2cb700503cde820265",
+          "341fd7727bb99f8eb90a3778f4b43e17d87c11bb9aa7041d9ed4a5b555f0ce36",
+          "03222d9763d03867fb34b8b35432e346c09ec7bc8e4f84712393f2f51528d040",
+          "355f5163964deb26e2955cc2436594fa44758e47a11e6bd374c565e9cc5ecc65",
+          "213ca05b832d9dfb481249bab4409db18910b1d76c8eceb51ba71b9237dc9fc0",
+          "3e8913828e8abc3feefb9344b6fbb7fcce9d7820969e7eef462a2af3f0f7e544",
+          "5d44a0462e2e0fda8fa389fd90cdf2923da3dcaaa53a55dc9cf9266f6edd6107",
+          "d55dd578e5a3425dc2d237d4ea38203c427cd34dee3c4c42cd2885e998407d98",
+          "79065d7a87599019393ecb04ac17623fef1dd940a19c7e41f6f055a3832bcea4",
+          "2c718ce901cae23fdcedaeae47ea46d38f08d79e7c79b40a20aaf8321d6dda9c",
+          "ce20697a65aaa3e1090338b4ee5721e3c73b97f52fb6cc996b98f6a7db6fca4e",
+          "0bf0a088a649c22dc9b184a9519d1ed05a4389bc2c3c5f1b6c8c857c3fb84ba1",
+          "8ce8689be42237098be02105417221113f6cfad95aebf6d032bf4aa84f2336e6",
+          "8b4f4029def30c2e9be6c99c5f0afeb4d1bd2d5a2b336184b2fd4fdcf6b46eda",
+          "ca0926c1ca211605d63948bf7501a1d47b46a44a3a4c97049d66f87b1f90c153",
+          "923123d9a93ece439057e7b2ed07422db4456dd6de5cb2245a4a57c9128cb2f8",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "28ae9c65b8d7adb075de1e3b6cd2855d36bfced3ea3ee27dcf922799fe80f443",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "61dac3efab7aec1f5af9fbc18446ab1b7dcb72024b839bd62f18de375aca0f71",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "d6b8771915719ebe0b6369ec78a6d55f24ad58173d7104378fb28e80fb50ccdf",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "5f8940b2293277662fb21a7fc3e9c6a375ba41bf788f59ce5f2240b48b0ca7be",
+          "7528949a973b5d98cc826ab24f42109d915c87793f44924f8436a298f10e4c5a",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "4bc78bac93dba6a087dce8a51ef07efb40f57056310b1923774939a50ae0839d",
+          "5ce1af3289b6459a011a96c43329e9d7bb8a3bbfff688c78d5aeaa207966a061",
+          "eeec59177501ee601f659b176df9720dc454c9cc7423826b8e34ef58907f0d80",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ed8d5a0b3e3a6943c0cdde9d7c73fd42a1728b9d3fd222b8734bb3d91818d2e0",
+          "caf4ba6f19238850dc3e88b59675320ead2c90aeac0b74c25c37e68f3815b193",
+          "b3b0e38f509426aee88e1cca5d0c7be321aa60c99a4de670713400338d38f8c1",
+          "f30a9dc701bd9a38c186541e863d1fa8ab72cbde1309242df6cca8519e7c5549",
+          "54236caabb1ef82f29163a5bee0986effa850bc54e08800e57535f0e6ff3336f",
+          "8f8bdfc3c2f2d43b6f28cff07ba696fec3830fb83710b037589658aaa20ea405",
+          "b4db32c534344cb4b9846acd2358b425301fc13c743e4c6419332f673c04331d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3bddfd62b68e48cffbedca2bf08d059f28fd819a6e91baafaf841ef53bbc3403",
+          "c195ee4e1d9be536c405e2819444660ea959be5719794dcf88ec75dabe2e0ebb",
+          "a1bea0ad83115b173cfb6e6df02ec5a124e5892b7747d6cfeebdb72c4d636c92",
+          "7fc2fed78a9e882b18b21101184278c497a6cf9fcb70844941b8b33e6f3d2251",
+          "8c42600c669d37de59f5ec1a0a3adcc9ef2cf7423a67de07bfaa8b04f8d57af8",
+          "66de6198d6b9b565676ab09e58380b47e6c057f89089358f6e2c0da530e197f4",
+          "4ee86ad10cac17f888d76ad525cd0c523be1b99521ca0f5156f2ed8dd03274ba",
+          "78fd37adc743d5dbbc89672996cb5e0d2ba0186eb4c7dad006c9cd4f70299407",
+          "6fb136f83618357509c4d27b6c735889991c39ef8431c72f1f17f4f4fff5ea4d",
+          "7572028667d784075c72e55397fb75a5b30d0e228df423357e618850b5852005",
+          "b5e0f33c87d3de26d720244d4c0db433096bef6540647bf8ed4a9cdea6ac78ef",
+          "ca3bda07a4712e5e0c8695d3d90c1b4fd1a1db907f8b87f871e76985b6f9bd3b",
+          "41add6ecee22613548d330f76aae0eafea665d97261c9b703e295037d674c646",
+          "76ed048b0775ccf0db146aa0b11fda21698cf72507d05370ff3ba1c1303a8599",
+          "8e6992ec470cf3ec334367d678544f9ea27710f673c2ccf06bbda53355e70e1f",
+          "b46b401ec00e13797451bc557938ea8f932a1f736492e861d111d9d046b6841c",
+          "86afdf70a95436e883aa7fc5c06a2ab083719054438f1218d15ebdaf287b4bac",
+          "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+          "28ae9c65b8d7adb075de1e3b6cd2855d36bfced3ea3ee27dcf922799fe80f443",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "81130ffa3547eabc110ed3b9129b8c484ed068eb290f616af9b4196746998db2",
+          "6ee115d629f032febf2ca155d9c8415c626a4a5ef8ee509967e36d3e2c0c6fed",
+          "8f86dce07c0353373bab662a4567831757db83a10034af43a70adb39dac83e57",
+          "f39c02d6108224b7b9c86273edf3d9db79024728748ec332d0b1285ea2ce2d39",
+          "fdbac3f55f334209ad86b799c8633c2d554f9d97d2a9dea34a39686fcbb85b84",
+          "dafb6e337bb8c66378a4c863ddfa9f0a0e4e5bec7317ba7bfadd6e09537b8ae6",
+          "d9f9cda8d671e0b47df981f677b564a6d36142a1822bebe0b54dd6f4da84c817",
+          "2da5293dd6c5514c42dfd6aa1c4ab2ed70522d3833519d476216923de2aaa331",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cc0af1fc3fb56ad8f06f61f5c96c6eac24119ebfbe29e3a5d657662b15ccd1c2",
+          "e04b4fb8d2f2fdcb0942b5e9b07b2292581c61484446b69133d73e8147da0757",
+          "797553367b9a5dc8cdd700bb483aa4430ec94a251772980299082f61e0646cee",
+          "03bf4172fbb173286bffb628c1a1e7128b43bb2654b555034eb8226ef4d2d800",
+          "2484347586aba09f001adf6233cd709e12b58f3ab24d4a20f8b57b4791e47362",
+          "ff19446752c33c181ea9232a795beff15bc3feedd2a58087b3f5c33eeb62e992",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "083b53342565960e2b848ddaf11fc9c1b099267bf85f882c611630ed42cd9b31",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "206c189d6504cd8af016455e75259ac98ac2af38cb52014388dfc56ccac38026",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "1bde64f2950efa83224c6d57c0186a5c6f73b240601080e8139d00f371400c67",
+          "9134abb7f0c59eb702251dd6b93c805e07872ee62f8d8e423355a7ced4bf9eb5",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "a7ba9308a0cb77f21cc124ff3e15a56b1e89b11c6a9c263321f208e9dbc9cdd0",
+          "7c45c6ef7ddca2ba73ec679d1434635e33c19575a645261e543556d0ab49ee8c",
+          "e0d62ad2a35ccfb1b01fd1c8ccc14a7c0da5f4712f8e0cb8237fa79e347680c7",
+          "c8719c108dc284c52933955de60aed69e6de4cbdf5f64e12d527e7f15cbadbd4",
+          "772953bed0b5974d47ad6ab4116ee08a9664043b86d15feadb2c473438546d85"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "series-2.3/chunker.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:29:series-2.3/prompt_builder.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.3/prompt_builder.py",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 39,
+      "linesAdded": 39,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "60809da62c612b26f4ee9a52c8f8460f7af87c9ffffb227ab1156a1e98b93d97",
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "063e3d97fbe5c7382df417aae2453be61a01861561f37741b5ce484cfd6551d0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "af2636486df9167464650c05555bd851b619011e08a52139da39ee8e231a2e67",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "639cbb685f449786836be2d5788ee7c95fcbcf0fcf933597b2cf8bb4584b1296",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "58ffbe4a3ae10c97d01277ee219f0cf6e7611535e70ed86eab13100732bc6d8f",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "f4e8096e49eaf4f0db947dabe157eef630bcd9b6ed41904de8f271eaba44298f",
+          "bdf730f37c82be66f5e189a304458d4aa9847ea190f685b6c41ee2ead7f27cd4",
+          "7796538b474190e0c08cc84cc97186731b1a282b83ab0422524a29caa3d1d1ba",
+          "fb71fedc2f3440698b4d3440c0d335e6084f53af7bac114ae33b9b0f3a86260e",
+          "b7205c2f7c588d93991f29e65ca13d783c9b6f7bd05fa2c2692ccb11149d2fb3",
+          "47b7759f038004398053e426ec942a13923ef5420d9239bfacbc4483fcb5ed4f",
+          "edbb1492625941ffe8e643c2d44a399c54645f1c261bb593aad7420c150075bd",
+          "cf0568a960bad97c0c7c6b0a2656e2b94c61a2c7d9188454e2ce402638c5f6fe",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "be4e0b2cf78a325a80aecf8e24d596e7112924341c0e51fb75c0541da33d3b6c",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "248e79e6307b18ed4e2ee93a80af545723f6431d52089e1a0742f61555e32003",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "50a03963bf2636e09320fbc9dff7995e2be3013006d47646332f6339fe5c452b",
+          "bf085a6e12c9d0e23a9dd157df084f933b2ef021caba82def1494bfb84a723c9",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "38ca9b286c785fa8eb695401a7e6d1fba18a32abd5b657c3cedf44659a7af786",
+          "779f2c0f2bff58e36d15e9e6665b4627569d1fb2d6ae1d186b6eb5cc46ce814c",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d6e5c8d6766c588c0c7bde2e6eef6fcb0edf3793b7e7e9defeedba7b722895e7",
+          "74edbc1d2970a08f2e5ee855604565be3a61e44e3d820056a84a1c3f7e87999c",
+          "f046783ac85be23ca28e386e58525c089410b4be74548a150ed4a74685c085a8",
+          "57bc25e3fab8998bfbffc11b647ad91d2ae721249e0852d90d2205319a124f56",
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "series-2.3/prompt_builder.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:30:series-2.3/questions.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.3/questions.py",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 45,
+      "linesAdded": 45,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "31ab2f821a74e252836f87afb176e454a20acd46f92540db4bfdcb5fc4c7c3f0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3c849bd1b54bf909d526032bc6d30b200388bb18bc20d5ae08b3fc6160445483",
+          "69eb66cf728f567d055e9aabeab7fba55f1a453944caa5dfd8950de0ec8468c6",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "2d3132bf48ec9059c9251d3f5e53e6538d14e42a394dea4aa3070f711c95c676",
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "01f8859e7bcc53773a25d07714c2cf0d7d31057b098c3d8d0dace1028f0aa8b5",
+          "0d3d2f5a8b2fc178b4e5ab7eb9c8c886e2e08b03608f0bd3200c3fb76b4aec0c",
+          "726426b50106f6e58a86b481cdeb89d4141a204a448f4882c214605a0f3621ea",
+          "c4213b9085690292ea56b2909004132f0fb29a24d552719a415a33b1d3cbfaf3",
+          "08c222947ab9e25115e8d85430645d77a51cd2ea644a2ef17369d4e03215951b",
+          "3c17e9dbcf4034d8315713fbb24bd0c8d347366b55121dc258e50c984a4113b8",
+          "227c10d42a5f154da2cdbe800f8fc22b5c2c0c4d0d5b928c6d2084528333de8a",
+          "1195387145cda3bf49657a5913e5dacb126ebb30a9b5df7213c5e267cf811992",
+          "5db03dbe70799756796c0076c8d6511d6ff7bf659af7c50a0d30f00d60d58d6a",
+          "e6b83d4aa7261bc680cd9999371236ce088156a773fdcacfaec1b40857d713dd",
+          "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+          "0d3d2f5a8b2fc178b4e5ab7eb9c8c886e2e08b03608f0bd3200c3fb76b4aec0c",
+          "1d036bcc73d503f7539d63ceb459faf9d3d948753c43b5c6fe4ca5afbf08bc19",
+          "64db37ca4518186480ced56ebe4d4e2132e47d74d503bc809998d4304fb5d1a4",
+          "08c222947ab9e25115e8d85430645d77a51cd2ea644a2ef17369d4e03215951b",
+          "0c973444d18adfe6b8aca15e342ec122330377ad84c814aab086924c2122a056",
+          "5f257fc87b6ec960e17015ef56d027f555cec96c6db5bf46ddbbba7194e2e705",
+          "e6d937aed3f7c71d0ac69bd4e5a732358bf246d75d5a64715b1f0d97b411cf3e",
+          "642ec93845bd98fd751e7f8cd81985ee3f37bd03df1aa4dbd1182bf692aa1d8d",
+          "e6b83d4aa7261bc680cd9999371236ce088156a773fdcacfaec1b40857d713dd",
+          "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+          "0d3d2f5a8b2fc178b4e5ab7eb9c8c886e2e08b03608f0bd3200c3fb76b4aec0c",
+          "0dd303e4ef9ebebbe069b4433492d6096f83369103ba392f642596095b19c19c",
+          "681c724926b310ad455429cec219b13ffb751cc23a06c6ab5f34f69d843cca65",
+          "08c222947ab9e25115e8d85430645d77a51cd2ea644a2ef17369d4e03215951b",
+          "0d8ca5b64fee5ea4c7c250cea56ab106146dcfb00aa9b84993dd7b2312f6c981",
+          "09aca6cb3ac1da777f07fd527bbf01c2fd67790147cc160e853610f0d1ce1f27",
+          "9cd52ba49f078b1b659346c8f095e723d6071c3f9861bbf658c52bbdd4c1d4a5",
+          "e0c6bc81331d0e84123e12e8aca5cfd992371027d8f627d7e6a826d0259f856f",
+          "e6b83d4aa7261bc680cd9999371236ce088156a773fdcacfaec1b40857d713dd",
+          "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+          "cfae0d4248f7142f7b17f826cd7a519280e312577690e957830d23dcf35a3fff",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "50a9c2d8bd85d6aa2549281875a16957b562b07eb11d3977fa77a28500cbabe7"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "series-2.3/questions.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:25:series-2.3/README.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.3/README.md",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 148,
+      "linesAdded": 148,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "20530e6c3405b5feed53013e843b67ac71a71455d740c3c328f8ef0d99c62fde",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ceaea5b91f817812eb9c1f9c6396caf87264798993a31f460d4061f2093aa435",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cc107d55e9bd56fe34620d5dec7b4727467aa93f06731111d1165c315cb2a6b0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f1b725aeba063714b8f47e86da92b54318e98aa83090e3b941da0dbdad8a43f2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "37e09c1e28c93611c12aa398377a663c5e52663c689f3ccb0e070f658d315c43",
+          "d29858cf3824cc131656eb97252dd2abe14be7e74a7d140f116d90c19037731f",
+          "10bb04e70b7a2e81a35199ddfc6cc3d1745fc22f1d9d1c1892d4664d4ec58448",
+          "992aadb3008086ff771872d8f43e0f008bf541039fdc8cbf92182f6fc0d01a78",
+          "23b7ff88f922c078aeb3ae079cbcb05b094266bcaf03548a27c0dd7eb76d2c31",
+          "5d38db9cc8ab63d5afb379639104698a4ebfcb864a44e2ea063dc66517a20e58",
+          "665b0b8caebfb5b21a20f0e23d0809a2897a930a348a452f8fa18504bfe47b4c",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "22c59f24a33417170ca8de12b64f4c15f06bacdc27d7cabd982a20f7b8398bc0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "abd578b467a71a682305b535c1029dacb4828d97187f658e6f291ce05ed14d30",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bcd41169169c00496c190a4e96b6d540b94be75c6935f66d4b690d1ba9df10ec",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b193c8c490b0a068a55a0c5c0fd641be289e68bc8341ccf7d7be062abd971310",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "d3c127179f353d3e9ec80172c01fe456b02f4bac97024a975e2ee4ed57d34b6c",
+          "f9c8ed242058b71e7822f02c399033742ef97754817e61ad70607fc1c4c6b00f",
+          "aa732974ad3e8ed02f290a5ed8202ac6f77721c1500b56903046ec80eb833791",
+          "f9c8ed242058b71e7822f02c399033742ef97754817e61ad70607fc1c4c6b00f",
+          "2ec31f35edf95d0c3345e4c377f855422a3496c775781d6dd6cc6b5649d10972",
+          "f9c8ed242058b71e7822f02c399033742ef97754817e61ad70607fc1c4c6b00f",
+          "b5129ac6ab26da19d6bdf3c43c9dbdbbc42a3df408870101f9ca2c5cf84b1d0e",
+          "f9c8ed242058b71e7822f02c399033742ef97754817e61ad70607fc1c4c6b00f",
+          "46419d80313c4dcf41ce5be6eaf6a80042e3b523c39904194fa6e6e8710abefe",
+          "f9c8ed242058b71e7822f02c399033742ef97754817e61ad70607fc1c4c6b00f",
+          "f8f1c9c64c9fb0fcf897a03f5c7674b52ca65baef3f518285548c99ef5d02dea",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "c55f78cb1186e8e93dac63668e9ae9c7cd14b5a8ad73c342e7b8d95765d17d28",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "8040f9f9fb971e8554c40e9d4f0065a229ccf2f81505d34c504719adc6edb442",
+          "ca809acdd36bd58fa0de1b58f473589126c84738a494e0b9594657eb079c3a41",
+          "9c1e9a090f54b58499907ce70093733ce948129c34af4157204d94010dcda4f1",
+          "24234598fab84452a0c71569b1a2f22fedf194fe9c340b400f5819b0349db8a8",
+          "0fd2d0603cfed9500731a264876fb6f207bde15a0cda70b8d61ba2c179b36bc6",
+          "89498e77fb56e68c9cb8ea411a963f8db6b91bbde518009081218df0ee209b39",
+          "8e967f600d2116eeeed0278c4f6b1d47053541147419a843051b1ab46eaefee1",
+          "874d4f5399522d00c30c0aa60f246172e28c21e541c9462c26bf4639f395ca80",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "c88b86824fcc78c3e4129ae69c3a80a40a8a68dfb88669ddb77fc16c90bb513d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "756dcfcddff993c7fd6cf14a402d97e7cbd9faafa6339aa722d19eeceb6d1391",
+          "80b9b1b4322e1ae49f39be11f8af1d7583001d465871b728427dfc14feb65a1e",
+          "596421fb19e8a9610f29f1f790996acb2343e469186c3fa2f566402745598314",
+          "9248276f3e1b8babf6da11a1f21886b7b7bb161dbe1d091a479b29843a0cbf4d",
+          "9396943ef99d4e8066e53c994beb087c7df88e6ba3bc9f6ac664676a399b5cc4",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "133485d395eb57559350ff6242427e757353fca9e8edd32f818f898c91da9592",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "0c82d5d4d5c7ac143d5450d86f86a6bee3e7e79c135c8d6a046e5bf29d46966f",
+          "a14f190a7e031f95f5ec0caf927ee6cb081eed7761afc9406bba9c80935cfd0b",
+          "02af2d8609cccc99525e493416a472707479a778f37bce73d8a2f989d7b1bab4",
+          "345041417b5ec077b418639a439c0334c681fe6c7a93eb91217ffca1c2cf9f99",
+          "1a8652213f5f7d91499b280053537c32adae3dbbd0c013efca373cf2f093181f",
+          "0b9eb4aaa5665c9caff7e2df83715a1bdf4690c0dc2b43206c91deb7f9e33949",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a9297bcc821abd4a5546f4874eaf17050785e5200cefdb4740a3a533f02f7aa3",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "888894fafc4d0c0798a6d1d12aaf39b8c7a65ae9329564b4f0a88e0adcff7c9d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "78d8a35e921f94f108636276c156ebeb7dbd4f498651e63d2d87c961db19b1f4",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "dff2a1c354fa6b73ede17e1c781d9dfd2557fc67b3a43d86bdacda6add4eb97e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "0ecddf15e1aff85f7399e0fd362b9856d804a3e66dd65e41b547c255fc86d8c1",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "30ea56e11c938cfea29dc8b96ffdb301613e5a403d74ca152baef84af1fd37b0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ad332335cfaa348c5bd715c3479844622270d5f7389ae070b81b135d521a221a",
+          "f634394e6be6cb445c6bc8191ae89e2f0de21f2214dc16b9cd2e080ad660b1dc",
+          "70d1b25f1780974738800bee7ccb487f1581a2632b5887cd942443338ea4aa7f",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "4e0248e4c6474fc6acfe38b04c8e4b2d82645e2187ed766416463d4c9dd56aca",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ad332335cfaa348c5bd715c3479844622270d5f7389ae070b81b135d521a221a",
+          "3f4a64b37143f49da5867e124b7f09d453e1f09c6c09c4f4d3f9bfef8546bec6",
+          "1556250a82f935620f0536d2d00a198e5add23d41b918b350ead31062d5b752c",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "0d54c6dab9181205720ea9ec1c927f54edde0b5f91cb975e45ac583268776499",
+          "440d523b9ff713d2010ac0124b6291d68eac56b08d205b77e60657d57afb45ed",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "0fc225935f5c300d81e60ea9cdf32227f40655660d430347eb08f44a710218a8",
+          "bdefa4a77dfe7ddc98936898020f733983cb8b25197f252c8fd1e3615d4f218f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "7c645e3b877424548b4eeeaa5b200b041ed6867fe95120dbd02b622f6a0311e8",
+          "4d6980c61c0d510fc2f865ca691acac38cb82eb5074297a4197bf371b6c8abff",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bb8a1c511a849373a77ff4ed5b28f36b25017571d6baf39c0e4e0d7bf8206156",
+          "57fc37c0aa19a91eaa0897cd709b778d69f29a2d584b7ad08ae15bafccbd422e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "1ae43a8b4e28688cc28d31ad9529740eed4fa8621183479798e5482628af35dc",
+          "56c7707be3d27e2b907d5d3ae998099f30cfc85b71a17ce26d1d2a309457dc2e",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "159304a0dbe434bea1a6c3d6a3ceca9ec29c6620ad81a688a6238e46b2033a85",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d2e10c876f4424e891dfade256fee880c5d48674f364a91ff98d300d6c87a82c",
+          "1346b997a53ef8c2a534b25b5e0241e8349f31f632d4a2f51078e8d629a48a6d",
+          "f4cf8bd8f243b684db1ba7d5e8c8e5990d86a25d7630bf401a0f8f01a9d4a2ca",
+          "5eea0dd895022c3473818bf06d08c02076435410686e306b96b5a80537a7b66a",
+          "e267e60a4212765e2326b446735c61fccb5704e28ce690aadac274c368c1a537",
+          "1063ca08cc422c197c62f59c0f8a4f8a0e8849a1d2e8d83fcdf491491fb03eb0",
+          "c72cf0c7baad92d01818b0e311552384076bd4edd8903c1d460e16e4a63a0f77",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b7013807cde6796f9d2b511c7476e0de1668f91d3d80182af808e6e5ab2a8a22",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d3b5a0d1cc9252cea1d5f57de965c4f09d09fdf0837431a477be0f01f62977fc",
+          "b68767ecbc3175c6595c0eb8ce7fc89ef069bd6ebc6ba77273bcedc1a6445682",
+          "b99234dfd3c95d387b7548fe46112e2151531f689feab7885197983471c0d76d",
+          "ad1751ce14a557ce5f228181fe5483aaf348684b04ea8f3d134f6509b411a82a",
+          "f149379351712149d2b476849676bb612d7f147c8e092a993e691dbd2bcb4f64",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "14aa1320ae476b26672749934571b4c166d72aaa067f5a227a593ac575ed3585",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "78afdde995a42a2cc2b3a4b95c44cad6e4fdaf2d3042f8cee105b14d95e144dd",
+          "84c78238b459cc880291337044eca3b94e736b98c754d3a3732a135b426d4b6d",
+          "e59006f5f51ec747b4fa8b8711488cf5d7b92e22bb3072e7ec79fc6685fd2cd4",
+          "78c4973c27053f8def29037f704eed00ba97ce5e99a7273b0582e7be47ea4f8c",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "b3c7bca81d801cd00ae4a72f9383f1cfada120d09f74b1fa22a45e69c5cb4b43",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "26cc97262c36fe6556119976f088790d3c58dd39cb8ab06a1456c3e9d57565bc",
+          "7b61409eda6626fc7cfa8cc349351d6d2e15f2692e5fcc9461835721a95095a9",
+          "ac45ee217942ce1000c59f061e83c7de4a6699e2bf229499255f221c9b8926e7",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "812e30b06c220b446c2f749aa02dd3a9ca974c5583e87055490a4a0c22b5e122",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "9f3b7cb64c85927a010597cce76092243d50f9173b95fe66a5b80d879bd5ad4a",
+          "f11b02fad7c91a0183ecb8fd8752e9f3a654198f0a2573bf49bec80a9d17ddb7",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "538456c744c4ffc7524fdcdbd9f6cacc129d3c9227a68b8b64be10e3f1801d75"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "series-2.3/README.md",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:31:series-2.3/retriever.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.3/retriever.py",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 78,
+      "linesAdded": 78,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "5b1b9a1aa03c46c979365413c49fe47a824e7f8a9b82213fe3548d63a259bdf2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "7f627a1f1a0d3e37561c18ae48c1df1157c058798b46e84c53fd282e8ef4102d",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e2574ae9eddfce213921329a27d3de72f61c1272f25d07649bc2250ab8593cc3",
+          "28c2ff74366cd96b2235813d69011008e9fbea3fc0bde8abfd52932111c7d1f2",
+          "cf8962bbca32a8184021221ec2c6de888f6a500b5b54807a30e4039d46dd6efb",
+          "eb970fe518882e662e298000ddca9af4cd955d3008a23078079a4a9bf48295a2",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "17127281b1a453f0c9f25a4a81b3e3f4c0a30ff760eba798b8165802263cc803",
+          "50334a2e8135c6cd867beb4b80d1a2bea799127be164132fb7d8f120f862cbe9",
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "66ec018201fb03f10df19f1a56a1264beb2654e8f07c2f163f023ebd53a751e4",
+          "063e3d97fbe5c7382df417aae2453be61a01861561f37741b5ce484cfd6551d0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "505692e93646ab567d3bbb56e65f295af9edf05996ffd8ddf4c34ac6cee1796b",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "eaf85416c454e85d4ccfc54bc9eca237167f8df760b48528d75e25bf36c90701",
+          "2d317ab16b0b6154c9f8e993f311063ca80783c2134c349691b2e0c2d582c187",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "68b80d7e2291876c4192308c7a0b3ccacd7f0800f5090030434cce15e9eaed1a",
+          "99a6732dc7494eb87a6f23e8270b4ab1a6b71884864210ef1482fcb67a5bb6cc",
+          "2763026b0fefa2f4994f6d678c2272825e6d4444a175be7c0a828dba346e9710",
+          "b8b30fc29456ade4ae76b9f6baec9e6811d1ad55d169fc9332ec2cc314d22a7b",
+          "781708fff6de830bd9f8b6d02bd74b171e510c02c51188fc9fe90e09a50379ae",
+          "3d58b3080f8886a4ce4dcceff7fb917b42f99d5f9bc03115b9c0e9e218321451",
+          "1cb9cf4387abed49a81a422a82aef1c06eb80b37a1c5cbe1e4e26ab90eb55839",
+          "4ffdea09cdef542261d8fd0e0e3af17a8acbb0c3fcb9b00cd996ca018f4f8c12",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ee50400f8dd0815ffff89b57d700642fc7c43561f5208396dab065a3c7919168",
+          "154cff5c8cfe63adf5714484c980cd3246272e894d8f1c131b9d9d73668d545b",
+          "1049d345183796a32d7ff14b25d6fd5eb683acc607ec7d35f554c2d48c6d1a5e",
+          "165645c85ea11a01bb83cb7ee5c9c1c6da07efa58c2947f791ad7f6917a7a9cc",
+          "f38dd67993cfba8d39d6a0390e8539e2ca012ae7e6069e0a0baaa81c01dc3c89",
+          "fdbac3f55f334209ad86b799c8633c2d554f9d97d2a9dea34a39686fcbb85b84",
+          "af3cd79eb0b72fba3deaecc7c5ce78959f588ef1b1f3630569270fdf633d576a",
+          "f1ebf28e80b470264a6ffa93a293f3443aca9046b33c691a40a6e7deb8decf9b",
+          "bc85c1243b44a3e5e1b73cd66851b8c5c51a84fd5986e6c6f61e31cdfc8588bb",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cf648c6465387ad2a48f1e419a89f059bb94547e71ed5dd5c09d22bbaa9782fb",
+          "88306791502d7484b93981c1c276ad38589d408336ae4a8fc772e5525b83b879",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "16b6d8780c5c6dc7f9662c6269c5791f14fdabfb3a1143d9c64626e0e3ab0e0d",
+          "2774a628fbc255560881cd0c6ab9661d7890e820418964ded214f2c76afd466b",
+          "304c8f4921c6cbbab53244ef48ba5abb899665bcd37f73e730f174f67ad48144",
+          "06eb8011b43ec5fa169336d62110fe00267a0bee777ec95da789ea98fe4af0f8",
+          "728b083003694a6f034bb2dcac7a6b90ee5fab35696dc5500a6aec9c18f3239b",
+          "7769489d08fcba3eee68890a92311d820ecd35ce791d8e2962ddfce93ac79872",
+          "c07f6c0ee52e106c7dee801d344cad6108c7583a3d2ab320571209c95b982b43",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f9b3c2d99d8953fb74039ea17e54a377f537d561ce3b50570663ffcb8c92632c",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "2ec2ff39706077697952f43502001f4f85ef64d782ea4dfa1732e3f4476f5107",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "118f6cf23147ce11038b9ff5a8a6ed7ca7a4ba0d6dcfb95f262bba732c40b544",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "0d9fd298d157b2620ffa4cc7e6f4ee5d40bb37f80b22c7e9d624e46a2bdae47f",
+          "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+          "d595bb9593e5b9c014a67be26956230307ebd8adee59f845616d31f62be60ce5",
+          "6d3294483879f73673dff2c5534d9fd973205f6528ba2bd6d080a0934ec42893",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "73975bd4591af9f945f7f516a274a63c5569f09be538db1b3f82930aad712689",
+          "01ec2041b608397f4115308959df9bee1e24f38bd546a793672e71e8dcafc3d8",
+          "e7250f0dc14248aa406e8dd825f25d5d31b1309d62295f501d69374b572ecd75",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "d2ab38522460363ded90365e2b1a5a19dc47baa29cc2a83549ce4a58b559988a",
+          "f34b9f0c0d34920a29e2b28f4b600a09c8df0eb6ff24bff121e8da4c3b15d168",
+          "73975bd4591af9f945f7f516a274a63c5569f09be538db1b3f82930aad712689",
+          "b4702093ab17f49d7c1baf42187f7c4a146c1204f093e4f97ba9c7f3ab6ad1fb"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "series-2.3/retriever.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    }
+  ],
+  "summary": {
+    "totalHunks": 31,
+    "buckets": {
+      "ai_only": 20,
+      "human_only": 11,
+      "tool_only": 0,
+      "mixed_ai_human": 0,
+      "mixed_ai_tool": 0,
+      "mixed_human_tool": 0,
+      "mixed_ai_human_tool": 0,
+      "unknown": 0
+    },
+    "aiInvolved": 20,
+    "humanInvolved": 11,
+    "toolInvolved": 0,
+    "unknownInvolved": 0,
+    "linesAdded": 1298,
+    "linesDeleted": 22
+  },
+  "reconciliation": {
+    "schemaVersion": 2,
+    "strategy": "staged-diff-hunk-overlap-v1",
+    "stagedHunkCount": 31,
+    "matchedHunkCount": 21,
+    "unknownHunkCount": 0,
+    "files": [
+      "README.md",
+      "docs/series_2_1_context_pruning.txt",
+      "docs/series_2_2_prompt_caching.txt",
+      "docs/series_2_3_rag_chunking.txt",
+      "docs/series_2_hidden_economics.txt",
+      "series-2.1/README.md",
+      "series-2.2/README.md",
+      "series-2.3/README.md",
+      "series-2.3/app.py",
+      "series-2.3/benchmark.py",
+      "series-2.3/chunker.py",
+      "series-2.3/prompt_builder.py",
+      "series-2.3/questions.py",
+      "series-2.3/retriever.py"
+    ],
+    "lineSummaryByBucket": {
+      "ai_only": {
+        "hunks": 20,
+        "linesAdded": 247,
+        "linesDeleted": 22
+      },
+      "human_only": {
+        "hunks": 11,
+        "linesAdded": 1051,
+        "linesDeleted": 0
+      },
+      "tool_only": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_human": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_human_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_human_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "unknown": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      }
+    }
+  }
+}
