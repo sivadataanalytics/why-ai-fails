@@ -1,0 +1,42 @@
+# Context Pruning — Send Only What Matters
+
+Context Pruning is the practice of filtering and reducing the evidence sent to a Large Language Model before building the prompt. Instead of dumping entire datasets into every request, the system scopes retrieval to what the question actually needs.
+
+## The Problem: Too Much Context
+
+Many AI applications fail because they give the model too much context. In log analysis, sending all 2,000 log lines when only 2 lines relate to the user's question wastes roughly 71,000 prompt tokens on irrelevant data. The model must process every token, increasing cost and latency without improving answer quality.
+
+Irrelevant context also adds noise. The model may attend to unrelated log lines, incident reports, or document sections, reducing precision and increasing hallucination risk.
+
+## How Context Pruning Works
+
+Context Pruning applies a pipeline before prompt construction:
+
+1. Clarify first — if the user's question is ambiguous, ask scoping questions before loading any data. This costs zero tokens on logs.
+2. Filter by scope — extract identifiers (block IDs, incident IDs, product names) from the question and filter the dataset.
+3. Remove redundancy — deduplicate repeated messages and drop unused columns.
+4. Cap and prioritize — keep high-severity rows first when a cap is needed.
+5. Summarize — compress remaining evidence into a compact summary for the prompt.
+
+The result: the same model and same question receive roughly 200 prompt tokens instead of 71,000 — a 99% reduction in prompt size with the same investigative goal.
+
+## Context Pruning vs Other Techniques
+
+Context Pruning reduces unnecessary context in the dynamic portion of the prompt. It answers: "What evidence does this specific question need?"
+
+It is different from Prompt Caching, which addresses stable knowledge that repeats across requests (system prompts, rules, schemas). Pruning handles per-request evidence; caching handles reusable static instructions.
+
+Context Pruning is also different from RAG chunking. Pruning filters a known dataset for a scoped question. RAG chunking splits a knowledge corpus so retrieval can find relevant sections across many documents. Both reduce prompt waste, but at different layers of the stack.
+
+## When to Use Context Pruning
+
+Use Context Pruning when:
+- You have structured or semi-structured data (logs, tickets, metrics)
+- The user's question implies a scope (block ID, time range, service name)
+- Full dumps are prohibitively expensive or slow
+
+Do not skip pruning and rely on the model to "figure it out" from 70,000 tokens of noise. That is an engineering failure, not a model failure.
+
+## Engineering Takeaway
+
+Send only the context that matters. Measure prompt tokens before and after pruning. Clarify scope before retrieval. Pruning is not optional for cost-sensitive production systems.

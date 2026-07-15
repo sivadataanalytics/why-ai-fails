@@ -1,0 +1,64 @@
+# Prompt Caching — Stop Re-Processing Stable Knowledge
+
+Prompt Caching stores stable portions of a prompt so they are not re-processed and re-billed at full input rates on every request. Enterprise AI applications often reuse the same system instructions, rules, schemas, and output formats across thousands of requests. Without caching, the provider charges full input token price for that stable text every time.
+
+## Static vs Dynamic Prompts
+
+Every production prompt has two layers:
+
+STATIC (cacheable):
+- Assistant role and persona
+- Investigation rules and safety policies
+- Dataset schema descriptions
+- Output format requirements (JSON schema, markdown structure)
+
+These change rarely — perhaps weekly during prompt refinement, not on every user message.
+
+DYNAMIC (never cache):
+- User questions
+- Retrieved log evidence or RAG chunks
+- Conversation history
+- Per-request diagnostics
+
+Caching applies only to the static layer. Never cache user questions, runtime logs, or retrieved evidence — that data changes every request and would produce stale or incorrect answers.
+
+## How Prompt Caching Reduces Cost
+
+On a cache MISS, the provider processes and stores the static prompt block. Billable input includes full static tokens plus dynamic tokens.
+
+On a cache HIT, the static block is read from cache. Billable input includes dynamic tokens plus a small cache reference overhead. The static portion is billed at a discounted cached input rate — often 75% cheaper than fresh input tokens.
+
+Example economics (typical lab run):
+- Static tokens: ~366
+- Dynamic tokens: ~144
+- Without cache: 510 prompt tokens at full input rate
+- With cache hit: 156 prompt tokens (dynamic + cache ref), static at discount
+
+Input cost reduction of 50–80% per request is common when static prompts are large. Savings compound at scale — 100 identical requests with a warm cache cost far less than 100 full-price requests.
+
+## Knowledge Drift
+
+Cached prompts introduce a maintenance risk called Knowledge Drift. When the static prompt contains outdated instructions — deprecated APIs, old security policies, superseded schemas — every cache hit serves stale guidance to the model.
+
+Knowledge Drift is dangerous because it is silent. The system appears fast and cheap while producing systematically wrong answers. Engineering teams must version cached prompts (v1, v2, v3), monitor cache hit ratios, and schedule periodic cache invalidation and prompt refinement.
+
+Signs of Knowledge Drift:
+- Model references APIs that no longer exist
+- Security rules in the prompt contradict current policy
+- Output format in cache does not match downstream consumers
+
+Refinement workflow: update static prompt → bump version → invalidate old cache entries → warm new cache on first request.
+
+## Prompt Caching vs Context Pruning
+
+Prompt Caching and Context Pruning solve different problems:
+
+Context Pruning removes unnecessary context from per-request evidence. It reduces dynamic prompt size by filtering logs and data.
+
+Prompt Caching avoids re-processing stable knowledge across requests. It reduces repeated billing on the static system prompt.
+
+Use both together in production: prune evidence per request, cache the system prompt across requests.
+
+## Engineering Takeaway
+
+Cache stable knowledge. Never cache user questions or runtime data. Version prompts. Monitor Knowledge Drift. Benchmark input cost reduction separately from total cost — completion tokens may dominate the bill, but caching still saves meaningful input spend at scale.

@@ -1,0 +1,92 @@
+# RAG Chunking — Finding the Right Chunk Size
+
+RAG (Retrieval-Augmented Generation) lets AI applications search a knowledge base before answering. The model may not know your internal documentation, runbooks, API references, or incident history. RAG retrieves relevant information at query time and adds it to the prompt as context.
+
+Chunking is the process of splitting large documents into smaller pieces stored and retrieved independently. Chunking strategy directly affects retrieval quality, prompt tokens, latency, estimated cost, and answer quality.
+
+## Why Chunking Matters
+
+Enterprise documents are too large to send whole:
+- 100-page product manuals
+- 50-page API guides
+- Long incident reports and runbooks
+- Complete knowledge base articles
+
+Each chunk is indexed (keyword index, vector embedding, or both). When a user asks a question, the retriever returns the top-k most relevant chunks. Those chunks become the "Retrieved Context" in the prompt.
+
+If chunks are too small, they may lose surrounding context. A paragraph about Prompt Caching might be split from the neighboring Context Pruning section, so a comparison question retrieves only half the needed evidence.
+
+If chunks are too large, retrieval returns excessive irrelevant text. The entire document may enter the prompt including unrelated RAG Chunking sections, increasing prompt tokens, latency, and cost without improving the answer.
+
+## Chunk Size Tradeoffs
+
+### Small Chunks (e.g., 200 tokens, 0 overlap)
+- Lower prompt tokens when retrieved
+- Higher precision for narrow questions
+- Risk: boundary loss — adjacent context split across chunks
+- May require more chunks (higher top-k) to answer broad questions
+
+### Medium Chunks (e.g., 500 tokens, 50 overlap)
+- Balanced retrieval for mixed question types
+- Good context preservation with moderate cost
+- Overlap reduces boundary loss between chunks
+- Often the best balance for documentation-style corpora
+
+### Large Chunks (e.g., 1000 tokens, 100 overlap)
+- Better context preservation within each chunk
+- Higher prompt tokens per retrieval
+- More irrelevant information in each chunk
+- Higher latency and estimated cost
+- May achieve high hit scores but at poor efficiency
+
+## Bigger Chunks Don't Always Mean Better Retrieval
+
+A common assumption: bigger chunks give the model more context, so they must be better. This is false in practice.
+
+Larger chunks increase prompt tokens, cost, latency, and noise. The model must process irrelevant sections. Retrieval precision drops when chunks are so large they always match weakly on every query.
+
+Smaller chunks reduce cost and improve precision but may miss cross-section context needed for comparison questions.
+
+The goal is not: retrieve the biggest chunk.
+The goal is: retrieve the most useful chunk.
+
+## Semantic Chunking
+
+Fixed token chunking ignores document structure. Semantic chunking splits on headings and section boundaries instead:
+
+# Context Pruning
+# Prompt Caching
+# RAG
+# Chunking
+
+Each section becomes a chunk aligned with how authors — and users — organize knowledge. Semantic chunks often outperform arbitrary token splits for FAQ and documentation workloads because retrieval returns coherent sections.
+
+## Benchmarking Chunk Strategies
+
+Do not choose chunk size randomly. Benchmark with:
+- Same documents
+- Same questions
+- Same model
+- Same retriever
+- Only chunking strategy changes
+
+Measure for each strategy:
+- Total chunks created
+- Top-k retrieved chunks
+- Retrieved prompt tokens
+- Completion tokens
+- Latency
+- Estimated cost
+- Hit score (matched expected terms / total expected terms)
+
+Hit score is a simple retrieval quality proxy. It checks whether retrieved chunk text contains terms the question requires. It is not perfect semantic evaluation, but it is understandable and actionable for engineering teams.
+
+## First Principle
+
+Chunk according to how users ask questions — not according to arbitrary file size or framework defaults.
+
+Understand what users ask, what evidence is needed, how much surrounding context matters, and how much cost and latency the system can tolerate. Then benchmark small, medium, and large strategies on your real corpus.
+
+## Engineering Takeaway
+
+Better RAG is not about retrieving more context. Better RAG is about retrieving the right evidence with the lowest useful cost. Retrieval quality and token cost must be evaluated together. Chunking is an architectural decision, not a storage detail.

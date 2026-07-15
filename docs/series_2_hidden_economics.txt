@@ -1,0 +1,33 @@
+# The Hidden Economics of Enterprise AI
+
+Large Language Models are priced by tokens, not by API calls. Every engineering decision in a production AI system — how much context you send, what you cache, how you chunk documents — directly affects the monthly bill and user-perceived latency.
+
+## Token Economics
+
+Organizations running AI assistants at scale quickly discover that token usage compounds. A single request may look inexpensive, but thousands of requests per hour multiply small inefficiencies into significant cost. Input tokens (the prompt) and output tokens (the completion) are billed separately. Input tokens are often the larger share when systems dump entire documents, logs, or knowledge bases into every request.
+
+Engineering teams must treat token cost as a first-class metric alongside accuracy and latency. Benchmarking is not optional — assumptions about "good enough" chunk sizes or cache policies fail when real workloads arrive.
+
+## Latency and Prompt Size
+
+Larger prompts take longer to process. The model must read and reason over every token in the context window before generating an answer. When retrieval returns oversized chunks, prompt tokens increase, latency rises, and users wait longer — even when much of the retrieved text is irrelevant to the question.
+
+The relationship is straightforward: more prompt tokens generally means higher latency and higher cost. The engineering goal is to send the minimum useful context, not the maximum available context.
+
+## Retrieval Design Decisions
+
+RAG (Retrieval-Augmented Generation) systems retrieve evidence at query time rather than relying solely on model training data. Chunking strategy is one of the most impactful retrieval design decisions. Chunk size affects:
+
+- Retrieval quality — can the system find the right evidence?
+- Prompt tokens — how much retrieved text enters the prompt?
+- Latency — how long does the model take to process the prompt?
+- Estimated cost — what does each request cost at scale?
+- Answer quality — does the model have enough context without drowning in noise?
+
+There is no universal chunk size. The right choice depends on document type, question patterns, context window limits, and cost constraints.
+
+## Engineering Benchmarking Mindset
+
+Production AI systems fail when teams choose defaults without measurement. Framework defaults (200 tokens, 500 tokens, 1000 tokens) are starting points, not answers. The correct approach is to benchmark the same documents, same questions, and same model across chunking strategies — changing only the chunking strategy — and compare retrieval hit scores, prompt tokens, latency, and cost together.
+
+Better RAG is not about retrieving more context. Better RAG is about retrieving the right evidence with the lowest useful cost.
