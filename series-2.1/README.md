@@ -23,9 +23,10 @@ Organizations pay for **tokens**, not API calls. Dumping 2,000 HDFS log lines in
 
 ```
 series-2.1/
-  app.py      Main entry — runs without vs with pruning, prints benchmark
-  prune.py    5-step pipeline: filter → columns → dedupe → cap → summarize
-  README.md   This file
+  app.py                          Main entry — runs without vs with pruning, prints benchmark
+  prune.py                        5-step pipeline: filter → columns → dedupe → cap → summarize
+  Series_2.1_Context_Pruning.ipynb  Presentation notebook (slides + live dry-run demo)
+  README.md                       This file
 ```
 
 **Shared (repo root):**
