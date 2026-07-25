@@ -39,10 +39,11 @@ Caching savings **compound** — the benchmark includes a **100-request** cost p
 
 ```
 series-2.2/
-  app.py            Main entry — without vs with cache, one Gemini call
-  prompt_cache.py   Cache store, static prompt versions (v1/v2/v3), hit/miss
-  benchmark.py      Prints side-by-side metrics and savings
-  README.md         This file
+  app.py                          Main entry — without vs with cache, one Gemini call
+  prompt_cache.py                 Cache store, static prompt versions (v1/v2/v3), hit/miss
+  benchmark.py                    Prints side-by-side metrics and savings
+  Series_2.2_Prompt_Caching.ipynb Presentation notebook (slides + live dry-run demo)
+  README.md                       This file
 ```
 
 **Reused from Series 2.1:**
