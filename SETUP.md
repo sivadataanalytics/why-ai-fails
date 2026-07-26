@@ -252,6 +252,26 @@ pip install jupyter
 jupyter notebook series-2.1/Series_2.1_Context_Pruning.ipynb
 ```
 
+### Validate notebooks (before push)
+
+GitHub shows **Invalid Notebook** if cell IDs or source format break the Jupyter schema (e.g. IDs with `.` in them).
+
+```bash
+# Validate all presentation notebooks
+python3 scripts/validate_notebooks.py
+
+# Auto-fix common issues (source format, invalid cell IDs)
+python3 scripts/validate_notebooks.py --fix
+```
+
+**Optional — block bad pushes automatically:**
+
+```bash
+./scripts/install_git_hooks.sh   # one-time: enables .githooks/pre-push
+```
+
+After that, `git push` runs validation first and aborts if any notebook fails.
+
 ---
 
 ## Step 8 — Live Gemini runs (optional)

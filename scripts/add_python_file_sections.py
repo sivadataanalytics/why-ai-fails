@@ -220,7 +220,7 @@ def patch_notebook(series_key: str, path: Path) -> None:
         "cell_type": "markdown",
         "metadata": {},
         "source": to_source_list(PYTHON_FILE_SECTIONS[series_key]),
-        "id": f"python-files-{series_key}",
+        "id": f"python-files-{series_key.replace('.', '-')}",
     }
     cells.insert(layout_idx + 1, new_cell)
 

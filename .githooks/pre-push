@@ -1,0 +1,24 @@
+#!/bin/sh
+# Block push if presentation notebooks fail validation (GitHub "Invalid Notebook").
+set -e
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT"
+
+if ! command -v python3 >/dev/null 2>&1; then
+  echo "pre-push: python3 not found — skipping notebook validation" >&2
+  exit 0
+fi
+
+# Install nbformat if missing (lightweight, no API keys)
+python3 - <<'PY' 2>/dev/null || pip3 install -q nbformat
+import nbformat  # noqa: F401
+PY
+
+echo "pre-push: validating presentation notebooks..."
+if ! python3 scripts/validate_notebooks.py; then
+  echo "" >&2
+  echo "Push blocked: fix notebooks first (try: python3 scripts/validate_notebooks.py --fix)" >&2
+  exit 1
+fi
+
+echo "pre-push: all notebooks valid."
