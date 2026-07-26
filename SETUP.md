@@ -234,6 +234,24 @@ Presentation notebook: `series-2.7/Series_2.7_Model_Routing.ipynb`
 
 ---
 
+### Series 2.8 — Multi-Agent Orchestration
+
+```bash
+python3 series-2.8/app.py --dry-run
+```
+
+500 enterprise requests; compares single, sequential, parallel, and reviewer strategies.
+
+Other commands:
+
+```bash
+python3 series-2.8/app.py --strategy reviewer --dry-run
+python3 series-2.8/app.py --request-id r0024 --dry-run
+python3 series-2.8/app.py --requests 100 --dry-run
+```
+
+---
+
 ## Step 7 — Presentation notebooks (optional)
 
 For classroom or demo presentations:

@@ -15,13 +15,15 @@ This repo focuses on **token economics**: what you send to the LLM, what you pay
 | [series-2.5/](series-2.5/) | Long-Term Memory | [Series_2.5_Long_Term_Memory.ipynb](series-2.5/Series_2.5_Long_Term_Memory.ipynb) | **Compress** knowledge across 500 conversations; retrieve only what matters |
 | [series-2.6/](series-2.6/) | Memory Retrieval | [Series_2.6_Memory_Retrieval.ipynb](series-2.6/Series_2.6_Memory_Retrieval.ipynb) | **Find** the right memory from 100k records — keyword, semantic, hybrid, re-rank |
 | [series-2.7/](series-2.7/) | Model Routing | [Series_2.7_Model_Routing.ipynb](series-2.7/Series_2.7_Model_Routing.ipynb) | **Select** the right LLM per request — cost, latency, and accuracy |
+| [series-2.8/](series-2.8/) | Multi-Agent Orchestration | — | **Coordinate** specialized agents — single vs sequential vs parallel vs reviewer |
 
 Series 2.2 builds on 2.1: evidence is still pruned; caching applies only to the static system prompt.  
 Series 2.3 adds the retrieval layer: same corpus and questions, different chunking strategies.  
 Series 2.4 adds conversation memory: long chat sessions need summarization, not full history in every prompt.  
 Series 2.5 adds persistent user memory: extract, compress, and retrieve durable facts across hundreds of conversations.  
 Series 2.6 scales retrieval: 100k memory store with hybrid search and re-ranking for enterprise personalization.  
-Series 2.7 adds model routing: send simple requests to small models, escalate only when confidence is low.
+Series 2.7 adds model routing: send simple requests to small models, escalate only when confidence is low.  
+Series 2.8 adds multi-agent orchestration: coordinate specialized agents through shared memory — quality per unit time, not agent count alone.
 
 ## Quick start
 
@@ -54,6 +56,9 @@ python series-2.6/app.py --dry-run
 
 # Series 2.7 — Model Routing ($0 dry-run)
 python series-2.7/app.py --dry-run
+
+# Series 2.8 — Multi-Agent Orchestration ($0 dry-run)
+python series-2.8/app.py --dry-run
 ```
 
 ## Repository layout
@@ -69,6 +74,7 @@ series-2.4/       Conversation summarization benchmark
 series-2.5/       Long-term memory compression benchmark
 series-2.6/       Memory retrieval benchmark (100k store)
 series-2.7/       Model routing benchmark (1k requests)
+series-2.8/       Multi-agent orchestration benchmark (500 requests)
 demo.py           Entry point for Series 2.1
 ```
 
@@ -80,3 +86,4 @@ demo.py           Entry point for Series 2.1
 - **Series 2.5:** `series-2.5/conversations.py` — 500 simulated conversations for one enterprise user.
 - **Series 2.6:** `series-2.6/memories.py` — 100,000 synthetic long-term memory records.
 - **Series 2.7:** `series-2.7/requests.py` — 1,000 synthetic AI requests across 10 task categories.
+- **Series 2.8:** `series-2.8/tasks.py` — 500 enterprise software build requests across 8 categories.
