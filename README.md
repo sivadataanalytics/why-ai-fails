@@ -23,6 +23,8 @@ Series 2.6 scales retrieval: 100k memory store with hybrid search and re-ranking
 
 ## Quick start
 
+**Full one-time setup:** see [SETUP.md](SETUP.md) (clone, venv, dependencies, verify all labs, notebooks, troubleshooting).
+
 ```bash
 # Setup (once)
 python -m venv .venv
