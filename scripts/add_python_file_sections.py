@@ -152,7 +152,7 @@ PYTHON_FILE_SECTIONS: dict[str, str] = {
         "|------|--------------|\n"
         "| **`app.py`** | CLI entry — load requests, run four strategies, print benchmark, live Gemini for one request. |\n"
         "| **`tasks.py`** | 500 enterprise requests across 8 categories (banking, healthcare, retail, …). |\n"
-        "| **`agents.py`** | Agent pool metadata + `simulate_agent_output()` for dry-run. |\n"
+        "| **`agents.py`** | Agent pool + `run_agent()` (Gemini live) / `simulate_agent_output()` (dry-run). |\n"
         "| **`planner.py`** | `decompose_request()` — task graph with dependencies. |\n"
         "| **`scheduler.py`** | `schedule_sequential()` / `schedule_parallel()` — dependency-aware waves. |\n"
         "| **`shared_memory.py`** | `SharedMemory` — read/write bus; agents never talk directly. |\n"

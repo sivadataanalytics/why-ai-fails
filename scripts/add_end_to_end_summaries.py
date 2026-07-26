@@ -252,18 +252,18 @@ A product manager submits an enterprise software request: *"Design and build a s
    - **Sequential** — planner → agents in dependency order
    - **Parallel** — independent agents in parallel waves
    - **Parallel + Reviewer** — parallel execution + validation pass
-8. **Evaluate output** — `evaluator.py` scores quality, consistency, and task completion.
-9. **Benchmark all strategies** — `benchmark.py` compares latency, quality score, and completion rate (dry-run uses tuned simulation targets).
+8. **Evaluate output** — `evaluator.py` scores quality, consistency, and task completion (computed metrics).
+9. **Benchmark all strategies** — `benchmark.py` compares latency, quality, and completion rate.
 10. **Live demo cell** — run `python series-2.8/app.py --dry-run --requests 50`.
 
 ### What you should observe
 
-| Strategy | Latency (dry-run) | Quality (dry-run) | Coverage |
-|----------|-------------------|-------------------|----------|
-| Single | ~18s | 0.84 | One perspective |
-| Sequential | ~14s | 0.91 | Full domain depth |
-| Parallel | ~8s | 0.92 | Fast + broad |
-| Parallel + Reviewer | ~10s | 0.97 | Highest quality |
+| Strategy | Typical pattern |
+|----------|-----------------|
+| Single | One agent, lower task completion |
+| Sequential | Full domain depth, higher latency |
+| Parallel | Fastest wall-clock, strong completion |
+| Parallel + Reviewer | Review + rework → highest quality |
 
 **Takeaway:** One intelligent agent can **answer**. A coordinated team of specialized agents — with a planner, scheduler, shared memory, and reviewer — can **build**.""",
 }
