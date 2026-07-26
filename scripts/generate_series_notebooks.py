@@ -1010,12 +1010,16 @@ def make_notebook(spec: dict) -> dict:
 
 
 def main() -> None:
+    from add_python_file_sections import patch_notebook
+
     for spec in NOTEBOOKS:
         path = spec["path"]
         path.parent.mkdir(parents=True, exist_ok=True)
         nb = make_notebook(spec)
         path.write_text(json.dumps(nb, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         print(f"Wrote {path.relative_to(ROOT)}")
+        series_key = path.parent.name
+        patch_notebook(series_key, path)
 
 
 if __name__ == "__main__":
