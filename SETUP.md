@@ -270,6 +270,18 @@ Use `python --version` instead, or install Python 3.10+ (see Step 2).
 
 Activate the venv first: `source .venv/bin/activate`, then `pip install -r requirements.txt`.
 
+### `... model ... is no longer available to new users`
+
+Google periodically deprecates specific model IDs for newly-created API keys.
+Add an override to `.env`:
+
+```env
+GEMINI_MODEL=gemini-flash-latest
+```
+
+`gemini-flash-latest` is a rolling alias Google maintains, so it won't go
+stale the same way a pinned model version can.
+
 ### `Missing GEMINI_API_KEY in .env`
 
 Either add the key to `.env`, or use `--dry-run` (no key needed).
