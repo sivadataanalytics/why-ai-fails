@@ -160,6 +160,15 @@ NOTEBOOK_PATHS = {
 SECTION_RE = re.compile(r"^## (\d+)\. ", re.MULTILINE)
 
 
+def to_source_list(text: str) -> list[str]:
+    if not text:
+        return []
+    lines = text.splitlines(keepends=True)
+    if lines and not lines[-1].endswith("\n"):
+        lines[-1] = lines[-1] + "\n"
+    return lines
+
+
 def cell_text(cell: dict) -> str:
     src = cell.get("source", "")
     if isinstance(src, list):
@@ -204,13 +213,13 @@ def patch_notebook(series_key: str, path: Path) -> None:
         cell = cells[i]
         if cell.get("cell_type") != "markdown":
             continue
-        cell["source"] = renumber_sections(cell_text(cell))
+        cell["source"] = to_source_list(renumber_sections(cell_text(cell)))
 
     # Insert new section after layout
     new_cell = {
         "cell_type": "markdown",
         "metadata": {},
-        "source": PYTHON_FILE_SECTIONS[series_key],
+        "source": to_source_list(PYTHON_FILE_SECTIONS[series_key]),
         "id": f"python-files-{series_key}",
     }
     cells.insert(layout_idx + 1, new_cell)

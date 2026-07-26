@@ -968,6 +968,8 @@ NOTEBOOKS: list[dict] = [
 
 
 def make_notebook(spec: dict) -> dict:
+    from fix_notebook_format import to_source_list
+
     cells = []
     md_sources = spec["cells"]
     how_to_run_idx = 7  # insert demo cell after "How to Run"
@@ -977,17 +979,16 @@ def make_notebook(spec: dict) -> dict:
             {
                 "cell_type": "markdown",
                 "metadata": {},
-                "source": source,
+                "source": to_source_list(source),
                 "id": f"cell-{i:02d}",
             }
         )
         if i == how_to_run_idx:
-            # Insert code cell after "How to Run"
             cells.append(
                 {
                     "cell_type": "code",
                     "metadata": {},
-                    "source": DEMO_CELL.replace("{app_path}", spec["app_path"]),
+                    "source": to_source_list(DEMO_CELL.replace("{app_path}", spec["app_path"])),
                     "execution_count": None,
                     "outputs": [],
                     "id": "demo-cell",
