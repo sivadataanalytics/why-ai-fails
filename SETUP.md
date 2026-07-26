@@ -245,6 +245,14 @@ python3 series-2.3/app.py          # Series 2.3 live
 
 Each live run calls Gemini and prints real token counts plus an answer excerpt.
 
+### Series 2.7 — Model Routing
+
+```bash
+python3 series-2.7/app.py --dry-run
+python3 series-2.7/app.py --strategy confidence --dry-run
+python3 series-2.7/app.py --request-id r0025 --dry-run
+```
+
 ---
 
 ## Recommended lab order
@@ -256,6 +264,7 @@ Each live run calls Gemini and prints real token counts plus an answer excerpt.
 2.4 Conversation Summarization → compress chat history
 2.5 Long-Term Memory         → store durable facts
 2.6 Memory Retrieval         → find the right memory at scale
+2.7 Model Routing            → select the right model per request
 ```
 
 ---
