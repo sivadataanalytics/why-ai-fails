@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from agents import EXECUTION_AGENTS, simulate_agent_output
+from agents import EXECUTION_AGENTS, run_agent
 from shared_memory import SharedMemory
 from tasks import REQUIRED_DOMAINS
 
@@ -59,12 +59,13 @@ def apply_rework(
     memory: SharedMemory,
     request: dict[str, Any],
     rework_agents: list[str],
+    *,
+    dry_run: bool = True,
 ) -> list[dict[str, Any]]:
     """One review iteration — re-run flagged agents and update memory."""
     results: list[dict[str, Any]] = []
     for agent_id in rework_agents:
-        result = simulate_agent_output(agent_id, request, memory.snapshot())
-        # Rework pass gets quality boost (reviewer feedback applied)
+        result = run_agent(agent_id, request, memory.snapshot(), dry_run=dry_run)
         result["quality_factor"] = min(0.98, result["quality_factor"] + 0.12)
         result["rework"] = True
         memory.write_agent_output(result)

@@ -16,11 +16,20 @@ from models import get_model, model_supports_task
 
 def _result_quality(result: dict[str, Any]) -> float:
     """
-    Simulated response quality (0–1) for model + task pairing.
-
-    Single-model baseline always scores high (large general handles all tasks).
-    Smart routing scores high when model matches task; penalizes mismatches.
+    Response quality (0–1) from live LLM output when available,
+    otherwise from model-task fit metadata.
     """
+    response = (result.get("response_text") or "").strip()
+    if response and not response.startswith("[dry-run"):
+        words = len(response.split())
+        substance = min(1.0, words / 60.0)
+        routing_bonus = 0.08 if result["model_id"] == result.get("expected_model") else 0.0
+        if {result["model_id"], result.get("expected_model", "")} <= {
+            "medium_coding", "medium_coding_internal",
+        }:
+            routing_bonus = 0.08
+        return round(min(0.99, 0.55 + 0.40 * substance + routing_bonus), 2)
+
     model_id = result["model_id"]
     task_type = result.get("task_type", "")
     expected = result.get("expected_model", "")

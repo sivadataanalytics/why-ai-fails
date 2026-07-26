@@ -10,9 +10,14 @@ from evaluator import aggregate_metrics
 from router import STRATEGY_NAMES, route_request
 
 
-def run_strategy(strategy: str, requests: list[dict[str, Any]]) -> dict[str, Any]:
+def run_strategy(
+    strategy: str,
+    requests: list[dict[str, Any]],
+    *,
+    dry_run: bool = True,
+) -> dict[str, Any]:
     """Route all requests with one strategy and aggregate metrics."""
-    results = [route_request(req, strategy) for req in requests]
+    results = [route_request(req, strategy, dry_run=dry_run) for req in requests]
     metrics = aggregate_metrics(results)
     return {
         "strategy_key": strategy,

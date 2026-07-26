@@ -95,15 +95,20 @@ python series-2.8/app.py --request-id r0024 --dry-run
 # Smaller dataset (faster dev)
 python series-2.8/app.py --requests 100 --dry-run
 
-# Live Gemini (one request)
-python series-2.8/app.py --request-id r0024
+# Live — Gemini call per agent (requires GEMINI_API_KEY)
+python series-2.8/app.py --live --request-id r0024
+
+# Live benchmark (limit requests — each invokes ~10 Gemini calls)
+python series-2.8/app.py --live --live-limit 2 --requests 50
 ```
 
 ## CLI options
 
 | Flag | Description |
 |------|-------------|
-| `--dry-run` | Simulate planning, scheduling, quality — no Gemini |
+| `--dry-run` | Simulate agents locally; computed metrics, no Gemini |
+| `--live` | Call Gemini for each agent (use `--live-limit` to control cost) |
+| `--live-limit` | Max requests per strategy in live benchmark (default: 1) |
 | `--strategy` | `single`, `sequential`, `parallel`, `reviewer` |
 | `--request-id` | Inspect one request (e.g. `r0024`) |
 | `--requests` | Dataset size (default: 500) |
@@ -113,8 +118,8 @@ python series-2.8/app.py --request-id r0024
 | Metric | Description |
 |--------|-------------|
 | Prompt / Completion / Total Tokens | From `common/token_usage.py` |
-| Latency | Simulated wall-clock (strategy-dependent) |
-| Estimated Cost | Provider-neutral placeholder pricing |
+| Latency | Dry-run: simulated; live: real API wall-clock |
+| Estimated Cost | From `common/token_usage.py` (live uses billed tokens) |
 | Task Completion | Required domains delivered |
 | Consistency Score | Cross-agent output alignment |
 | Security Score | Regulated-request security coverage |

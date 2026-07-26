@@ -2,10 +2,7 @@
 Specialized agent pool for Series 2.8 multi-agent orchestration.
 
 Agents never communicate directly — they read and write SharedMemory only.
-
-Agent roles:
-  planner, architecture, backend, frontend, database, security,
-  testing, devops, documentation, reviewer
+Live mode calls Gemini per agent; dry-run uses deterministic local simulation.
 """
 
 from __future__ import annotations
@@ -14,7 +11,7 @@ from typing import Any
 
 from common.token_usage import estimate_tokens
 
-# Agent metadata: domain, typical output size, base latency (seconds, dry-run)
+# Dry-run latency estimates (seconds) — live mode uses real API wall-clock time.
 AGENTS: dict[str, dict[str, Any]] = {
     "planner": {
         "name": "Planner Agent",
@@ -102,7 +99,7 @@ SINGLE_AGENT_ID = "single_general"
 SINGLE_AGENT = {
     "name": "Single General Agent",
     "domain": "general",
-    "base_latency": 18.4,
+    "base_latency": 2.0,
     "output_tokens": 900,
     "prompt_overhead": 400,
 }
@@ -125,19 +122,76 @@ def get_agent(agent_id: str) -> dict[str, Any]:
     return AGENTS[agent_id]
 
 
-def simulate_agent_output(agent_id: str, request: dict[str, Any], memory_snapshot: dict[str, Any]) -> dict[str, Any]:
-    """
-    Produce deterministic simulated output for dry-run (no Gemini).
+def quality_from_output(output_text: str, deps_coverage: float) -> float:
+    """Derive quality (0–1) from output substance and dependency coverage."""
+    words = len(output_text.split())
+    substance = min(1.0, words / 100.0)
+    structure_bonus = 0.05 if "#" in output_text and "-" in output_text else 0.0
+    raw = 0.45 * deps_coverage + 0.50 * substance + structure_bonus
+    return round(min(0.99, max(0.40, raw)), 2)
 
-    Quality improves when agent reads relevant prior outputs from shared memory.
+
+def run_agent(
+    agent_id: str,
+    request: dict[str, Any],
+    memory_snapshot: dict[str, Any],
+    *,
+    dry_run: bool,
+) -> dict[str, Any]:
+    """
+    Execute one agent — Gemini in live mode, local simulation in dry-run.
+    """
+    if dry_run:
+        return simulate_agent_output(agent_id, request, memory_snapshot)
+
+    from common.gemini_client import generate
+    from prompts import build_agent_prompt, build_single_agent_prompt
+
+    agent = get_agent(agent_id)
+    domain = agent.get("domain", agent_id)
+    deps_present = _dependency_coverage(domain, memory_snapshot)
+
+    if agent_id == SINGLE_AGENT_ID:
+        prompt = build_single_agent_prompt(request)
+    else:
+        prompt = build_agent_prompt(agent_id, request, memory_snapshot)
+
+    api = generate(prompt)
+    output_text = api["text"]
+    qf = quality_from_output(output_text, deps_present)
+
+    return {
+        "agent_id": agent_id,
+        "agent_name": agent["name"],
+        "domain": domain,
+        "output_text": output_text,
+        "prompt_tokens": api["prompt_tokens"],
+        "completion_tokens": api["completion_tokens"],
+        "total_tokens": api["total_tokens"],
+        "latency_seconds": api["latency_seconds"],
+        "quality_factor": qf,
+        "deps_coverage": deps_present,
+    }
+
+
+def simulate_agent_output(
+    agent_id: str,
+    request: dict[str, Any],
+    memory_snapshot: dict[str, Any],
+) -> dict[str, Any]:
+    """
+    Deterministic dry-run simulation — no Gemini calls.
+    Quality derives from dependency coverage, not fixed targets.
     """
     agent = get_agent(agent_id)
     domain = agent.get("domain", agent_id)
     category = request.get("category", "general")
 
-    # Check if dependencies exist in memory for consistency bonus
     deps_present = _dependency_coverage(domain, memory_snapshot)
-    quality_factor = 0.72 + 0.28 * deps_present
+    quality_factor = quality_from_output(
+        _template_body(agent_id, category) + " " * int(deps_present * 50),
+        deps_present,
+    )
 
     title = f"{category.replace('_', ' ').title()} — {agent['name']} deliverable"
     summary = (
@@ -160,7 +214,7 @@ def simulate_agent_output(agent_id: str, request: dict[str, Any], memory_snapsho
         "completion_tokens": completion_tokens,
         "total_tokens": prompt_tokens + completion_tokens,
         "latency_seconds": round(agent.get("base_latency", 1.0), 2),
-        "quality_factor": round(quality_factor, 2),
+        "quality_factor": quality_factor,
         "deps_coverage": deps_present,
     }
 

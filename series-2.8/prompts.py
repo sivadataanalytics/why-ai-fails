@@ -1,12 +1,53 @@
 """
-Prompt templates for live Gemini runs in Series 2.8.
-
-Dry-run uses simulated agent outputs; live mode sends aggregated context.
+Prompt templates for Series 2.8 — per-agent and aggregated Gemini calls.
 """
 
 from __future__ import annotations
 
+import json
 from typing import Any
+
+
+def _format_memory(memory_snapshot: dict[str, Any]) -> str:
+    """Serialize shared memory for agent context (truncate large entries)."""
+    parts: list[str] = []
+    for key, value in memory_snapshot.items():
+        if key == "request":
+            continue
+        if isinstance(value, dict):
+            text = value.get("summary") or value.get("full_text") or json.dumps(value)[:400]
+        else:
+            text = str(value)[:400]
+        parts.append(f"### {key}\n{text}")
+    return "\n\n".join(parts) if parts else "(no prior agent outputs yet)"
+
+
+def build_agent_prompt(
+    agent_id: str,
+    request: dict[str, Any],
+    memory_snapshot: dict[str, Any],
+) -> str:
+    """Prompt for one specialized agent — reads request + shared memory."""
+    from agents import get_agent
+
+    agent = get_agent(agent_id)
+    memory_block = _format_memory(memory_snapshot)
+    return f"""You are the {agent['name']} in an enterprise multi-agent software delivery team.
+
+Your role: {agent.get('description', agent_id)}
+
+Enterprise request:
+{request['prompt']}
+
+Category: {request.get('category', 'general')}
+Security level: {request.get('security_level', 'standard')}
+
+Shared memory from other agents:
+{memory_block}
+
+Produce a focused deliverable for your domain ({agent.get('domain', agent_id)}).
+Use markdown headings and bullet points. Be specific and actionable (150–400 words).
+"""
 
 
 def build_orchestration_prompt(request: dict[str, Any], run: dict[str, Any]) -> str:

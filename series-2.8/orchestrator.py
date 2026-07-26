@@ -7,17 +7,15 @@ Four strategies:
   parallel   — planner → parallel waves by dependency graph
   reviewer   — parallel execution + reviewer + one rework iteration
 
-Pipeline:
-  User Request → Planner → Scheduler → Agents → Shared Memory
-  → Aggregator → (Reviewer) → Final Response
+Live mode: each agent calls Gemini. Dry-run: local simulation with computed metrics.
 """
 
 from __future__ import annotations
 
 from typing import Any
 
-from agents import SINGLE_AGENT, SINGLE_AGENT_ID, get_agent, simulate_agent_output
-from common.token_usage import estimate_cost, estimate_tokens
+from agents import SINGLE_AGENT_ID, get_agent, run_agent
+from common.token_usage import estimate_cost
 from evaluator import consistency_score, overall_quality, security_score, task_completion
 from planner import plan_request
 from reviewer import apply_rework, review
@@ -50,52 +48,40 @@ def orchestrate(request: dict[str, Any], strategy: str, *, dry_run: bool = True)
 def _run_single(request: dict[str, Any], *, dry_run: bool) -> dict[str, Any]:
     """Strategy 1 — everything to one general-purpose agent."""
     memory = SharedMemory(request)
-    prompt = request["prompt"]
-    output_text = (
-        f"# General Solution\n\n"
-        f"Single-agent response for: {prompt}\n\n"
-        f"- High-level architecture outline\n"
-        f"- Partial API sketch\n"
-        f"- Limited security and testing depth\n"
-    )
-    prompt_tokens = estimate_tokens(prompt) + SINGLE_AGENT["prompt_overhead"]
-    completion_tokens = SINGLE_AGENT["output_tokens"]
-    latency = SINGLE_AGENT["base_latency"]
+    agent_result = run_agent(SINGLE_AGENT_ID, request, memory.snapshot(), dry_run=dry_run)
+    output_text = agent_result["output_text"]
 
-    agent_results = [{
-        "agent_id": SINGLE_AGENT_ID,
-        "agent_name": SINGLE_AGENT["name"],
-        "domain": "general",
-        "output_text": output_text,
-        "prompt_tokens": prompt_tokens,
-        "completion_tokens": completion_tokens,
-        "total_tokens": prompt_tokens + completion_tokens,
-        "latency_seconds": latency,
-        "quality_factor": 0.78,
-    }]
-    memory.write("general", {"summary": output_text[:500], "full_text": output_text}, agent_id=SINGLE_AGENT_ID)
-    # Single agent produces shallow coverage — not full domain separation
-    for domain in ("architecture", "backend", "database", "documentation"):
-        memory.write(domain, {
-            "summary": f"Shallow {domain} outline (single-agent, not specialized)",
-            "quality_factor": 0.70,
-        }, agent_id=SINGLE_AGENT_ID)
+    memory.write(
+        "general",
+        {"summary": output_text[:500], "full_text": output_text, "quality_factor": agent_result["quality_factor"]},
+        agent_id=SINGLE_AGENT_ID,
+    )
     aggregated = memory.aggregate()
 
     completion = task_completion(memory.keys(), request.get("required_domains"))
-    consistency = 0.76
-    sec = 0.82 if request.get("security_level") == "restricted" else 0.78
-    quality = 0.84
+    consistency = consistency_score([agent_result])
+    sec = security_score({
+        "request": request,
+        "memory_keys": memory.keys(),
+        "memory_snapshot": memory.snapshot(),
+    })
+    quality = overall_quality(
+        completion=completion,
+        consistency=consistency,
+        security=sec,
+        review=None,
+        strategy="single",
+    )
 
     return _build_result(
         request=request,
         strategy="single",
         memory=memory,
-        agent_results=agent_results,
+        agent_results=[agent_result],
         aggregated=aggregated,
-        prompt_tokens=prompt_tokens,
-        completion_tokens=completion_tokens,
-        latency=latency,
+        prompt_tokens=agent_result["prompt_tokens"],
+        completion_tokens=agent_result["completion_tokens"],
+        latency=agent_result["latency_seconds"],
         task_completion=completion,
         consistency=consistency,
         security=sec,
@@ -123,25 +109,36 @@ def _run_multi(
     waves = schedule(tasks, mode=schedule_mode)
 
     agent_results: list[dict[str, Any]] = []
-    planner_result = simulate_agent_output("planner", request, memory.snapshot())
+    planner_result = run_agent("planner", request, memory.snapshot(), dry_run=dry_run)
     agent_results.append(planner_result)
 
     from agents import AGENTS as AGENT_MAP
+
     agent_latencies = {aid: meta.get("base_latency", 1.0) for aid, meta in AGENT_MAP.items()}
 
-    total_latency = 0.0
+    total_latency = planner_result["latency_seconds"]
     prompt_tokens = planner_result["prompt_tokens"]
     completion_tokens = planner_result["completion_tokens"]
 
     for wave in waves:
-        wave_lat = wave_latency_seconds(wave, agent_latencies)
-        total_latency += wave_lat + 0.15
+        wave_start_latency = total_latency
         for task in wave:
-            result = simulate_agent_output(task["agent_id"], request, memory.snapshot())
+            result = run_agent(task["agent_id"], request, memory.snapshot(), dry_run=dry_run)
             memory.write_agent_output(result)
             agent_results.append(result)
             prompt_tokens += result["prompt_tokens"]
             completion_tokens += result["completion_tokens"]
+            if dry_run:
+                total_latency += result["latency_seconds"]
+            else:
+                total_latency = max(total_latency, result["latency_seconds"])
+
+        if dry_run:
+            total_latency += 0.15
+        elif len(wave) > 1:
+            # Parallel wave: wall-clock ~= slowest agent in wave
+            wave_lat = max(r["latency_seconds"] for r in agent_results[-len(wave):])
+            total_latency = wave_start_latency + wave_lat + 0.15
 
     review_iterations = 0
     rework_count = 0
@@ -151,30 +148,34 @@ def _run_multi(
         review_result = review(memory, request=request)
         review_iterations = 1
         review_score = review_result["review_score"]
-        total_latency += get_agent("reviewer")["base_latency"] + 0.8
-        prompt_tokens += 500
-        completion_tokens += 200
+        if dry_run:
+            total_latency += get_agent("reviewer")["base_latency"] + 0.8
         if review_result.get("rework_agents"):
-            rework = apply_rework(memory, request, review_result["rework_agents"])
+            rework = apply_rework(memory, request, review_result["rework_agents"], dry_run=dry_run)
             rework_count = len(rework)
             for r in rework:
                 agent_results.append(r)
                 prompt_tokens += r["prompt_tokens"]
                 completion_tokens += r["completion_tokens"]
                 total_latency += r["latency_seconds"]
-            # Re-review after rework (light pass — score boost)
             review_result = review(memory, request=request)
             review_score = max(review_score or 0, review_result["review_score"])
 
     aggregated = memory.aggregate()
-    if schedule_mode == "sequential":
-        total_latency = total_scheduled_latency(waves, agent_latencies) * 1.55
-    else:
-        total_latency = round(total_latency * 1.05, 2)
+    if dry_run:
+        if schedule_mode == "sequential":
+            total_latency = total_scheduled_latency(waves, agent_latencies) * 1.55
+        else:
+            total_latency = round(total_latency * 1.05, 2)
 
     completion = task_completion(memory.keys(), request.get("required_domains"))
     consistency = consistency_score(agent_results)
-    sec = security_score({"request": request, "memory_keys": memory.keys(), "review": memory.read("review")})
+    sec = security_score({
+        "request": request,
+        "memory_keys": memory.keys(),
+        "review": memory.read("review"),
+        "memory_snapshot": memory.snapshot(),
+    })
     strategy_key = "reviewer" if with_reviewer else schedule_mode
     quality = overall_quality(
         completion=completion,

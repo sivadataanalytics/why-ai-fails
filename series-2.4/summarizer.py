@@ -16,8 +16,7 @@ Four strategies — same conversation, same question, only summarization changes
     Structured facts only (preferences, tasks, decisions) + latest 5.
     Discards greetings, thanks, small talk.
 
-Summaries are built locally (no LLM) so --dry-run works without an API key.
-Live mode uses the same compressed memory; Gemini only answers the benchmark question.
+Summaries use Gemini in live mode; dry-run uses local compression (no API key).
 """
 
 from __future__ import annotations
@@ -91,7 +90,18 @@ def _compress_messages(messages: list[dict[str, Any]], *, label: str) -> str:
     return f"{label}\n" + "\n".join(bullets[:12])
 
 
-def _rolling_summary(older: list[dict[str, Any]]) -> str:
+def _llm_summarize_segment(segment: list[dict[str, Any]], *, label: str) -> str:
+    """Summarize a message segment with Gemini (live mode only)."""
+    from common.gemini_client import generate
+    from prompts import SUMMARIZE_PROMPT_TEMPLATE
+
+    formatted = "\n".join(_format_message(m) for m in segment)
+    prompt = SUMMARIZE_PROMPT_TEMPLATE.format(segment=formatted)
+    api = generate(prompt)
+    return f"{label}\n{api['text'].strip()}"
+
+
+def _rolling_summary(older: list[dict[str, Any]], *, dry_run: bool = True) -> str:
     """
     Strategy 2 — Rolling Summary of messages before the latest window.
 
@@ -104,11 +114,13 @@ def _rolling_summary(older: list[dict[str, Any]]) -> str:
     bullets = _compress_messages(older, label="Rolling Conversation Summary:")
     if not older:
         return bullets
+    if not dry_run:
+        return _llm_summarize_segment(older, label="Rolling Conversation Summary:")
     key_facts = extract_memory(older).to_text()
     return f"{bullets}\n\n{key_facts}"
 
 
-def _hierarchical_summary(older: list[dict[str, Any]]) -> str:
+def _hierarchical_summary(older: list[dict[str, Any]], *, dry_run: bool = True) -> str:
     """
     Strategy 3 — Hierarchical Summary for very long conversations.
 
@@ -121,6 +133,11 @@ def _hierarchical_summary(older: list[dict[str, Any]]) -> str:
 
     Prevents one giant rolling summary from growing without bound.
     """
+    if not older:
+        return "Master Summary:\n(none yet)"
+    if not dry_run:
+        return _llm_summarize_segment(older, label="Hierarchical Master Summary:")
+
     blocks: list[str] = []
     for i in range(0, len(older), HIERARCHICAL_BLOCK):
         block = older[i : i + HIERARCHICAL_BLOCK]
@@ -141,6 +158,8 @@ def _hierarchical_summary(older: list[dict[str, Any]]) -> str:
 def apply_strategy(
     messages: list[dict[str, Any]],
     strategy_key: str,
+    *,
+    dry_run: bool = True,
 ) -> dict[str, Any]:
     """
     Build conversation memory for one strategy.
@@ -171,21 +190,25 @@ def apply_strategy(
     if strategy_key == "rolling":
         latest = messages[-LATEST_ROLLING:]
         older = messages[:-LATEST_ROLLING]
-        memory_text = _rolling_summary(older) if older else "Rolling Conversation Summary:\n(none yet)"
+        memory_text = _rolling_summary(older, dry_run=dry_run) if older else "Rolling Conversation Summary:\n(none yet)"
         return _pack(strategy_key, strategy["name"], memory_text, latest)
 
     # --- Strategy 3: HIERARCHICAL — block summaries + master + latest 10 ---
     if strategy_key == "hierarchical":
         latest = messages[-LATEST_HIERARCHICAL:]
         older = messages[:-LATEST_HIERARCHICAL]
-        memory_text = _hierarchical_summary(older) if older else "Master Summary:\n(none yet)"
+        memory_text = _hierarchical_summary(older, dry_run=dry_run) if older else "Master Summary:\n(none yet)"
         return _pack(strategy_key, strategy["name"], memory_text, latest)
 
     # --- Strategy 4: SEMANTIC — structured facts only + latest 5 ---
     if strategy_key == "semantic":
         latest = messages[-LATEST_SEMANTIC:]
-        memory: ConversationMemory = extract_memory(messages[:-LATEST_SEMANTIC])
-        memory_text = memory.to_text()
+        older = messages[:-LATEST_SEMANTIC]
+        if dry_run or not older:
+            memory: ConversationMemory = extract_memory(older)
+            memory_text = memory.to_text()
+        else:
+            memory_text = _llm_summarize_segment(older, label="Semantic Conversation Memory:")
         return _pack(strategy_key, strategy["name"], memory_text, latest)
 
     raise ValueError(f"Unknown strategy: {strategy_key}")

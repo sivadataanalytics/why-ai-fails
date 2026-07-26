@@ -83,15 +83,20 @@ python series-2.7/app.py --request-id r0025 --dry-run
 # Smaller dataset for faster dev
 python series-2.7/app.py --requests 100 --dry-run
 
-# Live Gemini (one request)
-python series-2.7/app.py --request-id r0025
+# Live — Gemini per routed request (requires GEMINI_API_KEY)
+python series-2.7/app.py --live --request-id r0025
+
+# Live benchmark with limit (default 5 requests per strategy)
+python series-2.7/app.py --live --live-limit 10 --requests 100
 ```
 
 ## CLI options
 
 | Flag | Description |
 |------|-------------|
-| `--dry-run` | Simulated routing metrics; no Gemini |
+| `--dry-run` | Route only; metadata-based metrics, no Gemini |
+| `--live` | Call Gemini for each routed request |
+| `--live-limit` | Max live requests per strategy (default: 5) |
 | `--strategy` | `single`, `rules`, `dynamic`, `confidence` |
 | `--request-id` | Inspect/route one request (e.g. `r0025`) |
 | `--requests` | Dataset size (default: 1000) |

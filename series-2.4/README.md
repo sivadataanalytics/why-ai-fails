@@ -85,8 +85,8 @@ cp .env.example .env   # optional for live runs
 # Compare all four strategies — no API, $0
 python series-2.4/app.py --dry-run
 
-# Live run (4 Gemini calls — one per strategy)
-python series-2.4/app.py
+# Live — Gemini for summarization + answers (requires GEMINI_API_KEY)
+python series-2.4/app.py --live
 
 # Single strategy
 python series-2.4/app.py --strategy semantic --dry-run
@@ -99,7 +99,8 @@ python series-2.4/app.py --question-id q3 --dry-run
 
 | Flag | Description |
 |------|-------------|
-| `--dry-run` | Token estimates + memory scores only |
+| `--dry-run` | Local summarization + token estimates; no Gemini |
+| `--live` | Gemini summarization (rolling/hierarchical/semantic) + answers |
 | `--strategy` | `full`, `rolling`, `hierarchical`, `semantic` |
 | `--question-id` | `q1`–`q5` (default: `q5`) |
 

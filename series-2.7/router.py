@@ -186,11 +186,7 @@ def _route_confidence(
     chosen = primary
     escalated = False
 
-    # ~18% of complex requests escalate one tier (deterministic demo rate)
-    req_num = int(request["request_id"][1:])
-    force_escalate = (req_num % 100) < 18 and complexity == "complex"
-
-    should_escalate = force_escalate or (
+    should_escalate = (
         (complexity == "complex" and confidence < 0.78)
         or not model_supports_task(primary, task_type)
     )
@@ -232,8 +228,8 @@ def analyze_request(request: dict[str, Any], *, use_metadata: bool = False) -> d
     }
 
 
-def route_request(request: dict[str, Any], strategy: str) -> dict[str, Any]:
-    """Route one request and return decision + simulated execution metrics."""
+def route_request(request: dict[str, Any], strategy: str, *, dry_run: bool = True) -> dict[str, Any]:
+    """Route one request; call Gemini when dry_run=False."""
     if strategy not in STRATEGIES:
         raise ValueError(f"Unknown strategy: {strategy}")
 
@@ -258,18 +254,34 @@ def route_request(request: dict[str, Any], strategy: str) -> dict[str, Any]:
     )
 
     model_id = decision["model_id"]
-    cost = estimate_model_cost(model_id, prompt_tokens, completion_tokens)
-    latency = estimate_model_latency(model_id, prompt_tokens)
-
-    return {
+    result: dict[str, Any] = {
         **analysis,
         **decision,
         "strategy": strategy,
         "model_name": get_model(model_id)["name"],
         "completion_tokens": completion_tokens,
         "total_tokens": prompt_tokens + completion_tokens,
-        "estimated_cost": cost,
-        "latency_seconds": latency,
+        "estimated_cost": estimate_model_cost(model_id, prompt_tokens, completion_tokens),
+        "latency_seconds": estimate_model_latency(model_id, prompt_tokens),
         "expected_model": request["expected_model"],
         "request_id": request["request_id"],
+        "response_text": "",
     }
+
+    if dry_run:
+        return result
+
+    from common.gemini_client import generate
+    from prompts import build_routing_prompt
+
+    prompt = build_routing_prompt(request, result)
+    api = generate(prompt)
+    result["response_text"] = api["text"]
+    result["prompt_tokens"] = api["prompt_tokens"]
+    result["completion_tokens"] = api["completion_tokens"]
+    result["total_tokens"] = api["total_tokens"]
+    result["latency_seconds"] = api["latency_seconds"]
+    result["estimated_cost"] = estimate_model_cost(
+        model_id, api["prompt_tokens"], api["completion_tokens"]
+    )
+    return result

@@ -1,41 +1,13 @@
 """
 Series 2.7 — Model Routing Engineering Lab (start reading here).
 
-WHAT THIS DEMO PROVES
----------------------
-Enterprise AI systems become efficient by selecting the right model — not the
-biggest model on every request.
-
-1,000 AI requests → intent + complexity + policy → model router → simulated execution
-
-ARCHITECTURE
-------------
-  User Request
-        ↓
-  Intent Detection + Task Classification
-        ↓
-  Complexity Estimation
-        ↓
-  Cost Evaluation + Security Policy
-        ↓
-  Model Router (single / rules / dynamic / confidence)
-        ↓
-  Best Model → Gemini (live) or simulation (dry-run)
-
-READING ORDER
--------------
-1. models.py      — model pool (cost, latency, strengths)
-2. requests.py    — 1,000 synthetic requests
-3. classifier.py  — intent detection
-4. router.py      — four routing strategies
-5. evaluator.py   — accuracy, utilization, escalation
-6. app.py main()  — benchmark flow
+Live mode calls Gemini for each routed request. Dry-run uses routing metadata only.
 
 RUN
 ---
   python series-2.7/app.py --dry-run
-  python series-2.7/app.py --strategy confidence --dry-run
-  python series-2.7/app.py --request-id r0025
+  python series-2.7/app.py --live --live-limit 5
+  python series-2.7/app.py --live --request-id r0025
 """
 
 from __future__ import annotations
@@ -50,8 +22,7 @@ sys.path[:0] = [str(ROOT), str(Path(__file__).parent)]
 
 from benchmark import print_benchmark, run_strategy
 from common.config import load_config
-from prompts import build_routing_prompt
-from requests import DEFAULT_REQUEST_ID, REQUESTS, REQUESTS_BY_ID, generate_requests
+from requests import REQUESTS, REQUESTS_BY_ID, generate_requests
 from router import STRATEGIES, STRATEGY_NAMES, route_request
 
 DEFAULT_STRATEGIES = list(STRATEGIES)
@@ -59,11 +30,23 @@ DEFAULT_STRATEGIES = list(STRATEGIES)
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Model routing benchmark")
-    parser.add_argument("--dry-run", action="store_true", help="Simulate routing; no Gemini calls")
+    parser.add_argument("--dry-run", action="store_true", help="Route only; no Gemini calls")
+    parser.add_argument("--live", action="store_true", help="Call Gemini for each routed request")
     parser.add_argument("--strategy", choices=list(STRATEGIES))
     parser.add_argument("--request-id", choices=list(REQUESTS_BY_ID.keys()))
     parser.add_argument("--requests", type=int, default=len(REQUESTS), help="Dataset size")
+    parser.add_argument(
+        "--live-limit",
+        type=int,
+        default=5,
+        help="Max live Gemini calls per strategy when --live (default 5)",
+    )
     args = parser.parse_args(argv)
+
+    dry_run = not args.live
+    if args.dry_run and args.live:
+        print("Use either --dry-run or --live, not both.")
+        return 1
 
     load_config()
 
@@ -72,12 +55,15 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"Loaded {len(requests):,} AI requests")
     print(f"Strategies: {', '.join(strategies)}")
-    print("Mode: dry-run (simulated routing)\n" if args.dry_run else "Mode: live (Gemini for selected request)\n")
+    if dry_run:
+        print("Mode: dry-run (routing metadata only)\n")
+    else:
+        print(f"Mode: live (Gemini per request, up to {args.live_limit} per strategy)\n")
 
     if args.request_id:
         req = REQUESTS_BY_ID.get(args.request_id) or requests[0]
         for strategy in strategies:
-            routing = route_request(req, strategy)
+            routing = route_request(req, strategy, dry_run=dry_run)
             print(f"--- {STRATEGY_NAMES[strategy]} / {req['request_id']} ---")
             print(f"Task        : {routing['task_type']}")
             print(f"Complexity  : {routing['complexity']}")
@@ -88,33 +74,35 @@ def main(argv: list[str] | None = None) -> int:
             print(f"Latency     : {routing['latency_seconds']} sec")
             print(f"Escalated   : {routing.get('escalated', False)}")
             print(f"Reason      : {routing.get('reason', '')}")
-            print()
-
-        if not args.dry_run:
-            strategy = strategies[0]
-            routing = route_request(req, strategy)
-            from common.gemini_client import generate
-
-            prompt = build_routing_prompt(req, routing)
-            print(f"Calling Gemini ({routing['model_name']}) ...")
-            try:
-                api = generate(prompt)
+            if routing.get("response_text"):
                 print("\n--- Answer excerpt ---")
-                print(api["text"][:600])
-            except Exception as exc:
-                print(f"API error: {exc}\nTip: use --dry-run")
-                return 1
+                print(routing["response_text"][:400])
+            print()
         return 0
+
+    live_requests = requests[: args.live_limit] if not dry_run else requests
+    if not dry_run and args.live_limit < len(requests):
+        print(
+            f"Live limit: {len(live_requests)} of {len(requests)} requests "
+            f"(each invokes one Gemini call)\n"
+        )
 
     results: list[dict[str, Any]] = []
     for strategy in strategies:
         print(f"Running {STRATEGY_NAMES[strategy]} ...")
-        results.append(run_strategy(strategy, requests))
+        try:
+            results.append(run_strategy(strategy, live_requests, dry_run=dry_run))
+        except ValueError as exc:
+            print(f"{exc}\nTip: set GEMINI_API_KEY in .env or use --dry-run")
+            return 1
+        except Exception as exc:
+            print(f"API error: {exc}\nTip: use --dry-run")
+            return 1
 
     print()
     print_benchmark(results)
 
-    if args.dry_run and len(strategies) > 1:
+    if len(strategies) > 1:
         print("\n--- Routing accuracy detail ---")
         for r in results:
             print(

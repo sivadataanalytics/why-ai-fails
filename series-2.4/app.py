@@ -114,7 +114,7 @@ def run_strategy(
     full_memory_score : baseline from full conversation (for context retention)
     """
     # STEP A — compress conversation using the chosen strategy
-    packed = apply_strategy(messages, strategy_key)
+    packed = apply_strategy(messages, strategy_key, dry_run=dry_run)
 
     # STEP B — build the prompt Gemini receives (memory + latest OR full history)
     prompt = build_answer_prompt(
@@ -168,9 +168,19 @@ def main(argv: list[str] | None = None) -> int:
     # -----------------------------------------------------------------------
     parser = argparse.ArgumentParser(description="Conversation summarization benchmark")
     parser.add_argument("--dry-run", action="store_true", help="No Gemini calls")
+    parser.add_argument(
+        "--live",
+        action="store_true",
+        help="Use Gemini for summarization and answers (requires GEMINI_API_KEY)",
+    )
     parser.add_argument("--strategy", choices=list(STRATEGIES.keys()))
     parser.add_argument("--question-id", choices=list(QUESTIONS_BY_ID.keys()))
     args = parser.parse_args(argv)
+
+    dry_run = not args.live
+    if args.dry_run and args.live:
+        print("Use either --dry-run or --live, not both.")
+        return 1
 
     load_config()  # reads GEMINI_API_KEY from .env when doing live runs
 
@@ -184,13 +194,13 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Loaded {len(messages)} conversation messages.")
     print(f"Benchmark question ({question['id']}): \"{question['question']}\"")
     print(f"Strategies: {', '.join(strategies)}")
-    print("Mode: dry-run (no API)\n" if args.dry_run else "Mode: live (Gemini per strategy)\n")
+    print("Mode: dry-run (local summarization, no API)\n" if dry_run else "Mode: live (Gemini summarization + answers)\n")
 
     # -----------------------------------------------------------------------
     # STEP 2 — Establish baseline: full conversation memory score = 1.00 reference
     # Other strategies compare their retention against this baseline
     # -----------------------------------------------------------------------
-    full_packed = apply_strategy(messages, "full")
+    full_packed = apply_strategy(messages, "full", dry_run=True)
     full_score = memory_score(full_packed["memory_text"], full_packed["latest_messages"])
 
     # -----------------------------------------------------------------------
@@ -198,14 +208,14 @@ def main(argv: list[str] | None = None) -> int:
     # -----------------------------------------------------------------------
     results: list[dict[str, Any]] = []
     for strategy_key in strategies:
-        if not args.dry_run:
+        if not dry_run:
             print(f"Calling Gemini ({STRATEGIES[strategy_key]['name']}) ...")
         try:
             result = run_strategy(
                 strategy_key,
                 messages,
                 question,
-                dry_run=args.dry_run,
+                dry_run=dry_run,
                 full_memory_score=full_score,
             )
         except ValueError as exc:
@@ -222,7 +232,7 @@ def main(argv: list[str] | None = None) -> int:
     print_benchmark(results)
 
     # Show which expected facts survived in each strategy (dry-run detail)
-    if args.dry_run:
+    if dry_run:
         print("\n--- Memory detail ---")
         for r in results:
             print(f"{r['strategy_name']}: matched {r['matched_facts']}")
@@ -230,7 +240,7 @@ def main(argv: list[str] | None = None) -> int:
     # -----------------------------------------------------------------------
     # STEP 8 — Live mode: show answer from best strategy (highest memory, lowest tokens)
     # -----------------------------------------------------------------------
-    if not args.dry_run:
+    if not dry_run:
         best = max(results, key=lambda r: (r["memory_score"], -r["prompt_tokens"]))
         print("\n--- Answer excerpt (best memory / lowest tokens) ---")
         print(best["text"][:600])
