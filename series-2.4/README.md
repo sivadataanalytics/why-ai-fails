@@ -45,6 +45,7 @@ series-2.4/
   evaluator.py             Memory Score + context retention
   prompts.py               Prompt templates for Gemini
   benchmark.py             Side-by-side comparison printer
+  Series_2.4_Conversation_Summarization.ipynb  Presentation notebook (slides + live dry-run demo)
   README.md                This file
 ```
 

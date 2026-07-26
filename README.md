@@ -6,15 +6,15 @@ This repo focuses on **token economics**: what you send to the LLM, what you pay
 
 ## Labs
 
-| Folder | Topic | Core idea |
-|--------|-------|-----------|
-| [series-2.1/](series-2.1/) | Context Pruning | Send **less** evidence — filter logs before the prompt |
-| [series-2.2/](series-2.2/) | Prompt Caching | Don't **re-process** the same stable system prompt every request |
-| [series-2.3/](series-2.3/) | RAG Chunking | Retrieve the **right** evidence — benchmark chunk size, don't guess |
-| [series-2.4/](series-2.4/) | Conversation Summarization | **Memory** management — summarize history, preserve facts, cut prompt size |
-| [series-2.5/](series-2.5/) | Long-Term Memory | **Compress** knowledge across 500 conversations; retrieve only what matters |
-| [series-2.6/](series-2.6/) | Memory Retrieval | **Find** the right memory from 100k records — keyword, semantic, hybrid, re-rank |
-| [series-2.7/](series-2.7/) | Model Routing | **Select** the right LLM per request — cost, latency, and accuracy |
+| Folder | Topic | Notebook | Core idea |
+|--------|-------|----------|-----------|
+| [series-2.1/](series-2.1/) | Context Pruning | [Series_2.1_Context_Pruning.ipynb](series-2.1/Series_2.1_Context_Pruning.ipynb) | Send **less** evidence — filter logs before the prompt |
+| [series-2.2/](series-2.2/) | Prompt Caching | [Series_2.2_Prompt_Caching.ipynb](series-2.2/Series_2.2_Prompt_Caching.ipynb) | Don't **re-process** the same stable system prompt every request |
+| [series-2.3/](series-2.3/) | RAG Chunking | [Series_2.3_RAG_Chunking.ipynb](series-2.3/Series_2.3_RAG_Chunking.ipynb) | Retrieve the **right** evidence — benchmark chunk size, don't guess |
+| [series-2.4/](series-2.4/) | Conversation Summarization | [Series_2.4_Conversation_Summarization.ipynb](series-2.4/Series_2.4_Conversation_Summarization.ipynb) | **Memory** management — summarize history, preserve facts, cut prompt size |
+| [series-2.5/](series-2.5/) | Long-Term Memory | [Series_2.5_Long_Term_Memory.ipynb](series-2.5/Series_2.5_Long_Term_Memory.ipynb) | **Compress** knowledge across 500 conversations; retrieve only what matters |
+| [series-2.6/](series-2.6/) | Memory Retrieval | [Series_2.6_Memory_Retrieval.ipynb](series-2.6/Series_2.6_Memory_Retrieval.ipynb) | **Find** the right memory from 100k records — keyword, semantic, hybrid, re-rank |
+| [series-2.7/](series-2.7/) | Model Routing | [Series_2.7_Model_Routing.ipynb](series-2.7/Series_2.7_Model_Routing.ipynb) | **Select** the right LLM per request — cost, latency, and accuracy |
 
 Series 2.2 builds on 2.1: evidence is still pruned; caching applies only to the static system prompt.  
 Series 2.3 adds the retrieval layer: same corpus and questions, different chunking strategies.  

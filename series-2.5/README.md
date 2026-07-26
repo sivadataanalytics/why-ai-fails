@@ -57,6 +57,7 @@ series-2.5/
   evaluator.py           Retrieval accuracy metrics
   prompts.py             Prompt template with memory injection
   benchmark.py           Comparison printer
+  Series_2.5_Long_Term_Memory.ipynb  Presentation notebook (slides + live dry-run demo)
   README.md              This file
 ```
 

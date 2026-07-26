@@ -46,6 +46,7 @@ series-2.3/
   questions.py      Benchmark questions + expected terms
   prompt_builder.py RAG prompt template
   benchmark.py      Side-by-side comparison printer
+  Series_2.3_RAG_Chunking.ipynb  Presentation notebook (slides + live dry-run demo)
   README.md         This file
 ```
 

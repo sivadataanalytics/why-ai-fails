@@ -176,6 +176,8 @@ python3 series-2.3/app.py --dry-run
 
 Uses article corpus in `docs/`.
 
+Presentation notebook: `series-2.3/Series_2.3_RAG_Chunking.ipynb`
+
 ---
 
 ### Series 2.4 — Conversation Summarization
@@ -186,6 +188,8 @@ python3 series-2.4/app.py --dry-run
 
 Uses synthetic conversation in `series-2.4/conversation_dataset.py`.
 
+Presentation notebook: `series-2.4/Series_2.4_Conversation_Summarization.ipynb`
+
 ---
 
 ### Series 2.5 — Long-Term Memory
@@ -195,6 +199,8 @@ python3 series-2.5/app.py --dry-run
 ```
 
 Uses 500 simulated conversations in `series-2.5/conversations.py`.
+
+Presentation notebook: `series-2.5/Series_2.5_Long_Term_Memory.ipynb`
 
 ---
 
@@ -212,6 +218,20 @@ Faster dev test (smaller store):
 python3 series-2.6/app.py --memories 10000 --dry-run
 ```
 
+Presentation notebook: `series-2.6/Series_2.6_Memory_Retrieval.ipynb`
+
+---
+
+### Series 2.7 — Model Routing
+
+```bash
+python3 series-2.7/app.py --dry-run
+```
+
+Routes 1,000 synthetic requests across four strategies.
+
+Presentation notebook: `series-2.7/Series_2.7_Model_Routing.ipynb`
+
 ---
 
 ## Step 7 — Presentation notebooks (optional)
@@ -219,9 +239,11 @@ python3 series-2.6/app.py --memories 10000 --dry-run
 For classroom or demo presentations:
 
 1. Open Cursor / VS Code / Jupyter
-2. Open the `.ipynb` file under `series-2.1/` or `series-2.2/`
+2. Open the `.ipynb` file under any `series-2.x/` folder
 3. Select the Python kernel tied to your `.venv`
 4. Run cells top to bottom; demo cells call `--dry-run` automatically
+
+Available notebooks: `Series_2.1` through `Series_2.7` (one per lab).
 
 **Jupyter (if not using VS Code/Cursor):**
 
@@ -347,5 +369,5 @@ why-ai-fails/
 ## Support
 
 - Lab READMEs: `series-2.x/README.md`
-- Presentation notebooks: `series-2.1/` and `series-2.2/` `.ipynb` files
+- Presentation notebooks: `Series_2.1` through `Series_2.7` under each `series-2.x/` folder
 - Repo: https://github.com/sivadataanalytics/why-ai-fails

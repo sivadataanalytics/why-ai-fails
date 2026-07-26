@@ -55,6 +55,7 @@ series-2.6/
   queries.py       Benchmark queries
   prompts.py       Retrieval prompt template
   benchmark.py     Comparison printer
+  Series_2.6_Memory_Retrieval.ipynb  Presentation notebook (slides + live dry-run demo)
   README.md        This file
 ```
 

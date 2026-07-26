@@ -64,6 +64,7 @@ series-2.7/
   evaluator.py     Accuracy, utilization, escalation rate
   prompts.py       Live Gemini prompt template
   benchmark.py     Comparison printer
+  Series_2.7_Model_Routing.ipynb  Presentation notebook (slides + live dry-run demo)
   README.md        This file
 ```
 
