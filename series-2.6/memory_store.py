@@ -38,13 +38,7 @@ class MemoryStore:
     @classmethod
     def load(cls, count: int = 100_000) -> MemoryStore:
         """Generate and index memory dataset."""
-        store = cls(generate_memories(count))
-        # Pin canonical IDs on first matching canonical template per value
-        seen_values: set[str] = set()
-        for mem in store.memories:
-            if mem["canonical"] and mem["value"] not in seen_values:
-                seen_values.add(mem["value"])
-        return store
+        return cls(generate_memories(count))
 
     def _build_index(self) -> None:
         """Build inverted index and IDF from all memory text."""

@@ -165,11 +165,18 @@ def main(argv: list[str] | None = None) -> int:
 
     # FLOW 1 — unpruned: all 2000 lines in the prompt
     print("Running WITHOUT context pruning ...")
-    without = run_without_pruning(args.question, raw_logs, dry_run=args.dry_run)
+    try:
+        without = run_without_pruning(args.question, raw_logs, dry_run=args.dry_run)
 
-    # FLOW 2 — pruned: filtered evidence only
-    print("Running WITH context pruning ...")
-    with_pruning = run_with_pruning(args.question, logs_df, dry_run=args.dry_run)
+        # FLOW 2 — pruned: filtered evidence only
+        print("Running WITH context pruning ...")
+        with_pruning = run_with_pruning(args.question, logs_df, dry_run=args.dry_run)
+    except ValueError as exc:
+        print(f"{exc}\nTip: set GEMINI_API_KEY in .env or use --dry-run")
+        return 1
+    except Exception as exc:
+        print(f"API error: {exc}\nTip: use --dry-run")
+        return 1
 
     # LAYER 3 — print token savings side-by-side
     print()
