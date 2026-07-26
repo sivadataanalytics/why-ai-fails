@@ -69,6 +69,7 @@ series-2.8/
   evaluator.py        Quality, consistency, completion metrics
   prompts.py          Live Gemini prompt templates
   benchmark.py        Side-by-side comparison printer
+  Series_2.8_Multi_Agent_Orchestration.ipynb  Presentation notebook (slides + live dry-run demo)
   README.md           This file
 ```
 

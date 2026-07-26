@@ -250,6 +250,8 @@ python3 series-2.8/app.py --request-id r0024 --dry-run
 python3 series-2.8/app.py --requests 100 --dry-run
 ```
 
+Presentation notebook: `series-2.8/Series_2.8_Multi_Agent_Orchestration.ipynb`
+
 ---
 
 ## Step 7 — Presentation notebooks (optional)
@@ -261,7 +263,7 @@ For classroom or demo presentations:
 3. Select the Python kernel tied to your `.venv`
 4. Run cells top to bottom; demo cells call `--dry-run` automatically
 
-Available notebooks: `Series_2.1` through `Series_2.7` (one per lab).
+Available notebooks: `Series_2.1` through `Series_2.8` (one per lab).
 
 **Jupyter (if not using VS Code/Cursor):**
 
@@ -407,5 +409,5 @@ why-ai-fails/
 ## Support
 
 - Lab READMEs: `series-2.x/README.md`
-- Presentation notebooks: `Series_2.1` through `Series_2.7` under each `series-2.x/` folder
+- Presentation notebooks: `Series_2.1` through `Series_2.8` under each `series-2.x/` folder
 - Repo: https://github.com/sivadataanalytics/why-ai-fails

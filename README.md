@@ -15,7 +15,7 @@ This repo focuses on **token economics**: what you send to the LLM, what you pay
 | [series-2.5/](series-2.5/) | Long-Term Memory | [Series_2.5_Long_Term_Memory.ipynb](series-2.5/Series_2.5_Long_Term_Memory.ipynb) | **Compress** knowledge across 500 conversations; retrieve only what matters |
 | [series-2.6/](series-2.6/) | Memory Retrieval | [Series_2.6_Memory_Retrieval.ipynb](series-2.6/Series_2.6_Memory_Retrieval.ipynb) | **Find** the right memory from 100k records — keyword, semantic, hybrid, re-rank |
 | [series-2.7/](series-2.7/) | Model Routing | [Series_2.7_Model_Routing.ipynb](series-2.7/Series_2.7_Model_Routing.ipynb) | **Select** the right LLM per request — cost, latency, and accuracy |
-| [series-2.8/](series-2.8/) | Multi-Agent Orchestration | — | **Coordinate** specialized agents — single vs sequential vs parallel vs reviewer |
+| [series-2.8/](series-2.8/) | Multi-Agent Orchestration | [Series_2.8_Multi_Agent_Orchestration.ipynb](series-2.8/Series_2.8_Multi_Agent_Orchestration.ipynb) | **Coordinate** specialized agents — single vs sequential vs parallel vs reviewer |
 
 Series 2.2 builds on 2.1: evidence is still pruned; caching applies only to the static system prompt.  
 Series 2.3 adds the retrieval layer: same corpus and questions, different chunking strategies.  

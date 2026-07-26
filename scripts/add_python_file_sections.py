@@ -145,6 +145,23 @@ PYTHON_FILE_SECTIONS: dict[str, str] = {
         "| **`prompts.py`** | `build_routing_prompt()` for live Gemini execution of routed requests. |\n"
         "| **`benchmark.py`** | `run_strategy()`, side-by-side comparison and utilization report. |"
     ),
+    "series-2.8": (
+        "## 4. Python Files in This Lab\n\n"
+        "Every `.py` file under `series-2.8/`:\n\n"
+        "| File | What it does |\n"
+        "|------|--------------|\n"
+        "| **`app.py`** | CLI entry — load requests, run four strategies, print benchmark, live Gemini for one request. |\n"
+        "| **`tasks.py`** | 500 enterprise requests across 8 categories (banking, healthcare, retail, …). |\n"
+        "| **`agents.py`** | Agent pool metadata + `simulate_agent_output()` for dry-run. |\n"
+        "| **`planner.py`** | `decompose_request()` — task graph with dependencies. |\n"
+        "| **`scheduler.py`** | `schedule_sequential()` / `schedule_parallel()` — dependency-aware waves. |\n"
+        "| **`shared_memory.py`** | `SharedMemory` — read/write bus; agents never talk directly. |\n"
+        "| **`orchestrator.py`** | Four strategies: single, sequential, parallel, reviewer. |\n"
+        "| **`reviewer.py`** | Validate outputs, detect gaps, one rework iteration. |\n"
+        "| **`evaluator.py`** | Task completion, consistency, security, overall quality. |\n"
+        "| **`prompts.py`** | Live Gemini prompt templates. |\n"
+        "| **`benchmark.py`** | Side-by-side strategy comparison printer. |"
+    ),
 }
 
 NOTEBOOK_PATHS = {
@@ -155,6 +172,7 @@ NOTEBOOK_PATHS = {
     "series-2.5": ROOT / "series-2.5/Series_2.5_Long_Term_Memory.ipynb",
     "series-2.6": ROOT / "series-2.6/Series_2.6_Memory_Retrieval.ipynb",
     "series-2.7": ROOT / "series-2.7/Series_2.7_Model_Routing.ipynb",
+    "series-2.8": ROOT / "series-2.8/Series_2.8_Multi_Agent_Orchestration.ipynb",
 }
 
 SECTION_RE = re.compile(r"^## (\d+)\. ", re.MULTILINE)
