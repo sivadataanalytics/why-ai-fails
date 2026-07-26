@@ -1,0 +1,1382 @@
+{
+  "version": 2,
+  "schemaVersion": 2,
+  "source": "mantis",
+  "sourceVersion": "0.2.221",
+  "generatedAt": "2026-07-25T21:21:43.138Z",
+  "files": [
+    {
+      "file": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "action": "edited",
+      "linesAffected": 95,
+      "linesAdded": 95,
+      "linesDeleted": 7,
+      "totalLines": 553,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "action": "edited",
+      "linesAffected": 111,
+      "linesAdded": 111,
+      "linesDeleted": 7,
+      "totalLines": 577,
+      "assistant": "cursor"
+    }
+  ],
+  "hunks": [
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:1:series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "oldStart": 56,
+      "oldLines": 1,
+      "newStart": 56,
+      "newLines": 89,
+      "linesAdded": 89,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:ms0v3dvm:74:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:ms0vde9e:85:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0ves4s:87:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "8dc1e9ac5c0eb6c065164356146471e9e564d84c63a0d8ee318c186c0d8e8a25",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "2a26b0a6bf3733ce87ca0d0aa5c9de1159d002d1d4405aac2d05b13c85115d92",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "23cae443d16729fc8d60fba5c186befa029e602013a9df7ad6e3458d46bf5d2e",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "e2b4bbe8674bee99b6b2c7fd38b507366d19a1770b25a84df666caa7ae5a99a2",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "5a5a7da1973ac6cffea6c88557594e59a832f82290fe92059aa0b77cc05d4551",
+          "2ce9edf991c240976e31ddf88a59f3516a26dabebfe29630c26e67dc7756e679",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "ec357fe1b1fa7a3327a5cc71e40080a3a921b0f0e0121a6a282257b2384f0feb",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "7946a067dc6fc86f57cddd0c47a4edf0cac629255233345e1ac1e98574e83340",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "343e10b67b4fde62bb527afcdf4117f952acf623b0d2b9e2fd472b4e91f66c8e",
+          "f56fc220d980e98ca965458304d3cd162bb2f15d7e0231bcc8dcdc0a874f8f64",
+          "7539cf0a7c4efb79e2905b97ad9e61f10b83f349e5899b2fedf866f1680460f6",
+          "7ddfa629caeb907733ece6c1df4771435ab3128b59dc4652c0e006219a97f298",
+          "dc56d8c10a8dabc1b07646bf518338180e9e861f515d2e2e32a4551552e6246f",
+          "274d606ce9a209321031d586cfa653de036b4895f0366884be460d7c9f957aa8",
+          "e4c1043f52df8c5cbc38c27aa0ca8ef4722e06167f190c52153df8b7f78917d9",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "6c91b4f1a841d32f025ba6bfc7461ac087c8caf7d0d83c6e946b1905611011a3",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "efa60de28c84da54e883d60d28028e234059f0e5c128e835f434cd13d774628a",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "9d9d7ea4578bf75e8c4fc255261229227f22d6b384a01c3ed6fd87b214be3e51",
+          "85bf8757c5151ed24568141757df583791ac15ced38325ac2b6f183c1d904eb5",
+          "0d97e582914b27903b4eb7e664d1f7b4eff1fd53c50d4a3e72175a2bcd555ff2",
+          "23cc20228341accfdf73bad05c0e265eba6c8c04360972f1644c9d67e0eb9321",
+          "c2b8f0db01310c72f6dcc59caf66d430e76dbe31012a3513a73a0d7f07fd99c8",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "371d2e3e5bf865b1914fb4bfdd6da11511367d6d2971941c8d77beabecfadb4b",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "76c9cf6f2a74f7e1e1356d693b495b2bc59fd9372700c1c95e9cde9e8e91fcde",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "5e5dcb25db59f45637ce09ea31c72c617061d73ca1d892b61ecbf0f88292e6ae",
+          "ce63deb67e2762585bc154fda72129371e7908009a094a8c05e087038185a6d4",
+          "555c17979bd85cc6f3adf9730f56f927e5078d43aa1e5de924f686d43737c26e",
+          "73dccd85b283e0b87daef312c6a43295dcf1896deb15f0210f9f11306eb85390",
+          "d5c1cfd35a2f8a43af49e70344cedede06b1cf2089167eb10f474266b701c9c6",
+          "4add4ef4bcc5ac98d62cdc1ae24e42bf7c21721930b8a8cfee30d020f6f451c4",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "623ab5d94793faa0f9ef3b5fc78bad9b9b81d5a48cf1d6d2fc3b3b27cb53b890",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "02b19537229c0c2d51eaeb1a19d003afbc71eedb746e9e7adaa60508d0e9a45e",
+          "f9de667098f38c67c2fd15f2157489c6700f625332efa101f6058637c92e1cc9",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "a7786a4d2ebf724a9280b70456fa5ee8646849afc3133f8fbf97539b2192b1f3",
+          "3868e2c2d8ddb4087647e6211ea8f0c5925a64fcaa97847c245cb125f68db16b",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "179d602385ef554d321b36ae7717766883275fd22beac4810fa238c392466762",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "b40cb6f1384ca0316f7907158ebdacf5d7634d4cb2c976108d6d20e53d155f9f",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "c7054ca61724dbca5421893d3dca5e73d1d856002af6329ed835af88788da1a5",
+          "0f01d1e0503de72c691e41bba2a380c8e1782de2d10371a807feea743b7ac4cc",
+          "b948a02280d47d68a167601c37a7d7d370be37e514ddbb9e3c6d19a2b0abb7e8",
+          "747d3eeee01b3568887607a201ff904720f2f260d8ae806395f57350cf7af62f",
+          "d6303e1411a08c50c4128aa8df0cf3c3c86ff64186b2931ccbb680d319800e6e",
+          "03ab100701457995ec141ba8b38c18f7a2c510dcd5e655e502c714ba7349e25b",
+          "07fcf5618ff7ee097f7dd59dd4b601ec23c6cc418a2ad190e58cf9d9a1a582ed",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "248139eddc866df5875b80aef3ea11a1c73f7b67e20bda76033992d2586ae445",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "88aac0d43eb98c8b06a7508df7202a6724de8ae12acbe7a0843724e6e87c561e",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "214800a003fdc31d24feaaa7203b972dbbf8841e89a98c6396ffd4596b030e27",
+          "c44745ed3159cfb04c49cb401393313e72726df958d1083de397a1d2d38657ea",
+          "c850f63d9772d9ab3ac7f8e9cf625ca137e164dc4e17c0c00009df24c4dddf59",
+          "cec4805d20a3cd863458cf1debf59f7142ae372242420fcf12fb34eb92b4d15b",
+          "7bcc3d7ff7c8f63ad48f89999d9c1857d65d264fd4d66988eab7cfa7181ae4e3",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "6020cb571a4619010bc8636685c3f59b70aa49ed47910178e500fffd2e817889",
+          "f0af6bd36fad33eff77c3be24ce1f5f7d4958bdfca53e707c56abe15c985aed3",
+          "5d1b0979d16aca4fbadc455e0b01e3e164783b202c82cedad403c69d880eb2de",
+          "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+          "0d3d2f5a8b2fc178b4e5ab7eb9c8c886e2e08b03608f0bd3200c3fb76b4aec0c",
+          "324b41be9ef425a136e6695ee391d4fb1d882acc5739c9568a41e3d6f71883ca",
+          "c1b1fb8b49e5351ffe39f358a1f4b53a5bbcffee8d23770d06bcfb8d03fc57a3",
+          "9c1b375bd1fb539491208857e1e672878a826ba07aac56f9cbe78cf1affb06f4",
+          "bd384659944eba9e5c7f314b925fe84fb3902d3c1905e350328a18f8d03a91d5"
+        ],
+        "deletedLineHashes": [
+          "c5bd55f08ec410eb2881d23df6471771fd165c1cc69e15fe824b43274ada182c"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "newPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "matchedOperationCount": 3,
+        "matchedHunkCount": 3,
+        "matchedOperationIds": [
+          "vscode:ms0v3dvm:74:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh",
+          "vscode:ms0vde9e:85:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh",
+          "vscode:ms0ves4s:87:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0v3dvm:74:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh:1",
+          "vscode:ms0vde9e:85:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh:1",
+          "vscode:ms0ves4s:87:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 89,
+            "deleted": 1,
+            "changed": 90,
+            "touched": 89
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:2:series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "oldStart": 82,
+      "oldLines": 1,
+      "newStart": 170,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:ms0v3dvm:74:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0ves4s:87:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "d57a15c5a875237837a01334afd298fc92f9af5e0bd882467a00987b5505385b"
+        ],
+        "deletedLineHashes": [
+          "6dba3ccb9c2dc831ef7f89a447e7c0c1bdd41a6edaccffb61f7bb19aecce0439"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "newPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "matchedOperationCount": 2,
+        "matchedHunkCount": 2,
+        "matchedOperationIds": [
+          "vscode:ms0v3dvm:74:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh",
+          "vscode:ms0ves4s:87:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0v3dvm:74:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh:1",
+          "vscode:ms0ves4s:87:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:3:series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "oldStart": 114,
+      "oldLines": 1,
+      "newStart": 202,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:ms0v3dvm:74:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0vf5fy:88:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "cc153af0db0d0b471811c794ad18f78de032835bbb9b2f2e40f108fb4e0235ab"
+        ],
+        "deletedLineHashes": [
+          "6a7d5265c98eb51251a3788dd5bbe72d6a859599c0bdde27520f99094c00b214"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "newPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "matchedOperationCount": 2,
+        "matchedHunkCount": 2,
+        "matchedOperationIds": [
+          "vscode:ms0v3dvm:74:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh",
+          "vscode:ms0vf5fy:88:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0v3dvm:74:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.status-bar-refresh:1",
+          "vscode:ms0vf5fy:88:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:4:series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "oldStart": 275,
+      "oldLines": 1,
+      "newStart": 363,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0vfiso:89:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "c2b1be5ac1fbef4e42339bbf4a7eb0679efb003a01dd19d0f18cc035357023b4"
+        ],
+        "deletedLineHashes": [
+          "552aba29dda7506867f215a1e1c70ef146fe914b7986d33e9488c4c35ce8caec"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "newPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:ms0vfiso:89:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0vfiso:89:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:5:series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "oldStart": 311,
+      "oldLines": 1,
+      "newStart": 399,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0vfw8a:90:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "2893c7f5e0dcb8eb1cdc412d50a4fa17454d7cf0b59ab288352b599d087b4d4c"
+        ],
+        "deletedLineHashes": [
+          "24e732aff4244a91d39c4b26f70864ae21de0b014080f1705ccac075a8499dec"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "newPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:ms0vfw8a:90:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0vfw8a:90:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:6:series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "oldStart": 372,
+      "oldLines": 1,
+      "newStart": 460,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0vg9nm:91:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "672000377ecf6332c5844894c9c9d64a05b01c5ef41cdde82c78800fc928dbea"
+        ],
+        "deletedLineHashes": [
+          "8abe9a016593319aff3e8a3e1bdcf5645648983e17eea40d241cac648c963857"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "newPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:ms0vg9nm:91:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0vg9nm:91:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:7:series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "oldStart": 427,
+      "oldLines": 1,
+      "newStart": 515,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0vgn6p:92:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "bae463b6b94a1cc9cf66851f5aa1d430156a8fd5e22e52b88110a9dfa9c6cc75"
+        ],
+        "deletedLineHashes": [
+          "33e4a4c3ff29edb14c4119caceca1b4e1ef7bc641a0753007d76a7bfedb1f655"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "newPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:ms0vgn6p:92:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0vgn6p:92:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:8:series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "oldStart": 56,
+      "oldLines": 1,
+      "newStart": 56,
+      "newLines": 105,
+      "linesAdded": 105,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:ms0ve1bb:86:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0vha1t:93:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "7f2a435b83f08944102a94393b9f8adb93ff34eb958eeb8c5b59b1e2e7fd6b5f",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "00b0610f3a3fbdcc750519c0a04ce88ade67b4e508851571de18266949a063cc",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "1522f530061a808eabd82b52f0a4ca0d649f3d19e50692034e9634c8d1beafbf",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "e2b4bbe8674bee99b6b2c7fd38b507366d19a1770b25a84df666caa7ae5a99a2",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "51a49b848d2a85fc5281174f62895575aac08941a7a2107e96272dbd240f5f30",
+          "21f4103f1c8e2285d51c7f7f4c5b6fbbef69f334d556e3f251150609c5b607ca",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "447a7f3ee85985d9ef0160483707aed089b1aef3c75e5f52c9f8b4ba3e712e10",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "8e08111397788868722efa574ed674454d02f1b2aa374daee576df1ffcd7b576",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "5f957047fc1869e3ea9efa2893fcabde264b4e58216584f8f56572f275f7b663",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "06c64ab4fa634d089868c262faa53ad9b40e31356a545bb50f2045b485b445e3",
+          "45f5944192f3ef702632f03ea04bfacbc59a585f1ac70b1daabdd750544652f9",
+          "20a04f653e5d30cff068ec4d447f743ddf5451a500f101db0ab1258c13134738",
+          "7f0261bfb7bc741c506f036efcbd6528654edc0794c33b64995867b40d075629",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "016c73e304d6c4461415136ec94fdad8217dc4586c1eb85d2df3dbb963399a54",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "b5e1e0cf08c5d86e937c10bd4491aa70cf70682f60286c8cd3dcb3b7ef1cefeb",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "133b9656bdfed68c0843ce1c4fc0514ed4b59f56248ec95ef3b89a2c8bda558d",
+          "efaa83bc98d38f950000cb1e322513485021269fd89cba42dd23475991bbe5e1",
+          "dd1b5334c9fe2a06130743baa2a5398ca6cf0006e390381cd22a976589536d2e",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "a64fe170ff2b0774c6c81e34a01059f220e60c5932ac86d89a307c6b4b1cf817",
+          "5cfc8185a3318da17eea69041b4e60fd052e89c009e658dc03ca2ea5af3bdcd3",
+          "d6058971f0161c00e98213bb6981f06b373d2bb6b09b2543c3549b4549a4d022",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "5830a6924d4c9131010b41cb6f4bbccdcca76664f7d09799862315993f49c2b7",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "7ced5d66439b32739f424429b79935c4534a89e83ebe467fa16e19d48856e6c1",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "5e5dcb25db59f45637ce09ea31c72c617061d73ca1d892b61ecbf0f88292e6ae",
+          "ce63deb67e2762585bc154fda72129371e7908009a094a8c05e087038185a6d4",
+          "6ffd92ef40bd1bee9bd44ffc3fff77c18aed2c060edb1dc27e7e7b574c471812",
+          "0e5afc66da5a73fa38653ebd72b30781d8bf9dbc64553ea78bcfd42c3d07c923",
+          "bdd2303f050252c73ef25696ea13b73a290f01463e54aae186d4441219f5ef9f",
+          "9983fea55f4ff9d50a09039f176f0a74b99692309ef200ef9ff3f5e0b828df13",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "c6f2cd1ff2ee0e627ac22e7be8c2a9422cc4b325169393f96fe7276fbea7d2c5",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "3f9884834d9608643b77a3059feaee1779b76dcb56e88a3e6e5562bfdffde4aa",
+          "e200bbef9a55ffc683c3081665db9a0395edc9d28f46d78c688f60c372f6cce0",
+          "0b71d3210f0befe96902eddf7dc073e7b09879b28cc5728ed57c8653cbe6ce2e",
+          "0d82444445ac964169d89ac2264623298d0914495c6df4f84f2b02db5ccf361c",
+          "ca768637a17a203a905fc62d279ccb6430e0fde5e8e11a192d24981a70da5a1a",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "907826cce7416a3e5b5301598b993b160f9a9e8a0b90a10cc8088020f43a9a44",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "d0d0e1f964c7152105a59f378feac9346e139b529267b3802b3b2a8f34b185d1",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "204cfc92c57f9ec77cd54f2a9425af0aa357dccf567af276a74e1d1365593c73",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "743ee4b490bbffb5383878dbc343d2f606d4a74a06b11074decad00515b9d3f6",
+          "c8bd336d73d1adf1c2e4204d1f6dc49bad54815e023e75731ba0c181f27c9656",
+          "48177d21f5bc603eb5471f3056844167b2ee8ba1d42a0255dd1bf0088439f728",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "1eec3f94da0be6cd121dcfef3067d08da966ef6ad516d2ee957d27edb1b7a41a",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "b40cb6f1384ca0316f7907158ebdacf5d7634d4cb2c976108d6d20e53d155f9f",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "3b774a41ddde0d8cca5680c84035b8fca28fb2bf6e15fe6b88b63bf134966285",
+          "8f3822711a05bfeb6df3913baac8708996be1ef840cdc4a6a0b3d5074ed98d19",
+          "9049e9f49921e606465ac5cb5851e8d44e274868e653587450ed8df1268c5084",
+          "1f17b8579ce25504bdccb6c93d89a024eda4dc25242e2b904f38682ffad21cdf",
+          "8730b740de720ec040df1137c01656b28281179b6286b6e3876df9cd8a2bd6c9",
+          "debd6114e4299ed788fcece77c79d6f0594316684bca42a770639ab07407c9cd",
+          "5f3dbb29b54ea24473da5170337dafe7f1a6a6dc281b55a057376926bc5dd680",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "5ba643efdf558f8f81f81b34e79c9e7dfe82d3badd3f98e4194cdd749372b266",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "e78902ac12f921aebc567815f2ec338692a528368df41906e51026af053efc3d",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "a7f4968a04f24ffead29a350faa311196752f9384672583a252aee030659274c",
+          "2f74d7af6a00a775207700573558a62d142d289660c59ed018ef0991b685b499",
+          "7d5771a2602f7d28c281a82a7c3c8adaed73099fcc09b17be04878737e1df799",
+          "6b6c10b8252b7378c0e898b4b7753e3b94026ac60f53d4b4d6683a923880e378",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "4e808a96c1753c727a7e9508a25d560d9a74a84d5acc32978346cddd20065de0",
+          "996f87a3fc8333880a7636a771eb41e7c6e002e890c722908801e6d60c3cf69a",
+          "a52720bdf9feea075c2b60389a6d9b4d6e38014c63784355d0a38619376a18fe",
+          "a233306228cea7487edc56de0a45fec18d4501044de3d7a26fb6c51431aaa341",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "7e4412a09fc1811bd14f97e2c9539a91465b192d4a5468fa11aec63558b75e57",
+          "f2cb7003098d02932e0e1c42087a64547e71a2047ec2fcb4988665fc3954e8ea",
+          "d433678158851163cf52d6b7be9c7e087d6395a4caaeac1e6ff1c156384ccde3",
+          "f0af6bd36fad33eff77c3be24ce1f5f7d4958bdfca53e707c56abe15c985aed3",
+          "cab5763fa81c09a1b3b8ce55b8a89bae500b0db0e1a5b52b00e9495a4e1419a5",
+          "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+          "0d3d2f5a8b2fc178b4e5ab7eb9c8c886e2e08b03608f0bd3200c3fb76b4aec0c",
+          "324b41be9ef425a136e6695ee391d4fb1d882acc5739c9568a41e3d6f71883ca",
+          "c1b1fb8b49e5351ffe39f358a1f4b53a5bbcffee8d23770d06bcfb8d03fc57a3",
+          "9c1b375bd1fb539491208857e1e672878a826ba07aac56f9cbe78cf1affb06f4",
+          "bd384659944eba9e5c7f314b925fe84fb3902d3c1905e350328a18f8d03a91d5"
+        ],
+        "deletedLineHashes": [
+          "c5bd55f08ec410eb2881d23df6471771fd165c1cc69e15fe824b43274ada182c"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "newPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "matchedOperationCount": 2,
+        "matchedHunkCount": 2,
+        "matchedOperationIds": [
+          "vscode:ms0ve1bb:86:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh",
+          "vscode:ms0vha1t:93:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0ve1bb:86:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh:1",
+          "vscode:ms0vha1t:93:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 105,
+            "deleted": 1,
+            "changed": 106,
+            "touched": 105
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:9:series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "oldStart": 80,
+      "oldLines": 1,
+      "newStart": 184,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0vha1t:93:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "b3af297e82a43528943e76c3786d72ede7b29b479c6c7b19e1efabd8a22b15ae"
+        ],
+        "deletedLineHashes": [
+          "7dbe8d617b399f13fad6030458f7044d4f7a232c4be08b3e23147dec3ae18195"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "newPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:ms0vha1t:93:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0vha1t:93:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:10:series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "oldStart": 109,
+      "oldLines": 1,
+      "newStart": 213,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0vhnm9:94:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "2dfb1aa7bf311e88313577837bd9c9993c474ad9cbe65226be62c1b7f5602d78"
+        ],
+        "deletedLineHashes": [
+          "5590b3b9151c871e6404eeafcf5c4a26c380553474a141ab4eb26a5789201b74"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "newPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:ms0vhnm9:94:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0vhnm9:94:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:11:series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "oldStart": 267,
+      "oldLines": 1,
+      "newStart": 371,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:ms0v8obb:81:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:ms0v8wxa:82:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0vi17m:95:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "217420da0335d7433b623cbcd74a3baeef4210f25825f176d26bd69b9fe3c70e"
+        ],
+        "deletedLineHashes": [
+          "f50e42811aa51b39f182254997534384522f3d2f90bd0db31263174b36980ab5"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "newPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "matchedOperationCount": 3,
+        "matchedHunkCount": 3,
+        "matchedOperationIds": [
+          "vscode:ms0v8obb:81:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh",
+          "vscode:ms0v8wxa:82:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh",
+          "vscode:ms0vi17m:95:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0v8obb:81:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh:1",
+          "vscode:ms0v8wxa:82:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh:1",
+          "vscode:ms0vi17m:95:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:12:series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "oldStart": 306,
+      "oldLines": 1,
+      "newStart": 410,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:ms0v8fus:80:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.status-bar-refresh",
+            "operationId": "vscode:ms0v95lq:83:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh",
+            "evidenceLevel": "direct"
+          },
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0viero:96:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "2893c7f5e0dcb8eb1cdc412d50a4fa17454d7cf0b59ab288352b599d087b4d4c"
+        ],
+        "deletedLineHashes": [
+          "24e732aff4244a91d39c4b26f70864ae21de0b014080f1705ccac075a8499dec"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "newPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "matchedOperationCount": 3,
+        "matchedHunkCount": 3,
+        "matchedOperationIds": [
+          "vscode:ms0v8fus:80:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh",
+          "vscode:ms0v95lq:83:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh",
+          "vscode:ms0viero:96:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0v8fus:80:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh:1",
+          "vscode:ms0v95lq:83:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.status-bar-refresh:1",
+          "vscode:ms0viero:96:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:13:series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "oldStart": 387,
+      "oldLines": 1,
+      "newStart": 491,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0vit9u:97:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "672000377ecf6332c5844894c9c9d64a05b01c5ef41cdde82c78800fc928dbea"
+        ],
+        "deletedLineHashes": [
+          "8abe9a016593319aff3e8a3e1bdcf5645648983e17eea40d241cac648c963857"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "newPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:ms0vit9u:97:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0vit9u:97:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:14:series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "oldStart": 433,
+      "oldLines": 1,
+      "newStart": 537,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms0vj7hk:98:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "82232c196f8ba9c89a7ce66cfa93c97b6519678c0f11d1d05fe2da37fba709b2"
+        ],
+        "deletedLineHashes": [
+          "76544718bd76f9a9f41917fe4fb83b91c9be65b7c688a6947db6b889b81d7f80"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "newPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:ms0vj7hk:98:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms0vj7hk:98:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 2
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    }
+  ],
+  "summary": {
+    "totalHunks": 14,
+    "buckets": {
+      "ai_only": 14,
+      "human_only": 0,
+      "tool_only": 0,
+      "mixed_ai_human": 0,
+      "mixed_ai_tool": 0,
+      "mixed_human_tool": 0,
+      "mixed_ai_human_tool": 0,
+      "unknown": 0
+    },
+    "aiInvolved": 14,
+    "humanInvolved": 0,
+    "toolInvolved": 0,
+    "unknownInvolved": 0,
+    "linesAdded": 206,
+    "linesDeleted": 14
+  },
+  "reconciliation": {
+    "schemaVersion": 2,
+    "strategy": "staged-diff-hunk-overlap-v1",
+    "stagedHunkCount": 14,
+    "matchedHunkCount": 14,
+    "unknownHunkCount": 0,
+    "files": [
+      "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "series-2.2/Series_2.2_Prompt_Caching.ipynb"
+    ],
+    "lineSummaryByBucket": {
+      "ai_only": {
+        "hunks": 14,
+        "linesAdded": 206,
+        "linesDeleted": 14
+      },
+      "human_only": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "tool_only": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_human": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_human_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_human_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "unknown": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      }
+    }
+  }
+}
