@@ -1,0 +1,1127 @@
+{
+  "version": 2,
+  "schemaVersion": 2,
+  "source": "mantis",
+  "sourceVersion": "0.2.221",
+  "generatedAt": "2026-07-26T15:19:42.159Z",
+  "files": [
+    {
+      "file": "requirements.txt",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 0,
+      "totalLines": 4,
+      "assistant": null
+    },
+    {
+      "file": "scripts/add_python_file_sections.py",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "totalLines": 237,
+      "assistant": null
+    },
+    {
+      "file": "scripts/install_git_hooks.sh",
+      "action": "added",
+      "linesAffected": 8,
+      "linesAdded": 8,
+      "linesDeleted": 0,
+      "totalLines": 8,
+      "assistant": null
+    },
+    {
+      "file": "scripts/validate_notebooks.py",
+      "action": "added",
+      "linesAffected": 159,
+      "linesAdded": 159,
+      "linesDeleted": 0,
+      "totalLines": 159,
+      "assistant": null
+    },
+    {
+      "file": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "totalLines": 580,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "totalLines": 595,
+      "assistant": "cursor"
+    },
+    {
+      "file": "series-2.3/Series_2.3_RAG_Chunking.ipynb",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "totalLines": 355,
+      "assistant": null
+    },
+    {
+      "file": "series-2.4/Series_2.4_Conversation_Summarization.ipynb",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "totalLines": 335,
+      "assistant": null
+    },
+    {
+      "file": "series-2.5/Series_2.5_Long_Term_Memory.ipynb",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "totalLines": 334,
+      "assistant": null
+    },
+    {
+      "file": "series-2.6/Series_2.6_Memory_Retrieval.ipynb",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "totalLines": 325,
+      "assistant": null
+    },
+    {
+      "file": "series-2.7/Series_2.7_Model_Routing.ipynb",
+      "action": "edited",
+      "linesAffected": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "totalLines": 341,
+      "assistant": null
+    },
+    {
+      "file": "SETUP.md",
+      "action": "edited",
+      "linesAffected": 20,
+      "linesAdded": 20,
+      "linesDeleted": 0,
+      "totalLines": 393,
+      "assistant": "cursor"
+    }
+  ],
+  "hunks": [
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:3:requirements.txt",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "requirements.txt",
+      "oldStart": 3,
+      "oldLines": 0,
+      "newStart": 4,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "24d15058cdc1412dad9c2864efa52b09a1d80b28897c210b965a6e922ca90b0f"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "requirements.txt",
+        "newPath": "requirements.txt",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:4:scripts/add_python_file_sections.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "scripts/add_python_file_sections.py",
+      "oldStart": 223,
+      "oldLines": 1,
+      "newStart": 223,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "68ec7b337c198ea2066734cba7d3c7651e16f777b538acc3b1a2ed24b9037ecf"
+        ],
+        "deletedLineHashes": [
+          "558709bc10dd550ae3709c22c07a98be0949976bef1e2695dd08187f749d5fb2"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "scripts/add_python_file_sections.py",
+        "newPath": "scripts/add_python_file_sections.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:5:scripts/install_git_hooks.sh",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "scripts/install_git_hooks.sh",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 8,
+      "linesAdded": 8,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "3af71adb278ad4af33c144b78fa1ae708da03b773d98324ae991a7daedb53ca2",
+          "96d2377d7b2ed51921915bbe37044ffa1d0905f4a321f2c55e1b5db1fb910269",
+          "825769eed1c7cd6531f7d329eba635d64140a7ee9d8c6363ff00a953d7e071f9",
+          "5fc6643f8b11942eedfa84b93fd4e03fc5f0077a7ccee9b8130f5a2a1f6460d6",
+          "2b76e680cd3125d0edc26ef3716467e2f944ae1535d660f8821e65c3a2866aab",
+          "290c22c7517940368111c6f10879c12d4e13a669ea46304eaf6f877dc4207fb2",
+          "cf6fcf3d0062450120af1d041acbfbbb71606d3b64b2aa949415eae87b3c2bbe",
+          "ef83a202a2d8ca76c3170b165a678ce85e91f2d8b3009dd1a46f2c459be3746f"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "scripts/install_git_hooks.sh",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:6:scripts/validate_notebooks.py",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "scripts/validate_notebooks.py",
+      "oldStart": 0,
+      "oldLines": 0,
+      "newStart": 1,
+      "newLines": 159,
+      "linesAdded": 159,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "381f9bfc69d49d39040a7d5fc3197ce385019a2ba2de649622f841a8c658ed37",
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "f50a5e1d595f35475f27d437ad1b8d3f578432181fe4608fdbaf5ca13e3cf794",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "19f9dd8511864b10c016c83e6317b6daf2982fb10c942058426f053f6e46a5fd",
+          "0b6edadef38ed9e7a54065c9f7494445dd0b00b3e37de8b68258c2d10748d614",
+          "b368a02e71f824fc678d8dd4550a75cc2161d595cb16d9f228a273bc6d59f118",
+          "851453161f4e7136a11815c66241610d56a0dcc059eabee2924e3367f1fedf5f",
+          "a3b82665994451cb5f3e9141fcc5d6047807bd5065b1ab50aada07e1e374a024",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "2bad3eeaf33caffe3bc9b482b4934ed19eb4ec3614c12373e1a5c5f8948217da",
+          "52ac96cfe8919725b25cd1a66750e90ad63f03f800a406b520be05e9f994aeda",
+          "ec4cd97ae1d45823e82170a85eb9585f3621a3a1c80395de82d9a1fb60e277d7",
+          "e1d430b06642183d372ed06ff1dd62918a40d0e38daaa69518cadd80d47a0b98",
+          "b6d267efe80a3dbcf2f2d67e21d8c15783a2f031427f827d43b6222fe9c4bf02",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f534a72c58d199602723840a24761409f227f4238759b1f6b1982afb8956b460",
+          "ff3e4d4dcf7250cae8d622d77c9a6d69aefcf4ab04ef9920218fafe93c0f1991",
+          "66ec018201fb03f10df19f1a56a1264beb2654e8f07c2f163f023ebd53a751e4",
+          "9e77b3746ea081eb4c557e71cc84ca29dc66a89d18a07e85dba66a336e7310ae",
+          "6d69f2ac09017b8a49d050ab336e953b8fa02ae08c24396916ea7ea42418e627",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "368e0b19b5c2054e768091e0f4a14f5009340b92571f3e578aca9185f278b094",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "217c274be69d59341e3d40a09a9015b4ebe4a51965a9c7575854a6b058054dfb",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ba48c7e5d89ac9c085fad0f1724fe3d1c39a3a8cd98f59522daf8db370e297b7",
+          "90abe60ecc520b95b135f2f1328b2d32abdfe28d35186fe53a772a369f275a2a",
+          "bc85c1243b44a3e5e1b73cd66851b8c5c51a84fd5986e6c6f61e31cdfc8588bb",
+          "22d6dd6fd6d246fe7db5293bdf990f3599922482bcbe073cfdc6cad2ebc51dc2",
+          "8f880b1ef30961362032b6227afda6307a49e4f9d78ab9350081f1ffceecf8ec",
+          "41744890934c9e5a486614b325d44e3e16b9adf8ddb76533803937e938a6a8c4",
+          "383bb02b8ae82888600510238869b5f12caef508d16cd0d730ff3f36bb417d72",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "0d7efd13a7be87cd05b19ffc3f4686c04e362a0bed8431e86838c0fbf6ad7a37",
+          "3e160e1c71be9edf62a49d7da5811ab8cf5d299da1b081445a4585d5a57e88c2",
+          "3be0e34c17b562e2589f4e23063e1f94c0899d1f3396fa70e2d2faa349ced16c",
+          "e915416348cfe32f52006f34b6cff321d07bf5787cefcb8ad3f224ca3561aaa6",
+          "c2caee26dbd768efba43646f216019001217a1316cb92c62d3fd55855a90aa22",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "8d059c5e70ee554f885c072fb12cb54082f20bb2c6e5b1a7150b4adbf5f0dbff",
+          "330248063cd495977139e0d7231e7cd81ad4068f5e3f8a04792ac194c47f2729",
+          "a81c5a870fc31016877a11c92ff0005033b89a4a4142b78acb57d945758026dd",
+          "866c551cad076f62109f33e4a2221883b7f0b7935c85f582d23ce91f4f3eedd0",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "047e616d858460a277a1dfc2855964f7251fd79b1af66a47399041120fb7d84a",
+          "c19551e6cfcc01aab3d3234fe25d7850575e0d6a7c6b7eaea1946a0312fcb270",
+          "ba9f7dab7a787c64f27fb11296335403eab706dac43937c0864951d0056b4187",
+          "e680b69c35c363684b8f002be353fd9cd0d89ad6880abefaf7a9913610b8c2d7",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "142ba355cccab6f8aa3ca862fc2e014df8c689599d4405dd7c4761bf815cbfe4",
+          "76a4aa5d86259b0df3fae5f1e92e325532078341d393c8fa7d153a11696454e2",
+          "164e190daebe90a5ac32030ae0a16474e07d96522d48e873d46c8efd80250401",
+          "c14525b81a3d9d068fbe5886782d89a3c0842ba1bc7769d793b08554ed4d29a9",
+          "2cc83b0f529ad81ad42092312bbe7a40f896156bacb00b9e1eb361dc76ed594a",
+          "88f8a264581ea01f6941c63ca1f3308a4b334efefbfb52cdb9a51a868d556353",
+          "6696a916fc2ffa66a8e4e45c31b1d9a8c82698c870afd0408b59725808a40fbf",
+          "43944620350ccab0cb45ddac9305c09475706d19c01382793e091e3f79288a5f",
+          "554d5bef44d0d935cafa350d8a21f94951b6b98d4b4eb3e5b18b2a64b7d09464",
+          "b9d24dcc6042bc4bb8b618ff356e23be459a872c688a30b3b5abccc0e721f366",
+          "fb25262d236609d15b6b56eb0e62c5768e4f6d945c9dedfe7eb4db8c5bcce05c",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "800b8589a6903f1ae9ab4519b23c75c43befc47b6e55752922ed1cfb8ed6c549",
+          "b053ed1a7077cc346c655d4ecb11523d9179a100a03ec0c545dbf95d2d6ea297",
+          "0efb50b88ab722d0113937320e01a7255b22b5335262504133a44ffdc59debbf",
+          "3a7cf8f12fced64de61afec79c35f1a5788ae0a52b8f89d13b532b572537c361",
+          "600a76f9d5ebc6e811aa2cecf49d3b48e005d23955aaf89639f17b85d4ef9690",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "2aa8ced08e61af04f089b6ad963cde9679bd6c068f40a1da6710c0209eccfa7b",
+          "d8d79d4ade22530e5b35f0e5314687c1d6864fb33375c69b69e04786bf9eb77c",
+          "525c8ed17a45174128e8a5c58879a28d66d5f7a9ef09db22fe6fd7d4ff66168e",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "746590debeca0be85cfcc736a9386d859a42a1cb12705d1b19131a5a5e12a73a",
+          "80adc2125a02888245b8c1eaab792070b1f789bdbd7479118f265a3403874354",
+          "7ae8daed45ebff319e62ef384e2526fef3882f4f0c0e6666c54640e64adb0fea",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "c94f2f6f372b7580bfa044adc2baa7338648791e5270602f26af1a770ac18f1d",
+          "29446116c05e4b6c3f3cba4934e3cbebe0dad9ecc8c968de03a01a6527447a94",
+          "db1bd85fc77d09a0c83ed22bdb6d051abf98ee3f3440cdaaf18f34026b3ec81c",
+          "e8c261759865720b928caac877676db4a449f521da4803a019bc9d490d4b99aa",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "1cfe64815637b5af6b010bab8d89f9e67ca2eedf7b07fcd4411609bb4480c0d9",
+          "970e961637311feaec3cccbce929f5ed1c938bb66d12ea2373d7cc70e1b7c8a6",
+          "be4d7dcf693ba6f3fde04c9eef0e64f298081ee4b3ebf6546684008b6a034478",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "140631415a843a361d578e38a0f11791c99f6f2e2edce695fbecc78f81d65ffb",
+          "76a4aa5d86259b0df3fae5f1e92e325532078341d393c8fa7d153a11696454e2",
+          "164e190daebe90a5ac32030ae0a16474e07d96522d48e873d46c8efd80250401",
+          "fd0d53e15bbe51264b8cede0824be2286c465ab289a98cb24d48a6b5ab2b427a",
+          "91d6a56f8ea8d43f05194d1ad744bf4faedc1f1318da7e128566e4b0ec5d8b56",
+          "bde1dc87350dfa281ec90eccde0fc9f2f411b03ad7dd71762a588d7e2d79fee1",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "800b8589a6903f1ae9ab4519b23c75c43befc47b6e55752922ed1cfb8ed6c549",
+          "b053ed1a7077cc346c655d4ecb11523d9179a100a03ec0c545dbf95d2d6ea297",
+          "c46b472a5f3dbe62200d3233a71cc6670b3172824d3366e984da9349ab63adde",
+          "c4a020d0183eaae80439332d270c9f92eb24411d2d36d064c4d6826aa29627d0",
+          "8ce8689be42237098be02105417221113f6cfad95aebf6d032bf4aa84f2336e6",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "c94f2f6f372b7580bfa044adc2baa7338648791e5270602f26af1a770ac18f1d",
+          "1286f9833ffe4b9fbb072f836003bb4942c4f2ce47b7f3178b8466d4964370a0",
+          "63312d2a647767a2c482f33b1ed60796f5c043efa70f0c0801d2bfee3df0cdab",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "59ad208631405b6c933e1c1ec311313b76a0e98c14e2633536fb862f39edb702",
+          "69d319155f24de1a6f8f44f065f256a18ea76829f15dc16523081e80da2af3b2",
+          "506466270c3e601f4b2a6d3083a3ef1da6061f249f18e2d292bc6686331a9295",
+          "803dc41ca80f26890e475010f846f4b3b727fb59b8dc731b5783eaf758349ea1",
+          "10ec98e3e60ae493c1571919f7b6ad722b267e69bc273538c8bc2db5e410e6ba",
+          "f83472a1662f89c82c97847a781fa2f4e0d7588a9791aa46ab9cd1eae66547dc",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "12085810d1c9297d99b4217d2f0a2d1ba1b7d396332ddb130341aceee8552568",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cab05371d926aea1af1c3414f81b0e23428888f860011148612d57b2abee02cc",
+          "e4f9567bc40544526e682fbd41093c30677e28548f26ed4c32b44069bb2b337a",
+          "10154ec4884ee8125bc892b5a676c975b12886a7ec995cc00245c91722d3fead",
+          "df99d3b06ad810946858953f46b4592a5ee4991ac8772e6f6f17363c44b927c4",
+          "cd0aa89e5bccc793a11179c3e418485cb25a5681a6142b7d7810d2482796923a",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "5a20d6c3e8391578739e8fc07190b6fc6423327322f404658e3bf7958646d8aa",
+          "3cca9582f8fcbc60feef17e014877a250c8db06c7c1f89a354db0a347c09a9b6",
+          "3fa09cc142771019468ca94d6edd51763b9a3601f93106f898a5c623adce52f6",
+          "824d24b96f1d13d9b6d6a2189bdaf87c43819f0e644733a2a1fd43f85341d8cd",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "a6b232946648aa53dcf1a2c50454399ba542021695cfc83fae951192792226aa",
+          "ae7552d929a59019d7f63ef2dc128b3213f5837ba02c31888d2f3967a0853b35",
+          "0c8c4a14ba7bb9d5fe3809bb14746c9008fca8ca7c5dbffc06b653a673e3dfdd",
+          "fc97e5b0416e743cd786b2b6333b2b0507aa2abc98edfc3b66bc826d5c9563c3",
+          "37a1289f81107878efffaa5364b6e8bf028115874d2d8cc9fc70a529f73890b2",
+          "c3ab5fc2dcc25adffec8ff2c042e86c75675b02b42faa1341544571f8a385aa8",
+          "6ec9c4958329d53b9cfcd782a8d620752c9913c55169542bb83daf26e0ba431f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "f44aedad5d32e4f730208d82254f77cb2eaf7680d51ce5b325247ca97bf76722",
+          "145095d225fe47a9a094287130a50aba19958735fce7961e16dd25b6e6f318da",
+          "6346fc29cbb00ea90900d9a7714879c3600ddf704041057889695a50f1792f87",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3c7d3bd9db64b52c72d62908074feb759250dc33f5d3634fb5514528a007b999",
+          "611d1e326ceb946aedfe775d0f7c3075c2726bef26085a6213f08ae968aaa93a",
+          "ff238d6ef7df65ab75eb496e1718c1da4585c48d6caf11309fcef8d7cf96cd67",
+          "633a2337a8284ef3ddfc531284a29a584b1b926db673510c1093c66c8e60a9d4",
+          "d32508a19be9e944ad764315cd4b90436757ffdaee640560468e65c3c6c65094",
+          "5ef79885a9187ae8de2775676bd8526b741bfa964f566cd97a0369deaeb6b009",
+          "8a040171aa68fd843d864f6b0a8cc774a88e0844b29f753bd0fa2bde4e9d949c",
+          "307c095412348b4f71f60b273a08fa5880ce0f798c9dc05daa1c35595860ea92",
+          "363b70a81e54b8b3e4c96521c0559f8403a57595cf2807bf22956b6809fc7ba3",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "1fa9a1f2aa7d18a06fc893ab6881f065e8ef0acb56e8d178563444e5b96b6178",
+          "5cbcbd84eca3d53f686d5a8c4d900051542e4c13c40e9798cb41c16cb57fc882",
+          "a1bfacf83225c0fa508837ef2a37c99269503027391f1f57a92395cbe5530ba1",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "3412809c1cf42d7343047cba6a497584fa6c468737e2ef3fc443e11211447ea5",
+          "6d6b72297e8416f4b1d7d162a58bc05c29c14466cf665c2d2f1f43e89b59fbe8"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "A",
+        "oldPath": null,
+        "newPath": "scripts/validate_notebooks.py",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:7:series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "oldStart": 191,
+      "oldLines": 1,
+      "newStart": 191,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms1xadj2:136:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "25d2aba6da20e6cce1fa54334526e509942fd603dcf830d6f53ed5073f0770cf"
+        ],
+        "deletedLineHashes": [
+          "cae118202a5bdf976c73acb062c455f3bb0d63bb160b0080583500882db29f1c"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "newPath": "series-2.1/Series_2.1_Context_Pruning.ipynb",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:ms1xadj2:136:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms1xadj2:136:Why-AI-Fails-:Series_2.1_Context_Pruning.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 1
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:8:series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "oldStart": 196,
+      "oldLines": 1,
+      "newStart": 196,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "ai_only",
+        "contributors": [
+          {
+            "actor": "ai",
+            "tool": "cursor",
+            "source": "cursor-agent.transcript.fs-fallback",
+            "operationId": "vscode:ms1xae18:137:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback",
+            "evidenceLevel": "direct"
+          }
+        ],
+        "actors": [
+          "ai"
+        ],
+        "aiInvolved": true,
+        "humanInvolved": false,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "direct",
+        "kind": "vscode_change_event",
+        "source": "staged-diff-hunk-overlap-v1",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "7055b39f7ea2d08b36a23b57ddbd92f3e02c65dd2031539a68942db892303386"
+        ],
+        "deletedLineHashes": [
+          "a1ea02f73b479bde6caa944ce32c212f56d11183b03375b0525b86edeb97b8d8"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "newPath": "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+        "matchedOperationCount": 1,
+        "matchedHunkCount": 1,
+        "matchedOperationIds": [
+          "vscode:ms1xae18:137:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback"
+        ],
+        "matchedHunkIds": [
+          "vscode:ms1xae18:137:Why-AI-Fails-:Series_2.2_Prompt_Caching.ipynb:cursor-agent.transcript.fs-fallback:1"
+        ],
+        "matchedInheritedHunkCount": 0,
+        "actorLineCounts": {
+          "ai": {
+            "added": 1,
+            "deleted": 1,
+            "changed": 2,
+            "touched": 1
+          }
+        },
+        "actorLineCountsSource": "staged-diff-hunk-overlap-v1"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:9:series-2.3/Series_2.3_RAG_Chunking.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.3/Series_2.3_RAG_Chunking.ipynb",
+      "oldStart": 144,
+      "oldLines": 1,
+      "newStart": 144,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "850f37998945f589b7cc446bd6391db7b44de2970d793b975ffb29a647e4e488"
+        ],
+        "deletedLineHashes": [
+          "d275d24129796fde809b6c3cf2d6956890ba09c0fb21d712eb560f5d785ffec0"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.3/Series_2.3_RAG_Chunking.ipynb",
+        "newPath": "series-2.3/Series_2.3_RAG_Chunking.ipynb",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:10:series-2.4/Series_2.4_Conversation_Summarization.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.4/Series_2.4_Conversation_Summarization.ipynb",
+      "oldStart": 132,
+      "oldLines": 1,
+      "newStart": 132,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "0ef579ee6d2abcc3f70de57bafa243c9f28d835eb06ec64cb793d772ad7f46d9"
+        ],
+        "deletedLineHashes": [
+          "e48436ebeb246e362b60d8f7ab8543e388fc63b02db8769545dbb4f4c096eee2"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.4/Series_2.4_Conversation_Summarization.ipynb",
+        "newPath": "series-2.4/Series_2.4_Conversation_Summarization.ipynb",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:11:series-2.5/Series_2.5_Long_Term_Memory.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.5/Series_2.5_Long_Term_Memory.ipynb",
+      "oldStart": 134,
+      "oldLines": 1,
+      "newStart": 134,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "c8b746a15f4a21ffc45830f16b71b37d6a8a0bfede2b50f37d76643c5fe261b9"
+        ],
+        "deletedLineHashes": [
+          "aa94df40b204d08210be606f5f21c1a819488e5996d9bf97c913f7d0947bec3d"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.5/Series_2.5_Long_Term_Memory.ipynb",
+        "newPath": "series-2.5/Series_2.5_Long_Term_Memory.ipynb",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:12:series-2.6/Series_2.6_Memory_Retrieval.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.6/Series_2.6_Memory_Retrieval.ipynb",
+      "oldStart": 132,
+      "oldLines": 1,
+      "newStart": 132,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "99f435866896374fceb3af90d23ff647c4582cea9bdce08c30c0701cf9a1b34e"
+        ],
+        "deletedLineHashes": [
+          "983c6b2fc7ea87c115ee9229759a0d2e359d76b678559223b0ca475444ac4662"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.6/Series_2.6_Memory_Retrieval.ipynb",
+        "newPath": "series-2.6/Series_2.6_Memory_Retrieval.ipynb",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:13:series-2.7/Series_2.7_Model_Routing.ipynb",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "series-2.7/Series_2.7_Model_Routing.ipynb",
+      "oldStart": 132,
+      "oldLines": 1,
+      "newStart": 132,
+      "newLines": 1,
+      "linesAdded": 1,
+      "linesDeleted": 1,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "32d1afc7be790d4480ac538e6aa9ef39dc37c902f2783fe4c3ee1e70e4238802"
+        ],
+        "deletedLineHashes": [
+          "bb920bead6ca318e8d00b9202a18c0dabbbc330fd894f22ee70d9f982e85f615"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "series-2.7/Series_2.7_Model_Routing.ipynb",
+        "newPath": "series-2.7/Series_2.7_Model_Routing.ipynb",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "recordType": "hunk",
+      "hunkId": "staged:2:SETUP.md",
+      "operationId": null,
+      "filePath": null,
+      "relativePath": "SETUP.md",
+      "oldStart": 254,
+      "oldLines": 0,
+      "newStart": 255,
+      "newLines": 20,
+      "linesAdded": 20,
+      "linesDeleted": 0,
+      "attribution": {
+        "bucket": "human_only",
+        "contributors": [
+          {
+            "actor": "human",
+            "tool": null,
+            "source": "mantis-managed-cli.manual-fallback",
+            "operationId": null,
+            "evidenceLevel": "inferred"
+          }
+        ],
+        "actors": [
+          "human"
+        ],
+        "aiInvolved": false,
+        "humanInvolved": true,
+        "toolInvolved": false,
+        "unknownInvolved": false
+      },
+      "evidence": {
+        "level": "inferred",
+        "kind": "manual_typing",
+        "source": "mantis-managed-cli.manual-fallback",
+        "commandId": null,
+        "sessionId": null,
+        "reason": null
+      },
+      "contentHash": null,
+      "metadata": {
+        "addedLineHashes": [
+          "ad27b2cc1468317d706f644ee9c09e28bed046980f7515508d07df0a9d875745",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "e8a2e1139bef2191e197b4c06080ea2138eec1188697ca5742076181576a936f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ad332335cfaa348c5bd715c3479844622270d5f7389ae070b81b135d521a221a",
+          "5dfb49c9b8cfb897bf421b00b22c98cfb40de0a70f6d2c9e8f5651c479107620",
+          "07c05844b2ce488bd810d119df5f4b56f7184e66a46a9eb9693b1b87b3812ebe",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cd6c6f0c3eee032314c4d08b81f1895faada0d69c27333b8b84cb8c98856320f",
+          "0bc1054569e13ae84b4f5c063b3b2737acdce092e2d4204d17bc034a56a98b9a",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "dccb43f116645439bf83498455e179e4e2b5e48e061245e6106166c64fe3142f",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "ad332335cfaa348c5bd715c3479844622270d5f7389ae070b81b135d521a221a",
+          "2878d4f197d6a1c073f5ed14d01599a17488bab7655e175890a256be9fc86640",
+          "f1b901847390b0ed7e374e7c1e464ec17b46a427c487a5ad6cbd2906405083d5",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "33e0074b351033923dd2022ccd4f6df9ad9dd1e1e4ff3b6c7cd97a8890f898ff",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        "strategy": "staged-diff-hunk-overlap-v1",
+        "stagedStatus": "M",
+        "oldPath": "SETUP.md",
+        "newPath": "SETUP.md",
+        "matchedOperationCount": 0,
+        "matchedHunkCount": 0,
+        "matchedOperationIds": [],
+        "matchedHunkIds": [],
+        "matchedInheritedHunkCount": 0,
+        "unattributedFallback": true,
+        "unattributedFallbackSource": "mantis-managed-cli.manual-fallback"
+      }
+    }
+  ],
+  "summary": {
+    "totalHunks": 12,
+    "buckets": {
+      "ai_only": 2,
+      "human_only": 10,
+      "tool_only": 0,
+      "mixed_ai_human": 0,
+      "mixed_ai_tool": 0,
+      "mixed_human_tool": 0,
+      "mixed_ai_human_tool": 0,
+      "unknown": 0
+    },
+    "aiInvolved": 2,
+    "humanInvolved": 10,
+    "toolInvolved": 0,
+    "unknownInvolved": 0,
+    "linesAdded": 196,
+    "linesDeleted": 8
+  },
+  "reconciliation": {
+    "schemaVersion": 2,
+    "strategy": "staged-diff-hunk-overlap-v1",
+    "stagedHunkCount": 12,
+    "matchedHunkCount": 2,
+    "unknownHunkCount": 0,
+    "files": [
+      "SETUP.md",
+      "requirements.txt",
+      "scripts/add_python_file_sections.py",
+      "scripts/install_git_hooks.sh",
+      "scripts/validate_notebooks.py",
+      "series-2.1/Series_2.1_Context_Pruning.ipynb",
+      "series-2.2/Series_2.2_Prompt_Caching.ipynb",
+      "series-2.3/Series_2.3_RAG_Chunking.ipynb",
+      "series-2.4/Series_2.4_Conversation_Summarization.ipynb",
+      "series-2.5/Series_2.5_Long_Term_Memory.ipynb",
+      "series-2.6/Series_2.6_Memory_Retrieval.ipynb",
+      "series-2.7/Series_2.7_Model_Routing.ipynb"
+    ],
+    "lineSummaryByBucket": {
+      "ai_only": {
+        "hunks": 2,
+        "linesAdded": 2,
+        "linesDeleted": 2
+      },
+      "human_only": {
+        "hunks": 10,
+        "linesAdded": 194,
+        "linesDeleted": 6
+      },
+      "tool_only": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_human": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_human_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "mixed_ai_human_tool": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      },
+      "unknown": {
+        "hunks": 0,
+        "linesAdded": 0,
+        "linesDeleted": 0
+      }
+    }
+  }
+}
