@@ -180,12 +180,3 @@ def generate_memories(count: int = MEMORY_COUNT) -> list[dict[str, Any]]:
         )
 
     return memories
-
-
-def canonical_for_query(expected_values: list[str]) -> list[str]:
-    """Return memory_ids of canonical records matching expected values."""
-    ids: list[str] = []
-    for i, tmpl in enumerate(CANONICAL_TEMPLATES):
-        if tmpl["value"] in expected_values:
-            ids.append(f"mem_canonical_{i}")
-    return ids

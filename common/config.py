@@ -16,6 +16,10 @@ from dotenv import load_dotenv
 ROOT_DIR = Path(__file__).resolve().parents[1]
 DATASETS_DIR = ROOT_DIR / "datasets"
 DEFAULT_LOG_FILE = DATASETS_DIR / "HDFS_2k.log"
+
+# Load .env before reading GEMINI_MODEL below, so a value set in .env (not just
+# the shell environment) is respected — get_api_key() re-loads it defensively.
+load_dotenv(ROOT_DIR / ".env")
 DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 
 # Block ID present in HDFS_2k.log — pruning filters 2000 lines down to ~2
